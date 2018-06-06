@@ -109,7 +109,7 @@ class MyHomePage extends State<MyPreferences> {
                         margin: const EdgeInsets.only(top:10.0),
                         child : new Text(
                                 'Welcome Shiva',
-                                style: const TextStyle(fontSize: 15.0),                               
+                                style: const TextStyle(fontSize: 15.0, color: Colors.white),                               
                               )
                       ),              
                       ]),                   
@@ -122,7 +122,7 @@ class MyHomePage extends State<MyPreferences> {
                         margin: const EdgeInsets.only(top:10.0),
                         child : new Text(
                                 'We are glad to make your Business Travel Exciting!',
-                                style: const TextStyle(fontSize: 16.0),                               
+                                style: const TextStyle(fontSize: 16.0, color: Colors.white),                               
                               )
                       ),              
                       ]),                   
@@ -160,10 +160,10 @@ class MyHomePage extends State<MyPreferences> {
                         margin: const EdgeInsets.only(right: 20.0, left: 10.0),
                         child : new Text(
                                 'Stay Withing Budget',
-                                style: const TextStyle(fontSize: 17.0),                               
+                                style: const TextStyle(fontSize: 17.0, color: Colors.white),                               
                               )
                       ),               
-                      new Text ('Yes',style: const TextStyle(fontSize: 17.0),), 
+                      new Text ('Yes',style: const TextStyle(fontSize: 17.0, color: Colors.white),), 
                       new Radio<String>(
                         value: "Yes",
                         groupValue: stayWithinBudget,
@@ -174,7 +174,7 @@ class MyHomePage extends State<MyPreferences> {
                             });
                           },
                       ),
-                      new Text ('No',style: const TextStyle(fontSize: 17.0),), 
+                      new Text ('No',style: const TextStyle(fontSize: 17.0, color: Colors.white),), 
                       new Radio<String>(
                         value: "No",
                         groupValue: stayWithinBudget,
@@ -194,10 +194,10 @@ class MyHomePage extends State<MyPreferences> {
                         margin: const EdgeInsets.only(right: 80.0, left: 10.0),
                         child : new Text(
                                 'Blend Travel',
-                                style: const TextStyle(fontSize: 17.0),                               
+                                style: const TextStyle(fontSize: 17.0, color: Colors.white),                               
                               )
                       ),           
-                      new Text ('Yes',style: const TextStyle(fontSize: 17.0),), 
+                      new Text ('Yes',style: const TextStyle(fontSize: 17.0, color: Colors.white),), 
                       new Radio<String>(
                         value: "Yes",
                         groupValue: blendTravel,
@@ -208,7 +208,7 @@ class MyHomePage extends State<MyPreferences> {
                             });
                           },
                       ),
-                      new Text ('No',style: const TextStyle(fontSize: 17.0),), 
+                      new Text ('No',style: const TextStyle(fontSize: 17.0, color: Colors.white),), 
                       new Radio<String>(
                         value: "No",
                         groupValue: blendTravel,
@@ -253,7 +253,7 @@ class MyHomePage extends State<MyPreferences> {
                         margin: const EdgeInsets.only(right: 20.0, left: 10.0),
                         child : new Text(
                                 'Social Based Setting',
-                                style: const TextStyle(fontSize: 17.0),                               
+                                style: const TextStyle(fontSize: 17.0, color: Colors.white),                               
                               )
                       ),       
                       new Text ('Yes',style: const TextStyle(fontSize: 17.0),), 
@@ -267,7 +267,7 @@ class MyHomePage extends State<MyPreferences> {
                             });
                           },
                       ),
-                      new Text ('No',style: const TextStyle(fontSize: 17.0),), 
+                      new Text ('No',style: const TextStyle(fontSize: 17.0, color: Colors.white),), 
                       new Radio<String>(
                           value: "No",
                           groupValue: socialBasedSetting,
