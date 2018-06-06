@@ -7,20 +7,7 @@ import 'tagPage.dart';
 import 'Preferences/preference.dart';
 import 'order/flightSearch.dart';
 import 'order/FlightResults.dart';
-/*
-void main() {
-  runApp(
-    new MaterialApp(
-      home: new LandingPage(),
-      routes: <String, WidgetBuilder> {
-        '/landing' : (BuildContext context) => new LandingPage(),
-        '/OrderDetails': (BuildContext context) => new OrderDetails(),
-        '/Preferences' : (BuildContext context) => new Preferences(),
-        
-      },
-    )
-  );
-}*/
+import 'login/login.dart';
 
 void main() => runApp(MyApp());
 
@@ -32,13 +19,14 @@ class MyApp extends StatelessWidget{
         TagPage.tag : (BuildContext context) => new TagPage(),
         EventListPage.tag: (BuildContext context) => new EventListPage(),
         SearchScreen.tag: (BuildContext context) => new SearchScreen(),
-        FlightResultsScreen.tag: (BuildContext context) => new FlightResultsScreen()        
+        FlightResultsScreen.tag: (BuildContext context) => new FlightResultsScreen(),
+        LoginPage.tag: (BuildContext context) => new LoginPage()
         };
 
   @override
   Widget build(BuildContext context){
     return MaterialApp( 
-      title: "BusinessTravel",
+      title: "Business Travel",
     debugShowCheckedModeBanner: false,
     theme: ThemeData(
       primarySwatch: Colors.lightBlue ,

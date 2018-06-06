@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'orderDetails.dart';
-import 'preference.dart';
 import 'Preferences/preference.dart';
 import 'tagPage.dart';
 import 'package:http/http.dart' as http;
@@ -17,9 +16,6 @@ static String tag="landing-Page";
 }
 class LandingPageState extends State<LandingPage>{
    
-  void clickOrder(){
-  Navigator.of(context).pushNamed(Preferences.tag);
-  }
   void clickTag(){
     Navigator.of(context).pushNamed(TagPage.tag);
   }
@@ -102,29 +98,37 @@ final dStoreButton = Padding(
         ),
 
       );
-  
-    var listView = new ListView();
+
     var drawer = new Drawer();
     return new Scaffold( // 1
     drawer: drawer,
       appBar: new AppBar(
-      title: new Text("Business Travel Supporting System"), // screen title,
+      title: new Text("Business Travel"), // screen title,
       ),
-    body: Center(
-      child: ListView(
-        shrinkWrap: true,
-        padding: EdgeInsets.only(left: 24.0, right:24.0),
-        children: <Widget>[
-          logo, 
-          SizedBox(height: 48.0),
-          orderButton,
-          SizedBox(height: 48.0),
-          tagButton,
-          SizedBox(height: 48.0),
-          dStoreButton,
-        ],
-      )
-    ),
+    body: new Container(
+        decoration: new BoxDecoration(
+          image: new DecorationImage(
+            image: new AssetImage("assets/background.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: 
+          Center(
+              child: ListView(
+                shrinkWrap: true,
+                padding: EdgeInsets.only(left: 24.0, right:24.0),
+                children: <Widget>[
+                 // logo, 
+                  SizedBox(height: 48.0),
+                  orderButton,
+                  SizedBox(height: 48.0),
+                  tagButton,
+                  SizedBox(height: 48.0),
+                  dStoreButton,
+                ],
+              )
+            ),
+      ),
     );
   }
 }

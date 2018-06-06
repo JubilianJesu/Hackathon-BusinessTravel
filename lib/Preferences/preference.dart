@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../order/flightSearch.dart';
+import '../model/preferenceModel.dart';
 
 class MyPreferences extends StatefulWidget {
   static String tag="mypreferences-Page";
@@ -13,6 +14,7 @@ class MyPreferences extends StatefulWidget {
 
 class MyHomePage extends State<MyPreferences> {
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   List<String> _events = <String>['', 'IT Events', 'Game Events', 'Cultural Events'];
   String _event = '';
   List<String> _dinings = <String>['', 'Italian', 'Russian', 'Indian'];
@@ -20,6 +22,7 @@ class MyHomePage extends State<MyPreferences> {
   String stayWithinBudget = "Yes";
   String blendTravel = "Yes";
   String socialBasedSetting = "Yes";
+  PreferenceModel myPreference = new PreferenceModel();
 
 // Method setting value.
   void handleBudgetValueChanged(String value) {
@@ -40,13 +43,57 @@ class MyHomePage extends State<MyPreferences> {
     });
   }
 
+   void showMessage(String message, [MaterialColor color = Colors.red]) {
+    _scaffoldKey.currentState
+        .showSnackBar(new SnackBar(backgroundColor: color, content: new Text(message)));
+  }
+
+  void submitForm() {
+    final FormState form = _formKey.currentState;
+
+    if (!form.validate()) {
+      showMessage('Form is not valid!  Please review and correct.');
+    } else {
+      form.save(); //This invokes each onSaved event
+
+      print('Form save called, myPreference is now up to date...');
+      print('EventInterested: ${myPreference.eventInterested}');
+      print('StayWithWidget: ${myPreference.stayWithWidget}');
+      print('BlendTravel: ${myPreference.blendTravel}');
+      print('DiningOption: ${myPreference.diningOption}');
+      print('SocialSetting: ${myPreference.socialSetting}');
+      print('DestinationZipcode: ${myPreference.destinationZipcode}');
+      print('========================================');
+      //print('Submitting to back end...');
+      print('TODO - we will write the submission part next...');
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
+
     return new Scaffold(
+      key: _scaffoldKey,
       appBar: new AppBar(
-        title: new Text("Business Travel Supporting System"),
+        leading: IconButton(
+            icon: Icon(Icons.menu),
+            onPressed: (){
+              print('Menu button');
+            },
+          ),
+          title: new Text("My Preferences")
       ),
-      body: new SafeArea(
+      body: new Container(
+        
+        decoration: new BoxDecoration(
+          image: new DecorationImage(
+            image: new AssetImage("assets/background.jpg"),
+            fit: BoxFit.cover,
+          ),
+          color: Colors.white,
+        ),
+        child: new SafeArea(
           top: false,
           bottom: false,
           child: new Form(
@@ -93,6 +140,7 @@ class MyHomePage extends State<MyPreferences> {
                           isDense: true,
                           onChanged: (String newValue) {
                             setState(() {
+                              myPreference.eventInterested = newValue;
                               _event = newValue;
                             });
                           },
@@ -119,13 +167,23 @@ class MyHomePage extends State<MyPreferences> {
                       new Radio<String>(
                         value: "Yes",
                         groupValue: stayWithinBudget,
-                        onChanged: handleBudgetValueChanged
+                        onChanged: (String newValue) {
+                            setState(() {
+                              myPreference.stayWithWidget = newValue;
+                              handleBudgetValueChanged(newValue);
+                            });
+                          },
                       ),
                       new Text ('No',style: const TextStyle(fontSize: 17.0),), 
                       new Radio<String>(
                         value: "No",
                         groupValue: stayWithinBudget,
-                        onChanged: handleBudgetValueChanged
+                        onChanged: (String newValue) {
+                            setState(() {
+                              myPreference.stayWithWidget = newValue;
+                              handleBudgetValueChanged(newValue);
+                            });
+                          },
                       ),
                     ]
                   ),     
@@ -143,13 +201,23 @@ class MyHomePage extends State<MyPreferences> {
                       new Radio<String>(
                         value: "Yes",
                         groupValue: blendTravel,
-                        onChanged: handleBlendValueChanged
+                        onChanged: (String newValue) {
+                            setState(() {
+                              myPreference.blendTravel = newValue;
+                              handleBlendValueChanged(newValue);
+                            });
+                          },
                       ),
                       new Text ('No',style: const TextStyle(fontSize: 17.0),), 
                       new Radio<String>(
                         value: "No",
                         groupValue: blendTravel,
-                        onChanged: handleBlendValueChanged
+                        onChanged: (String newValue) {
+                            setState(() {
+                              myPreference.blendTravel = newValue;
+                              handleBlendValueChanged(newValue);
+                            });
+                          },
                       ),
                     ]
                   ),     
@@ -165,6 +233,7 @@ class MyHomePage extends State<MyPreferences> {
                         isDense: true,
                         onChanged: (String newValue) {
                           setState(() {
+                            myPreference.diningOption = newValue;
                             _dining = newValue;
                           });
                         },
@@ -191,13 +260,23 @@ class MyHomePage extends State<MyPreferences> {
                       new Radio<String>(
                           value: "Yes",
                           groupValue: socialBasedSetting,
-                          onChanged: handleSocialValueChanged
+                          onChanged: (String newValue) {
+                            setState(() {
+                              myPreference.blendTravel = newValue;
+                              handleSocialValueChanged(newValue);
+                            });
+                          },
                       ),
                       new Text ('No',style: const TextStyle(fontSize: 17.0),), 
                       new Radio<String>(
                           value: "No",
                           groupValue: socialBasedSetting,
-                          onChanged: handleSocialValueChanged
+                          onChanged: (String newValue) {
+                            setState(() {
+                              myPreference.blendTravel = newValue;
+                              handleSocialValueChanged(newValue);
+                            });
+                          },
                       ),                      
                     ]
                   ),     
@@ -211,22 +290,22 @@ class MyHomePage extends State<MyPreferences> {
                     inputFormatters: [
                       WhitelistingTextInputFormatter.digitsOnly,
                     ],
+                    onSaved: (val) => myPreference.destinationZipcode = val,
                   ),                                  
                   new Container(
                       padding: const EdgeInsets.only(left: 40.0, top: 20.0),
                       child: new RaisedButton(
                         child: const Text('Submit'),
                         onPressed: (){
+                          submitForm();
                           Navigator.of(context).pushNamed(SearchScreen.tag);
                         },
                       )),
                 ],
-              ))),
+              )
+            )
+          ),
+      ),
     );
   }
-
-  
-
-
-
 } 

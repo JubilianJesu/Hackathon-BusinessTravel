@@ -5,13 +5,13 @@ import 'package:flutter/cupertino.dart';
 import 'model/eventModel.dart';
 import 'package:http/http.dart' as http;
 
-class EventListPage extends StatefulWidget {
-  static String tag = "event-Page";
+class DestinationListPage extends StatefulWidget {
+  static String tag = "destination-Page";
   @override
-  EventListPageState createState() => EventListPageState();
+  DestinationListPageState createState() => DestinationListPageState();
 }
 
-class EventListPageState extends State<EventListPage> {
+class DestinationListPageState extends State<DestinationListPage> {
   final String url = "https://api.coinmarketcap.com/v2/listings/";
   List data;
 
@@ -48,7 +48,7 @@ final clickInterestedButton = Padding(
   Widget build(BuildContext context) {
     return Scaffold(
        appBar: new AppBar(
-      title: new Text("BTS - Events", style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold)), // screen title,
+      title: new Text("BTS - Destination", style: TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold)), // screen title,
       ),
       body: new Container(
           decoration: new BoxDecoration(

@@ -110,13 +110,11 @@ final blendButton = Padding(
 
       );
 
-
-    var listView = new ListView();
     var drawer = new Drawer();
     return new Scaffold( // 1
     drawer: drawer,
       appBar: new AppBar(
-      title: new Text("Business Travel Supporting System"), // screen title,
+      title: new Text("Business Travel"),
       actions: <Widget>[
       logoHeader
     ],
