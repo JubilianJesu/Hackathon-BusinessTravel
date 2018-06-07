@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:path/path.dart';
 import 'FlightResultsModel.dart';
+import 'tripSummary.dart';
 
 class FlightResultsScreen extends StatelessWidget{  
 static String tag="flightresult-Page";
@@ -227,7 +229,9 @@ static String tag="flightresult-Page";
     return lstWidgets;
   }
 
-  void _selectFlight() {}
+  void _selectFlight() {
+    // Navigator.of(context).pushNamed(TripSummary.tag);
+  }
 
   List<Flight> getDummyFlightResults() {
     List<Flight> results = new List<Flight>();

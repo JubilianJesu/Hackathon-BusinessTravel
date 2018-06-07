@@ -11,8 +11,29 @@ static String tag="tripsummary-Page";
 
 class TripSummaryState extends State<TripSummary> {
   @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
+   Widget build(BuildContext context){
+    return new Scaffold(
+      appBar: new AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: (){
+            print('Menu button pressed');
+            Navigator.pop(context);
+          },
+        ),
+        title: new Text('One Order'),
+      ),
+      body: _buildBody(),
+    );
+  }
+
+  Widget _buildBody() {
+    return new Container(
+      child: new ListView(
+      scrollDirection: Axis.vertical,
+      children : <Widget>[ new TripSummaryDetail(),new Offers() ]
+      )
+    );
   }
 }
 
