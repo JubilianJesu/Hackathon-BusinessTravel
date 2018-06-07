@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'FlightResults.dart';
+import 'FlightSearchModel.dart';
 
 
 
@@ -11,30 +12,15 @@ static String tag="ordersearch-Page";
 }
 
 class SearchScreenState extends State<SearchScreen> {
-  @override
-  final TextEditingController _textController = new TextEditingController();
-  Widget _buildTextComposer() {
-    return new Container(
-      margin: const EdgeInsets.symmetric(horizontal: 8.0),
-      child: new Row(
-        children: <Widget>[
-          new Flexible(
-            child: new TextField(
-              controller: _textController,
-              onSubmitted: _handleSubmitted,
-              decoration: new InputDecoration.collapsed(hintText: "From"),
-            ),
-          ),
-          new Container(
-            margin: new EdgeInsets.symmetric(horizontal: 4.0),
-            child: new IconButton(
-                icon: new Icon(Icons.send),
-                onPressed: () => _handleSubmitted(_textController.text)),
-          ),
-        ],
-      ),
-    );
-  }
+  final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
+  FlightSearchModel searchModel = new FlightSearchModel();
+  bool isFlight = true;
+  bool isHotel = false;
+  void _handleOneWayClick() {}
+  void _handleRTClick() {}
+  void _handleMCClick() {}
+  void _handleSwapAirportClick() {}
+  void _handleMyLocationClick() {}
 
   Widget _buildTripType() {
     return new Container(
@@ -43,22 +29,33 @@ class SearchScreenState extends State<SearchScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             new RaisedButton(
-                child: new Text('One-way', style: new TextStyle(color: Colors.black54),), onPressed: _handleOneWayClick, color: Colors.white70,elevation: 0.5,),
+              child: new Text(
+                'One-way',
+                style: new TextStyle(color: Colors.black54),
+              ),
+              onPressed: _handleOneWayClick,
+              color: Colors.white70,
+              elevation: 0.5,
+            ),
             new RaisedButton(
-                child: new Text('Round Trip', style: new TextStyle(color: Colors.black54),), onPressed: _handleRTClick, color: Colors.white70,elevation: 0.5),
+                child: new Text(
+                  'Round Trip',
+                  style: new TextStyle(color: Colors.black54),
+                ),
+                onPressed: _handleRTClick,
+                color: Colors.white70,
+                elevation: 0.5),
             new RaisedButton(
-                child: new Text('Multi City', style: new TextStyle(color: Colors.black54),), onPressed: _handleMCClick, color: Colors.white70,elevation: 0.5),
+                child: new Text(
+                  'Multi City',
+                  style: new TextStyle(color: Colors.black54),
+                ),
+                onPressed: _handleMCClick,
+                color: Colors.white70,
+                elevation: 0.5),
           ],
         ));
   }
-
-  void _handleSubmitted(String text) {
-    _textController.clear();
-  }
-
-  void _handleOneWayClick() {}
-  void _handleRTClick() {}
-  void _handleMCClick() {}
 
   Widget _buildFromToBox() {
     return new Container(
@@ -110,13 +107,18 @@ class SearchScreenState extends State<SearchScreen> {
                               new Flexible(
                                   child: new Container(
                                 padding: const EdgeInsets.only(left: 8.0),
-                                child: new TextField(
+                                child: new TextFormField(
                                   decoration: new InputDecoration.collapsed(
-                                      hintText: "From"),
+                                      hintText: "From"
+                                      ),
+                                      onSaved: (String value){
+                                        this.searchModel.origin = value;
+                                      },
                                 ),
                               )),
                               new Container(
-                                margin: const EdgeInsets.only(top: 0.0, bottom: 0.0),
+                                margin: const EdgeInsets.only(
+                                    top: 0.0, bottom: 0.0),
                                 //height: 20.0,
                                 //alignment: const Alignment(-4.0, 0.0),
                                 child: new IconButton(
@@ -124,7 +126,7 @@ class SearchScreenState extends State<SearchScreen> {
                                       Icons.location_on,
                                       color: Colors.grey,
                                     ),
-                                    onPressed: _handlgeDetMyLocationClick),
+                                    onPressed: _handleMyLocationClick),
                               )
                             ],
                           ),
@@ -141,9 +143,12 @@ class SearchScreenState extends State<SearchScreen> {
                               new Flexible(
                                   child: new Container(
                                 padding: const EdgeInsets.only(left: 8.0),
-                                child: new TextField(
+                                child: new TextFormField(
                                   decoration: new InputDecoration.collapsed(
                                       hintText: "To"),
+                                      onSaved: (String value){
+                                        this.searchModel.destination = value;
+                                      },
                                 ),
                               )),
                               new Container(
@@ -154,7 +159,7 @@ class SearchScreenState extends State<SearchScreen> {
                                       Icons.location_on,
                                       color: Colors.grey,
                                     ),
-                                    onPressed: _handlgeDetMyLocationClick),
+                                    onPressed: _handleMyLocationClick),
                               )
                             ],
                           ),
@@ -212,32 +217,32 @@ class SearchScreenState extends State<SearchScreen> {
 
   Widget _submitSearch() {
     return new Container(
-      padding: const EdgeInsets.only(top:8.0,bottom: 8.0, left: 33.0),
+      padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 33.0),
       margin: const EdgeInsets.only(top: 40.0),
       child: new Row(
         children: <Widget>[
-        new GestureDetector(
-          child: new Container(
-            decoration: const BoxDecoration(
-              color: Colors.blueAccent
+          new GestureDetector(
+            child: new Container(
+              decoration: const BoxDecoration(color: Colors.blueAccent),
+              width: 350.0,
+              height: 40.0,
+              padding: const EdgeInsets.only(top: 8.0),
+              child: new Text('Search',
+                  style: new TextStyle(fontSize: 20.0, color: Colors.white70),
+                  textAlign: TextAlign.center),
             ),
-            width: 350.0,
-            height: 40.0,
-            padding: const EdgeInsets.only(top: 8.0),
-            child: new Text('Search', style: new TextStyle(fontSize: 20.0, color: Colors.white70),textAlign: TextAlign.center),
-          ),
-          onTap: () {
-            print('Submit pressed');
-            Navigator.push(context, new MaterialPageRoute(builder: (context) => new FlightResultsScreen()));
-          },
-        )
+            onTap: () {
+              print('Submit pressed');
+              Navigator.push(
+                  context,
+                  new MaterialPageRoute(
+                      builder: (context) => new FlightResultsScreen()));
+            },
+          )
         ],
       ),
     );
   }
-
-  bool isFlight = true;
-  bool isHotel = false;
 
   Widget _travelOptions() {
     return Column(
@@ -291,7 +296,9 @@ class SearchScreenState extends State<SearchScreen> {
         ),
         new Container(
           padding: const EdgeInsets.only(top: 12.0, bottom: 12.0),
-          decoration: const BoxDecoration(border: const Border(bottom: const BorderSide(width: 0.2, color: Colors.grey))),
+          decoration: const BoxDecoration(
+              border: const Border(
+                  bottom: const BorderSide(width: 0.2, color: Colors.grey))),
           height: 64.0,
           child: new ListView(
             scrollDirection: Axis.horizontal,
@@ -309,39 +316,40 @@ class SearchScreenState extends State<SearchScreen> {
     );
   }
 
-  void _handleSwapAirportClick() {}
-  void _handlgeDetMyLocationClick() {}
   Widget _buildBody() {
     return new Container(
-        child: new Column(
-      children: <Widget>[
-        new Container(
-          child: _buildTripType(),
-        ),
-        new Container(
-          child: _buildFromToBox(),
-        ),
-        new Container(
-          child: _travelOptions(),
-        ),
-        new Container(
-          child: _submitSearch(),
-        )
-      ],
+        child: new Form(
+      key: this._formKey,
+      child: new Column(
+        children: <Widget>[
+          new Container(
+            child: _buildTripType(),
+          ),
+          new Container(
+            child: _buildFromToBox(),
+          ),
+          new Container(
+            child: _travelOptions(),
+          ),
+          new Container(
+            child: _submitSearch(),
+          )
+        ],
+      ),
     ));
   }
 
+  @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
           leading: IconButton(
             icon: Icon(Icons.menu),
-            onPressed: (){
+            onPressed: () {
               print('Menu button');
             },
           ),
-          title: new Text("One Order")
-      ),
+          title: new Text("One Order")),
       body: _buildBody(),
     );
   }
@@ -375,7 +383,7 @@ class CustomButtonState extends State<CustomButton> {
             padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 9.0),
             //height: 40.0,
             //width:100.0,
-            margin: const EdgeInsets.only(left:8.0),
+            margin: const EdgeInsets.only(left: 8.0),
             decoration: new BoxDecoration(
                 color: _myBackColor,
                 borderRadius: new BorderRadius.all(const Radius.circular(20.0)),
