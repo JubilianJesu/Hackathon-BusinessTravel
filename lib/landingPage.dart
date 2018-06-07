@@ -5,6 +5,7 @@ import 'orderDetails.dart';
 import 'Preferences/preference.dart';
 import 'tagPage.dart';
 import 'package:http/http.dart' as http;
+import 'dart:ui';
 
 class LandingPage extends StatefulWidget {
 static String tag="landing-Page";
@@ -105,29 +106,31 @@ final dStoreButton = Padding(
       appBar: new AppBar(
       title: new Text("Business Travel"), // screen title,
       ),
-    body: new Container(
-        decoration: new BoxDecoration(
-          image: new DecorationImage(
-            image: new AssetImage("assets/background.jpg"),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: 
-          Center(
-              child: ListView(
-                shrinkWrap: true,
-                padding: EdgeInsets.only(left: 24.0, right:24.0),
-                children: <Widget>[
-                 // logo, 
-                  SizedBox(height: 48.0),
-                  orderButton,
-                  SizedBox(height: 48.0),
-                  tagButton,
-                  SizedBox(height: 48.0),
-                  dStoreButton,
-                ],
-              )
+      body: new Stack(
+        fit: StackFit.expand,
+        children: <Widget>[
+          new Image.asset("assets/background.jpg", fit: BoxFit.cover),
+          new BackdropFilter(
+            filter: new ImageFilter.blur(sigmaX: 0.0, sigmaY: 0.0),
+            child: new Container(
+              color: Colors.black.withOpacity(0.3),
+              child: Center(
+                  child: ListView(
+                    shrinkWrap: true,
+                    padding: EdgeInsets.only(left: 24.0, right:24.0),
+                    children: <Widget>[
+                      SizedBox(height: 48.0),
+                      orderButton,
+                      SizedBox(height: 48.0),
+                      tagButton,
+                      SizedBox(height: 48.0),
+                      dStoreButton,
+                    ],
+                  )
+                ),
             ),
+          ),
+        ],
       ),
     );
   }
