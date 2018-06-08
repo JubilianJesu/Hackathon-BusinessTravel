@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'orderDetails.dart';
+import 'dstore/dStoreList.dart';
 import 'Preferences/preference.dart';
 import 'tagPage.dart';
 import 'package:http/http.dart' as http;
@@ -13,8 +13,8 @@ static String tag="landing-Page";
  State<StatefulWidget> createState() {
     return new LandingPageState();
   }
- 
 }
+
 class LandingPageState extends State<LandingPage>{
    
   void clickTag(){
@@ -32,7 +32,7 @@ class LandingPageState extends State<LandingPage>{
   }
   void clickDStore(){
     getPnrDetails();
-    Navigator.of(context).pushNamed(OrderDetails.tag);
+    Navigator.of(context).pushNamed(DStorePage.tag);
   }
  @override
   Widget build(BuildContext context) {

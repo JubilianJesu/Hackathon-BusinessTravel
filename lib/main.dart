@@ -11,6 +11,7 @@ import 'order/FlightResults.dart';
 import 'login/login.dart';
 import 'offers/offers_view.dart';
 import 'events/events_view.dart';
+import 'dstore/dStoreList.dart';
 
 void main() => runApp(MyApp());
 
@@ -26,7 +27,8 @@ class MyApp extends StatelessWidget{
         TripSummary.tag: (BuildContext context) => new TripSummary(),
         LoginPage.tag: (BuildContext context) => new LoginPage(),
         MyOffers.tag: (BuildContext context) => new MyOffers(),
-        MyEvents.tag: (BuildContext context) => new MyEvents()
+        MyEvents.tag: (BuildContext context) => new MyEvents(),
+        DStorePage.tag : (BuildContext context) => new DStorePage(),
         };
 
   @override
