@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
-import 'eventPage.dart';
-
+import 'events/events_view.dart';
+import 'Offers/Offers_view.dart';
 
 class TagPage extends StatefulWidget {
   static String tag="Tag-Page";
@@ -33,7 +33,7 @@ class TagPageState extends State<TagPage>{
               minWidth: 50.0,
               height: 42.0,
               onPressed: (){
-                Navigator.of(context).pushNamed(EventListPage.tag);
+                Navigator.of(context).pushNamed(MyEvents.tag);
               },
               color: Colors.lightBlueAccent,
               child: Text('Events', style: TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold)),
@@ -51,7 +51,9 @@ final destinationButton = Padding(
             child: MaterialButton(
               minWidth: 50.0,
               height: 42.0,
-              onPressed: (){},
+              onPressed: (){
+                Navigator.of(context).pushNamed(MyOffers.tag);
+              },
               color: Colors.lightBlueAccent,
               child: Text('Destinations', style: TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold)),
               ),

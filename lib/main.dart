@@ -9,6 +9,8 @@ import 'Preferences/preference.dart';
 import 'order/flightSearch.dart';
 import 'order/FlightResults.dart';
 import 'login/login.dart';
+import 'offers/offers_view.dart';
+import 'events/events_view.dart';
 
 void main() => runApp(MyApp());
 
@@ -22,7 +24,9 @@ class MyApp extends StatelessWidget{
         SearchScreen.tag: (BuildContext context) => new SearchScreen(),
         FlightResultsScreen.tag: (BuildContext context) => new FlightResultsScreen(),
         TripSummary.tag: (BuildContext context) => new TripSummary(),
-        LoginPage.tag: (BuildContext context) => new LoginPage()
+        LoginPage.tag: (BuildContext context) => new LoginPage(),
+        MyOffers.tag: (BuildContext context) => new MyOffers(),
+        MyEvents.tag: (BuildContext context) => new MyEvents()
         };
 
   @override
