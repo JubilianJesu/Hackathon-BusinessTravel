@@ -320,9 +320,11 @@ class SearchScreenState extends State<SearchScreen> {
     return new Container(
         child: new Form(
       key: this._formKey,
-      child: new Column(
-        children: <Widget>[
-          new Container(
+      child: new Container(
+        child: new ListView(
+          scrollDirection: Axis.vertical,
+          children: <Widget>[
+            new Container(
             child: _buildTripType(),
           ),
           new Container(
@@ -334,9 +336,11 @@ class SearchScreenState extends State<SearchScreen> {
           new Container(
             child: _submitSearch(),
           )
-        ],
+          ],
+        ),
+      )
       ),
-    ));
+    );
   }
 
   @override
@@ -344,12 +348,12 @@ class SearchScreenState extends State<SearchScreen> {
     return new Scaffold(
       appBar: new AppBar(
           leading: IconButton(
-            icon: Icon(Icons.menu),
+            icon: Icon(Icons.menu, color: Colors.white,),
             onPressed: () {
               print('Menu button');
             },
           ),
-          title: new Text("One Order")),
+          title: new Text("One Order", style: new TextStyle(color: Colors.white),)),
       body: _buildBody(),
     );
   }

@@ -12,6 +12,7 @@ import 'login/login.dart';
 import 'offers/offers_view.dart';
 import 'events/events_view.dart';
 import 'dstore/dStoreList.dart';
+import 'order/Confirmation.dart';
 
 void main() => runApp(MyApp());
 
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget{
         MyOffers.tag: (BuildContext context) => new MyOffers(),
         MyEvents.tag: (BuildContext context) => new MyEvents(),
         DStorePage.tag : (BuildContext context) => new DStorePage(),
+        Confirmation.tag: (BuildContext context) => new Confirmation(),
         };
 
   @override

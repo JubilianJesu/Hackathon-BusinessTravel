@@ -46,6 +46,19 @@ flutter:
     - assets/RentImage.png
     - assets/HotelBooking.jpg
     - assets/carbooking.jpg
+    - assets/hotel_hilton.jpg
+    - assets/hotel_MandarinOriental.jpg
+    - assets/hotel_sofitel.jpg
+    - assets/hotel_WillardInterContinental.jpg
+    - assets/Avis_logo.jpg
+    - assets/Budget_logo.png
+    - assets/Enterprise_logo.jpg
+    - assets/Hertz_logo.png
+    - assets/SmallCar.jpg
+    - assets/IntermediateCar.jpg
+    - assets/FullSizeCar.jpg
+    - assets/SUVCar.jpg
+    - assets/qr_code.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

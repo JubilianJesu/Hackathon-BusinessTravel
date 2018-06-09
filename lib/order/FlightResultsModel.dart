@@ -1,11 +1,14 @@
 class FlightResults{
   List<Flight> flights;
+  List<Flight> selectedFlights;
 }
 class Flight{
   String origin;
   String destination;
   String departureDate;
+  String departureDateFormatted;
   String arrivalDate;
+  String arrivalDateFormatted;
   String departureTime;
   String arrivalTime;
   String carrierCode;
