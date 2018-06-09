@@ -63,7 +63,7 @@ class MyHomePage extends State<MyPreferences> {
           content: new SingleChildScrollView(
             child: new ListBody(
               children: <Widget>[
-                new Text('${myPreference.eventInterested}'),           
+                new Text('${myPreference.eventInterested}'),
               ],
             ),
           ),
@@ -127,15 +127,15 @@ class MyHomePage extends State<MyPreferences> {
 
   final stayWithinBudget = Row(
                     children: <Widget>[
-                      const Icon(Icons.menu, color: Colors.white,),
+                      const Icon(Icons.menu, color: Colors.white, size: 16.0,),
                       new Container(
-                        margin: const EdgeInsets.only(right: 20.0, left: 10.0),
+                        margin: const EdgeInsets.only(right: 10.0, left: 5.0),
                         child : new Text(
                                 'Stay Withing Budget',
-                                style: const TextStyle(fontSize: 17.0, color: Colors.white),                               
+                                style: const TextStyle(fontSize: 16.0, color: Colors.white),                               
                               )
                       ),               
-                      new Text ('Yes',style: const TextStyle(fontSize: 17.0, color: Colors.white),), 
+                      new Text ('Yes',style: const TextStyle(fontSize: 16.0, color: Colors.white),), 
                       new Radio<String>(
                         value: "Yes",
                         groupValue: stayWithinBudgetValue,
@@ -146,7 +146,7 @@ class MyHomePage extends State<MyPreferences> {
                             });
                           },
                       ),
-                      new Text ('No',style: const TextStyle(fontSize: 17.0, color: Colors.white),), 
+                      new Text ('No',style: const TextStyle(fontSize: 16.0, color: Colors.white),), 
                       new Radio<String>(
                         value: "No",
                         groupValue: stayWithinBudgetValue,
@@ -164,13 +164,13 @@ class MyHomePage extends State<MyPreferences> {
                     children: <Widget>[
                       const Icon(Icons.message, color: Colors.white,),
                       new Container(
-                        margin: const EdgeInsets.only(right: 80.0, left: 10.0),
+                         margin: const EdgeInsets.only(right: 60.0),
                         child : new Text(
                                 'Blend Travel',
-                                style: const TextStyle(fontSize: 17.0, color: Colors.white),                               
+                                style: const TextStyle(fontSize: 16.0, color: Colors.white),                               
                               )
                       ),           
-                      new Text ('Yes',style: const TextStyle(fontSize: 17.0, color: Colors.white),), 
+                      new Text ('Yes',style: const TextStyle(fontSize: 16.0, color: Colors.white),), 
                       new Radio<String>(
                         value: "Yes",
                         groupValue: blendTravelValue,
@@ -181,7 +181,7 @@ class MyHomePage extends State<MyPreferences> {
                             });
                           },
                       ),
-                      new Text ('No',style: const TextStyle(fontSize: 17.0, color: Colors.white),), 
+                      new Text ('No',style: const TextStyle(fontSize: 16.0, color: Colors.white),), 
                       new Radio<String>(
                         value: "No",
                         groupValue: blendTravelValue,
@@ -223,15 +223,15 @@ class MyHomePage extends State<MyPreferences> {
 
   final socialBasedSetting = Row(
                     children: <Widget>[
-                      const Icon(Icons.person, color: Colors.white,),
+                      const Icon(Icons.person, color: Colors.white,size: 16.0,),
                       new Container(
-                        margin: const EdgeInsets.only(right: 20.0, left: 10.0),
+                        margin: const EdgeInsets.only(right: 10.0, left: 5.0),
                         child : new Text(
                                 'Social Based Setting',
-                                style: const TextStyle(fontSize: 17.0, color: Colors.white),                               
+                                style: const TextStyle(fontSize: 16.0, color: Colors.white),                               
                               )
                       ),       
-                      new Text ('Yes',style: const TextStyle(fontSize: 17.0, color: Colors.white),), 
+                      new Text ('Yes',style: const TextStyle(fontSize: 16.0, color: Colors.white),), 
                       new Radio<String>(
                           value: "Yes",
                           groupValue: socialBasedSettingValue,
@@ -242,7 +242,7 @@ class MyHomePage extends State<MyPreferences> {
                             });
                           },
                       ),
-                      new Text ('No',style: const TextStyle(fontSize: 17.0, color: Colors.white),), 
+                      new Text ('No',style: const TextStyle(fontSize: 16.0, color: Colors.white),), 
                       new Radio<String>(
                           value: "No",
                           groupValue: socialBasedSettingValue,
@@ -307,7 +307,7 @@ class MyHomePage extends State<MyPreferences> {
                       new Column(children: [  new Container(
                         margin: const EdgeInsets.only(top:10.0),
                         child : new Text(
-                                'We are glad to make your Business Travel Exciting!',
+                                'Glad to make your Business Travel Exciting!',
                                 style: const TextStyle(fontSize: 16.0, color: Colors.white),                               
                               )
                       ),              
@@ -329,7 +329,7 @@ class MyHomePage extends State<MyPreferences> {
           child: 
             new Form(            
               key: _formKey,
-              autovalidate: true,
+              autovalidate: true,              
               child: new ListView(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 children: <Widget>[
