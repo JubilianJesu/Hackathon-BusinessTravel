@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'FlightResultsModel.dart';
 import 'tripSummary.dart';
 import 'FlightCommonComponent.dart';
 
 class FlightResultsScreen extends StatelessWidget{  
 static String tag="flightresult-Page";
 FlightCommonComponent component = new FlightCommonComponent();
+  @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
