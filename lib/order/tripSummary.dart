@@ -72,7 +72,7 @@ class TripSummaryState extends State<TripSummary> {
           children: <Widget>[
             new Container(
                 height: 62.0,
-                width: 73.5,
+                width: 65.0,
                 //padding: const EdgeInsets.only(right: 4.0),
                 decoration: const BoxDecoration(
                     border: const Border(
@@ -83,17 +83,17 @@ class TripSummaryState extends State<TripSummary> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     new Container(
-                      width: 60.0,
+                      width: 50.0,
                       child: new Text(
                         flight.departureDateFormatted,
-                        style: new TextStyle(fontSize: 18.0),
+                        style: new TextStyle(fontSize: 15.0),
                         textAlign: TextAlign.center,
                       ),
                     ),
                   ],
                 )),
             new Container(
-              width: 337.5,
+              width: 290.5,
               padding: const EdgeInsets.only(top: 4.0, bottom: 8.0),
               // decoration: const BoxDecoration(
               //     border: const Border(
@@ -306,7 +306,7 @@ class TripSummaryState extends State<TripSummary> {
           new GestureDetector(
             child: new Container(
               decoration: const BoxDecoration(color: Colors.blueAccent),
-              width: 350.0,
+              width: 300.0,
               height: 40.0,
               padding: const EdgeInsets.only(top: 8.0),
               child: new Text('Confirm',

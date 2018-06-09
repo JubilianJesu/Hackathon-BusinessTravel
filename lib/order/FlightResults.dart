@@ -17,7 +17,7 @@ FlightCommonComponent component = new FlightCommonComponent();
           },
         ),
         title: new Container(
-          width: 115.0,
+          //width: 115.0,
           child: new Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
@@ -52,16 +52,17 @@ FlightCommonComponent component = new FlightCommonComponent();
             margin: const EdgeInsets.only(left: 8.0, top: 8.0),
             child: new Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //mainAxisSize:MainAxisSize.max,
               children: <Widget>[
                 new Row(
                   children: component.buildAirlineWidget(context, fltResults[i].carrierCode),
                 ),
                 new Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  //mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
                     fltResults[i].isBestFlight ? new Container(
                       padding: const EdgeInsets.only(
-                          top: 2.0, right: 3.0, bottom: 2.0, left: 3.0),
+                          top: 2.0,bottom: 2.0, left: 3.0),
                       decoration: const BoxDecoration(color: Colors.green),
                       child: new Text(
                         'Best Flight',
@@ -74,19 +75,21 @@ FlightCommonComponent component = new FlightCommonComponent();
             ),
           ),
           new Container(
-            height: 70.0,
+            height: 70.0,            
             padding: const EdgeInsets.only(top: 8.0, left: 8.0, bottom: 8.0),
             decoration: const BoxDecoration(
                 border: const Border(
                     bottom: const BorderSide(width: 1.0, color: Colors.grey))),
             child: new Row(
               children: <Widget>[
-                new Container(
+                new SizedBox(  
+                  width: 60.0,                
                   child: new RaisedButton(
+                    splashColor: Colors.blue,                    
                     onPressed:() => _selectFlight(context),
                     child: new Text(
                       fltResults[i].priceToCollect,
-                      style: new TextStyle(fontSize: 22.0),
+                      style: new TextStyle(fontSize: 14.0),
                     ),
                   ),
                 ),

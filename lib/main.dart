@@ -37,9 +37,10 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context){
     return MaterialApp( 
       title: "Business Travel",
-    debugShowCheckedModeBanner: false,
+    debugShowCheckedModeBanner: false,    
     theme: ThemeData(
       primarySwatch: Colors.lightBlue ,
+
     ),
     routes: routes,
     home: LandingPage(),

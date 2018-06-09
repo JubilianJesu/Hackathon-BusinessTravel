@@ -8,9 +8,9 @@ class FlightCommonComponent{
                   child: new Row(
                     children: <Widget>[
                       new Container(
-                        margin: const EdgeInsets.only(left: 8.0),
+                       margin: const EdgeInsets.only(left: 8.0),
                         child: new Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
+                          //crossAxisAlignment: CrossAxisAlignment.end,
                           children: <Widget>[
                             new Container(
                               child: new Text(
@@ -21,7 +21,7 @@ class FlightCommonComponent{
                             new Container(
                               child: new Text(flight.origin,
                                   textAlign: TextAlign.right,
-                                  style: new TextStyle(fontSize: 17.0)),
+                                  style: new TextStyle(fontSize: 14.0)),
                             ),
                           ],
                         ),
@@ -32,7 +32,7 @@ class FlightCommonComponent{
                             child: new Text(flight.travelTime),
                           ),
                           new Container(
-                            width: 190.0,
+                            width:150.0,
                             margin: const EdgeInsets.only(top: 9.8),
                             decoration: const BoxDecoration(
                                 border: const Border(
@@ -46,7 +46,7 @@ class FlightCommonComponent{
                         ],
                       ),
                       new Container(
-                        //margin: const EdgeInsets.only(left: 8.0),
+                        margin: const EdgeInsets.only(left: 8.0),
                         child: new Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
@@ -59,7 +59,7 @@ class FlightCommonComponent{
                             new Container(
                               child: new Text(flight.destination,
                                   textAlign: TextAlign.right,
-                                  style: new TextStyle(fontSize: 17.0)),
+                                  style: new TextStyle(fontSize: 14.0)),
                             ),
                           ],
                         ),
