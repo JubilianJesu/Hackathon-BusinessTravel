@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
+import 'events/events_scroller.dart';
 import 'events/events_view.dart';
 import 'Offers/Offers_view.dart';
 import 'order/FlightCommonComponent.dart';

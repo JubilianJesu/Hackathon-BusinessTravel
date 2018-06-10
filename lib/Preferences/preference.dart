@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../landingPage.dart';
+import '../model/preferenceModel.dart';
 import '../order/flightSearch.dart';
 import '../model/preferenceModel.dart';
 import 'dart:ui';
+import '../landingPage.dart';
 
 class MyPreferences extends StatefulWidget {
   static String tag = "mypreferences-Page";

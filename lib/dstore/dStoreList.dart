@@ -64,7 +64,7 @@ class TheGridView {
             ),
           ),
           new Positioned(
-            bottom: 90.0,
+            bottom: 155.0,
             right: 8.0,
             child: _buildNotification(notificationCount),
           ),

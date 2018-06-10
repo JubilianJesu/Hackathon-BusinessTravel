@@ -5,16 +5,29 @@ class offers {
     @required this.images,
   });
 
-  final List<image> images;
+  List<image> images;
 }
 class image {
   image({
     @required this.title,
-    @required this.thumbnail,
+    @required this.imageUrl,
     @required this.url,
+    @required this.description
   });
 
-  final String title;
-  final String thumbnail;
-  final String url;
+  String title;
+  String imageUrl;
+  String url;
+  String category;
+  String description;
+  String id;
+
+  factory image.fromJson(Map<String, dynamic> json) {
+    return new image(
+      title: json['title'] as String,
+      imageUrl: json['imageUrl'] as String,
+      url: json['url'] as String,      
+      description: json['description'] as String,
+    );
+  }
 }

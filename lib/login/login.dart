@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 import '../Preferences/preference.dart';
+import 'package:http/http.dart' as http;
+import 'dart:async';
+import 'dart:convert';
+import '../model/authlogin.dart';
 
 class LoginPage extends StatefulWidget {
   static String tag = "loginPage";
   @override
   _LoginPageState createState() => new _LoginPageState();
+}
+
+class loginProfile {
+  final String authToken;
+  final String profileId;
+  final String companyId;
 }
 
 class _LoginPageState extends State<LoginPage> {
@@ -14,12 +24,37 @@ class _LoginPageState extends State<LoginPage> {
   String _email;
   String _password;
 
+Future<String> _loginuser() async{
+
+  dynamic input = "{""Username"":""$_email""}";
+  print(input);
+
+    http.Response res = await http.post("https://ndcwas18.azurewebsites.net/api/login", 
+    body: input, headers: {
+      "Content-Type": "Application/Json"
+    });
+    // print(res.body);
+    // print(res.statusCode);
+    return res.body;
+  }
+
   void _submit() {
     final form = formKey.currentState;
 
     if (form.validate()) {
       form.save();
 
+print(_loginuser().toString());
+  var profiledata;
+  
+  const JsonCodec JSON = json;
+
+  _loginuser().then((res) {
+      profiledata =  JSON.decode(res.toString());
+  });
+    // var profiledata = JSON.decode(_loginuser().toString());
+
+    print(profiledata);
       // Email & password matched our validation rules
       // and are saved to _email and _password fields.
       _performLogin();
@@ -45,12 +80,12 @@ class _LoginPageState extends State<LoginPage> {
         title: new Text('Validating forms'),
       ),
       body: new Container(
-        decoration: new BoxDecoration(
-          image: new DecorationImage(
-            image: new AssetImage("assets/background.jpg"),
-            fit: BoxFit.cover,
-          ),
-        ),
+        // decoration: new BoxDecoration(
+        //   image: new DecorationImage(
+        //     image: new AssetImage("assets/background.jpg"),
+        //     fit: BoxFit.cover,
+        //   ),
+        // ),
         child: new Padding(
             padding: const EdgeInsets.all(16.0),
             child: new Form(
