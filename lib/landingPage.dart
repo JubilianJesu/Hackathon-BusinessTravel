@@ -111,7 +111,7 @@ final dStoreButton = Padding(
       body: new Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          new Image.asset("assets/background.jpg", fit: BoxFit.cover),
+          new Image.asset("assets/HubBG.png", fit: BoxFit.cover),
           new BackdropFilter(
             filter: new ImageFilter.blur(sigmaX: 0.0, sigmaY: 0.0),
             child: new Container(

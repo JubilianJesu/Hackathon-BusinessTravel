@@ -24,15 +24,14 @@ class _LoginPageState extends State<LoginPage> {
   String _email;
   String _password;
 
-Future<String> _loginuser() async{
+  Future<String> _loginuser() async {
+    dynamic input = "{" "Username" ":" "$_email" "}";
+    print(input);
 
-  dynamic input = "{""Username"":""$_email""}";
-  print(input);
-
-    http.Response res = await http.post("https://ndcwas18.azurewebsites.net/api/login", 
-    body: input, headers: {
-      "Content-Type": "Application/Json"
-    });
+    http.Response res = await http.post(
+        "https://ndcwas18.azurewebsites.net/api/login",
+        body: input,
+        headers: {"Content-Type": "Application/Json"});
     // print(res.body);
     // print(res.statusCode);
     return res.body;
@@ -44,17 +43,17 @@ Future<String> _loginuser() async{
     if (form.validate()) {
       form.save();
 
-print(_loginuser().toString());
-  var profiledata;
-  
-  const JsonCodec JSON = json;
+      print(_loginuser().toString());
+      var profiledata;
 
-  _loginuser().then((res) {
-      profiledata =  JSON.decode(res.toString());
-  });
-    // var profiledata = JSON.decode(_loginuser().toString());
+      const JsonCodec JSON = json;
 
-    print(profiledata);
+      _loginuser().then((res) {
+        profiledata = JSON.decode(res.toString());
+      });
+      // var profiledata = JSON.decode(_loginuser().toString());
+
+      print(profiledata);
       // Email & password matched our validation rules
       // and are saved to _email and _password fields.
       _performLogin();
@@ -77,43 +76,52 @@ print(_loginuser().toString());
     return new Scaffold(
       key: scaffoldKey,
       appBar: new AppBar(
-        title: new Text('Validating forms'),
+        title: new Text('Corporate Travel Market Place'),
       ),
       body: new Container(
-        // decoration: new BoxDecoration(
-        //   image: new DecorationImage(
-        //     image: new AssetImage("assets/background.jpg"),
-        //     fit: BoxFit.cover,
-        //   ),
-        // ),
+        decoration: new BoxDecoration(
+          image: new DecorationImage(
+            image: new AssetImage("assets/HubBG.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
         child: new Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: new Form(
-              key: formKey,
-              child: new Column(
-                children: [
-                  new TextFormField(
-                    decoration: new InputDecoration(labelText: 'Your email'),
-                    validator: (val) =>
-                    !val.contains('@') ? 'Not a valid email.' : null,
-                    onSaved: (val) => _email = val,
-                  ),
-                  new TextFormField(
-                    decoration: new InputDecoration(labelText: 'Your password'),
-                    validator: (val) =>
-                    val.length < 6 ? 'Password too short.' : null,
-                    onSaved: (val) => _password = val,
-                    obscureText: true,
-                  ),
-                  new RaisedButton(
+          padding: const EdgeInsets.all(16.0),
+          child: new Form(
+            key: formKey,
+            child: new Column(
+              children: [
+                new TextFormField(
+                  decoration: new InputDecoration(labelText: 'Your email',labelStyle: new TextStyle(color: Colors.white)),
+                  validator: (val) =>
+                      !val.contains('@') ? 'Not a valid email.' : null,
+                  onSaved: (val) => _email = val,
+                  style: new TextStyle(color: Colors.white),
+                ),
+                new TextFormField(
+                  decoration: new InputDecoration(
+                    labelText: 'Your password', labelStyle: new TextStyle(color: Colors.white),
+                    ),
+                  validator: (val) =>
+                      val.length < 6 ? 'Password too short.' : null,
+                  onSaved: (val) => _password = val,
+                  obscureText: true,
+                  style: new TextStyle(color: Colors.white),
+                ),
+                new Container(
+                  margin:
+                      const EdgeInsets.only(left: 30.0, top: 30.0, right: 30.0),
+                  child: new RaisedButton(
                     onPressed: _submit,
-                    child: new Text('Login'),
+                    child: new Text('Login',style: new TextStyle(color: Colors.white),),
+                    color: Colors.deepPurpleAccent,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
+      ),
     );
   }
 }
