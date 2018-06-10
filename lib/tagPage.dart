@@ -28,6 +28,7 @@ class TagPageState extends State<TagPage> {
                   print('Menu button');
                 },
               ),
+              backgroundColor: Colors.deepPurpleAccent,
               title: new Text("TAG")),
           body: _buildBody(context)),
     );

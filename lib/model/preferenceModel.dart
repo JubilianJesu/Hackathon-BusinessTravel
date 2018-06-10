@@ -5,4 +5,5 @@ class PreferenceModel {
   String diningOption = '';
   String socialSetting = '';
   String destinationZipcode = '';
+  String femaleFriendly = '';
 }

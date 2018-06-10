@@ -223,7 +223,7 @@ class SearchScreenState extends State<SearchScreen> {
         children: <Widget>[
           new GestureDetector(
             child: new Container(
-              decoration: const BoxDecoration(color: Colors.blueAccent),
+              decoration: const BoxDecoration(color: Colors.deepPurpleAccent),
               width: 350.0,
               height: 40.0,
               padding: const EdgeInsets.only(top: 8.0),
@@ -408,7 +408,7 @@ class CustomButtonState extends State<CustomButton> {
         setState(() {
           if (_myTextColor == Colors.black54) {
             _myTextColor = Colors.white;
-            _myBackColor = Colors.blueAccent;
+            _myBackColor = Colors.deepPurpleAccent;
           } else {
             _myTextColor = Colors.black54;
             _myBackColor = Colors.white70;
