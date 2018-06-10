@@ -25,7 +25,7 @@ class ImageCard extends StatelessWidget {
       borderRadius: new BorderRadius.circular(8.0),
       child: new Stack(
         children: <Widget>[
-          new Image.asset(video.thumbnail),
+          new Image.network(video.imageUrl),
           new Positioned(
             bottom: 12.0,
             right: 12.0,
@@ -34,7 +34,7 @@ class ImageCard extends StatelessWidget {
         ],
       ),
     );
-  }
+  } 
 
   Widget _buildPlayButton() {
     return new Material(

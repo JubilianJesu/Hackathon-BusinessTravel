@@ -19,23 +19,23 @@ class OfferScroll extends State<MyOffers> {
     images: <image>[
       new image(
         title: '15% Off - Fashion Ornaments',
-        thumbnail: 'assets/Burberry_Offer.JPG',
-        url: 'https://www.burberry.com/',
+        url: 'assets/Burberry_Offer.JPG',
+        imageUrl: 'https://www.burberry.com/',
       ),
       new image(
         title: 'Free - Forbes Magazine',
-        thumbnail: 'assets/Forbes_Offer.jpg',
-        url: 'https://www.forbes.com',
+        url: 'assets/Forbes_Offer.jpg',
+        imageUrl: 'https://www.forbes.com',
       ),
       new image(
         title: 'Complementary Fragrance with Any \$400+Order',
-        thumbnail: 'assets/MontBlanc_Offer.jpg',
-        url: 'http://www.montblanc.com',
+        url: 'assets/MontBlanc_Offer.jpg',
+        imageUrl: 'http://www.montblanc.com',
       ),
       new image(
         title: '10% Off - Starbucks',
-        thumbnail: 'assets/Starbucks_Offer.jpg',
-        url: 'https://www.starbucks.com/',
+        url: 'assets/Starbucks_Offer.jpg',
+        imageUrl: 'https://www.starbucks.com/',
       ),
     ],
   );

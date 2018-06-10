@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
-import 'events/events_view.dart';
-import 'Offers/Offers_view.dart';
+import 'events/events_scroller.dart';
+import 'destination/destination.dart';
 
 class TagPage extends StatefulWidget {
   static String tag="Tag-Page";
@@ -52,7 +52,7 @@ final destinationButton = Padding(
               minWidth: 50.0,
               height: 42.0,
               onPressed: (){
-                Navigator.of(context).pushNamed(MyOffers.tag);
+                Navigator.of(context).pushNamed(MyDestinations.tag);
               },
               color: Colors.lightBlueAccent,
               child: Text('Destinations', style: TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold)),

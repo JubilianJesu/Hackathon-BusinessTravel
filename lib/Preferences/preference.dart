@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../order/flightSearch.dart';
 import '../model/preferenceModel.dart';
 import 'dart:ui';
+import '../landingPage.dart';
 
 class MyPreferences extends StatefulWidget {
   static String tag="mypreferences-Page";
@@ -56,28 +56,6 @@ class MyHomePage extends State<MyPreferences> {
       showMessage('Form is not valid!  Please review and correct.');
     } else {
       form.save(); //This invokes each onSaved event
-
-    showDialog(context: context,  builder: (BuildContext context) {
-        return new AlertDialog(
-          title: new Text('Rewind and remember'),
-          content: new SingleChildScrollView(
-            child: new ListBody(
-              children: <Widget>[
-                new Text('${myPreference.eventInterested}'),
-              ],
-            ),
-          ),
-          actions: <Widget>[
-            new FlatButton(
-              child: new Text('Regret'),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
-    );
 
       print('Form save called, myPreference is now up to date...');
       print('EventInterested: ${myPreference.eventInterested}');
@@ -282,7 +260,7 @@ class MyHomePage extends State<MyPreferences> {
                               textAlign: TextAlign.center ), 
                           onPressed: (){
                             submitForm();
-                            Navigator.of(context).pushNamed(SearchScreen.tag);
+                            Navigator.of(context).pushNamed(LandingPage.tag);
                           },
                         )
                       );

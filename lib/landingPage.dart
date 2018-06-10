@@ -6,6 +6,7 @@ import 'Preferences/preference.dart';
 import 'tagPage.dart';
 import 'package:http/http.dart' as http;
 import 'dart:ui';
+import 'order/flightSearch.dart';
 
 class LandingPage extends StatefulWidget {
 static String tag="landing-Page";
@@ -21,17 +22,17 @@ class LandingPageState extends State<LandingPage>{
     Navigator.of(context).pushNamed(TagPage.tag);
   }
 
-  Future<String> getPnrDetails() async{
-    http.Response response = await http.get(
-      Uri.encodeFull("http://businesstravel20180603032656.azurewebsites.net/api/Values"),
-      headers:{
-        "Accept" : "application/json"
-      }
-    );
-    print(response.body);
-  }
+  // Future<String> getPnrDetails() async{
+  //   http.Response response = await http.get(
+  //     Uri.encodeFull("http://businesstravel20180603032656.azurewebsites.net/api/Values"),
+  //     headers:{
+  //       "Accept" : "application/json"
+  //     }
+  //   );
+  //   print(response.body);
+  // }
   void clickDStore(){
-    getPnrDetails();
+    //getPnrDetails();
     Navigator.of(context).pushNamed(DStorePage.tag);
   }
  @override
@@ -52,7 +53,7 @@ class LandingPageState extends State<LandingPage>{
               minWidth: 200.0,
               height: 42.0,
               onPressed: (){
-                Navigator.of(context).pushNamed(MyPreferences.tag);
+                Navigator.of(context).pushNamed(SearchScreen.tag);
               },
               color: Colors.lightBlueAccent,
               child: Text('Orders', style: TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold)),
