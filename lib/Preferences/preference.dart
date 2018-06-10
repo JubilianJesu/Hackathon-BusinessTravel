@@ -146,14 +146,14 @@ class MyHomePage extends State<MyPreferences> {
         size: 16.0,
       ),
       new Container(
-          margin: const EdgeInsets.only(right: 10.0, left: 5.0),
+          margin: const EdgeInsets.only(right: 5.0, left: 5.0),
           child: new Text(
             'Stay Withing Budget',
-            style: const TextStyle(fontSize: 16.0, color: Colors.black),
+            style: const TextStyle(fontSize: 14.0, color: Colors.black),
           )),
       new Text(
         'Yes',
-        style: const TextStyle(fontSize: 16.0, color: Colors.black),
+        style: const TextStyle(fontSize: 14.0, color: Colors.black),
       ),
       new Radio<String>(
         value: "Yes",
@@ -167,7 +167,7 @@ class MyHomePage extends State<MyPreferences> {
       ),
       new Text(
         'No',
-        style: const TextStyle(fontSize: 16.0, color: Colors.black),
+        style: const TextStyle(fontSize: 14.0, color: Colors.black),
       ),
       new Radio<String>(
         value: "No",
@@ -190,11 +190,11 @@ class MyHomePage extends State<MyPreferences> {
           margin: const EdgeInsets.only(right: 60.0),
           child: new Text(
             'Blend Travel',
-            style: const TextStyle(fontSize: 16.0, color: Colors.black),
+            style: const TextStyle(fontSize: 14.0, color: Colors.black),
           )),
       new Text(
         'Yes',
-        style: const TextStyle(fontSize: 16.0, color: Colors.black),
+        style: const TextStyle(fontSize: 14.0, color: Colors.black),
       ),
       new Radio<String>(
         value: "Yes",
@@ -208,7 +208,7 @@ class MyHomePage extends State<MyPreferences> {
       ),
       new Text(
         'No',
-        style: const TextStyle(fontSize: 16.0, color: Colors.black),
+        style: const TextStyle(fontSize: 14.0, color: Colors.black),
       ),
       new Radio<String>(
         value: "No",
@@ -259,14 +259,14 @@ class MyHomePage extends State<MyPreferences> {
         size: 16.0,
       ),
       new Container(
-          margin: const EdgeInsets.only(right: 10.0, left: 5.0),
+          //margin: const EdgeInsets.only(right: 2.0, left: 5.0),
           child: new Text(
             'Social Based Setting',
-            style: const TextStyle(fontSize: 16.0, color: Colors.black),
+            style: const TextStyle(fontSize: 14.0, color: Colors.black),
           )),
       new Text(
         'Yes',
-        style: const TextStyle(fontSize: 16.0, color: Colors.black),
+        style: const TextStyle(fontSize: 14.0, color: Colors.black),
       ),
       new Radio<String>(
         value: "Yes",
@@ -280,7 +280,7 @@ class MyHomePage extends State<MyPreferences> {
       ),
       new Text(
         'No',
-        style: const TextStyle(fontSize: 16.0, color: Colors.black),
+        style: const TextStyle(fontSize: 14.0, color: Colors.black),
       ),
       new Radio<String>(
         value: "No",
@@ -303,14 +303,14 @@ class MyHomePage extends State<MyPreferences> {
         size: 16.0,
       ),
       new Container(
-          margin: const EdgeInsets.only(right: 42.0, left: 5.0),
+          margin: const EdgeInsets.only(right: 32.0, left: 5.0),
           child: new Text(
             'Female Friendly',
-            style: const TextStyle(fontSize: 16.0, color: Colors.black),
+            style: const TextStyle(fontSize: 14.0, color: Colors.black),
           )),
       new Text(
         'Yes',
-        style: const TextStyle(fontSize: 16.0, color: Colors.black),
+        style: const TextStyle(fontSize: 14.0, color: Colors.black),
       ),
       new Radio<String>(
         value: "Yes",
@@ -324,7 +324,7 @@ class MyHomePage extends State<MyPreferences> {
       ),
       new Text(
         'No',
-        style: const TextStyle(fontSize: 16.0, color: Colors.black),
+        style: const TextStyle(fontSize: 14.0, color: Colors.black),
       ),
       new Radio<String>(
         value: "No",
@@ -399,7 +399,7 @@ class MyHomePage extends State<MyPreferences> {
               margin: const EdgeInsets.only(top: 10.0),
               child: new Text(
                 'Glad to make your Business Travel Exciting!',
-                style: const TextStyle(fontSize: 16.0, color: Colors.black),
+                style: const TextStyle(fontSize: 12.0, color: Colors.black),
               )),
         ]),
       ],
@@ -408,7 +408,7 @@ class MyHomePage extends State<MyPreferences> {
     final line = Container(
       color: Colors.black.withOpacity(0.85),
       margin: const EdgeInsets.symmetric(vertical: 16.0),
-      width: 225.0,
+      width: 200.0,
       height: 2.0,
     );
 
@@ -420,7 +420,7 @@ class MyHomePage extends State<MyPreferences> {
               key: _formKey,
               autovalidate: true,
               child: new ListView(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
                 children: <Widget>[
                   welcomeMessage,
                   line,

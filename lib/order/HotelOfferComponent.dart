@@ -76,7 +76,7 @@ class HotelOfferComponent extends StatelessWidget {
                     ),
                   ),
                   new Container(
-                    height: 110.0,
+                    height: 100.0,
                     width: 190.0,
                     margin: const EdgeInsets.only(bottom: 2.0),
                     decoration: new BoxDecoration(

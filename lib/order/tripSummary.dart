@@ -119,7 +119,7 @@ class TripSummaryState extends State<TripSummary> {
             children: <Widget>[
               new Container(
                 margin:
-                    const EdgeInsets.only(top: 10.0, bottom: 10.0, left: 5.0),
+                    const EdgeInsets.only(top: 10.0, bottom: 10.0, left: 1.0),
                 child: new Row(
                   children: <Widget>[
                     new Text(
@@ -214,11 +214,11 @@ class TripSummaryState extends State<TripSummary> {
             children: <Widget>[
               new Container(
                   margin:
-                      const EdgeInsets.only(top: 10.0, bottom: 10.0, left: 5.0),
+                      const EdgeInsets.only(top: 10.0, bottom: 10.0, left: 1.0),
                   child: new Row(
                     children: <Widget>[
                       new Text(
-                        'Add Rental Car to your trip',
+                        'Add Rental Car',
                         textAlign: TextAlign.left,
                         style: new TextStyle(
                             fontSize: 18.0, fontWeight: FontWeight.bold),

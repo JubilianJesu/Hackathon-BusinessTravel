@@ -32,7 +32,7 @@ class FlightCommonComponent{
                             child: new Text(flight.travelTime),
                           ),
                           new Container(
-                            width:150.0,
+                            width:130.0,
                             margin: const EdgeInsets.only(top: 9.8),
                             decoration: const BoxDecoration(
                                 border: const Border(
@@ -101,7 +101,7 @@ class FlightCommonComponent{
   }
 
   List<Widget> getFlightAmenities(Amenities amenities, BuildContext context) {
-    const _iconSize = 16.0;
+    const _iconSize = 13.0;
     List<Widget> lstWidgets = new List<Widget>();
     if (amenities.isWifi) {
       lstWidgets.add(new Container(

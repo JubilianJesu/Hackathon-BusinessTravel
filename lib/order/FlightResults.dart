@@ -146,7 +146,7 @@ class FlightResultsScreenState extends State<FlightResultsScreen> {
             child: new Row(
               children: <Widget>[
                 new SizedBox(  
-                  width: 60.0,                
+                  width: 55.0,                
                   child: new RaisedButton(
                     splashColor: Colors.blue,                    
                     onPressed:() => _selectFlight(context),
@@ -180,7 +180,7 @@ class FlightResultsScreenState extends State<FlightResultsScreen> {
   }
   Future<FlightResultsData> fetchPost() async {
     try{
-        var url = 'http://ndcwas18.azurewebsites.net/api/Shop/flights/1/'+ this.flightShopRequest.origin + '/' + this.flightShopRequest.destination +'/'+ this.flightShopRequest.departureDate + '/' + this.flightShopRequest.returnDate;
+      var url = 'http://ndcwas18.azurewebsites.net/api/Shop/flights/1/'+ this.flightShopRequest.origin + '/' + this.flightShopRequest.destination +'/'+ this.flightShopRequest.departureDate + '/' + this.flightShopRequest.returnDate;
     final response = await http.get(url);
     
     Map fResultsMap =  json.decode(response.body);

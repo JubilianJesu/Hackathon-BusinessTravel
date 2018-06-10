@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
+import '../deals/deals_scroller.dart';
 import '../events/events_scroller.dart';
 import '../order/FlightCommonComponent.dart';
 import '../order/tripSummary.dart';
@@ -10,7 +11,6 @@ import 'package:url_launcher/url_launcher.dart';
 
 class MySpace extends StatefulWidget {
   static String tag = "MySpace-Page";
-  final String eventnavig = "";
   @override
   State<StatefulWidget> createState() {
     return new MySpacePageState();
@@ -171,21 +171,22 @@ class TheGridView {
 
 void iconClick(BuildContext context, String icon) {
   switch (icon) {
-    case "AirportMap":
-      //Navigator.of(context).pushNamed(MyEvents.tag);
+    case "United":
+      launch("https://www.united.com/ual/en/us/");
       break;
-    case "Weather":
-      Navigator.of(context).pushNamed('/OrderDetails');
+    case "Hilton":
+      launch("http://www3.hilton.com/en/index.html");
       break;
-    case "Attractions":
-     // if (await canLaunch("https://www.google.com/maps/search/attractions+near+me/@38.9001883,-77.0276488,15z/data=!3m1!4b1")) {
-            launch("https://www.google.com/maps/search/attractions+near+me/@38.9001883,-77.0276488,15z/data=!3m1!4b1");
-          // }
+    case "Uber":     
+      launch("https://www.uber.com/");          
       break;
-    case "Local Destinations":
-      Navigator.of(context).pushNamed('/OrderDetails');
+    case "Budget":
+      launch("https://www.budget.com/en/home");
       break;
+    case "Deals":
+      Navigator.of(context).pushNamed(MyDeals.tag);
+      break;   
     default:
-      Navigator.of(context).pushNamed(MyEvents.tag);
+      Navigator.of(context).pushNamed(MySpace.tag);
   }
 }

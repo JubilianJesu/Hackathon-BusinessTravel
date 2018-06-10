@@ -194,7 +194,7 @@ class EventsBarDelegate extends SliverPersistentHeaderDelegate {
 }
 
 class MyDeals extends StatefulWidget {
-  static String tag = "myevents-Page";
+  static String tag = "mydeals-Page";
   @override
   EventsPageState createState() => new EventsPageState();
 }

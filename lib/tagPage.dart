@@ -182,10 +182,10 @@ class TheGridView {
 void iconClick(BuildContext context, String icon) {
   switch (icon) {
     case "AirportMap":
-      launch("https://www.google.com/maps/place/O'Hare+International+Airport/@41.9741509,-87.9082607,18z/data=!4m5!3m4!1s0x880fb4276a7762f3:0x511747070259ad4b!8m2!3d41.9741625!4d-87.9073214");
+      launch("https://www.google.com/maps/place/Denver+International+Airport/@39.8560963,-104.6759263,17z/data=!3m1!4b1!4m5!3m4!1s0x876c7f2a98ff44ff:0x49583bb435b59c6a!8m2!3d39.8560963!4d-104.6737376");
       break;
     case "Weather":
-      launch("https://weather.com/weather/today/l/Washington+DC+USDC0001:1:US");
+      launch("https://weather.com/weather/hourbyhour/l/Denver+CO+USCO0105:1:US");
       break;
     case "Wine&Dine":
       launch("https://www.google.com/maps/search/restaurants+near+me/@38.9001876,-77.0276488,15z/data=!3m1!4b1");
@@ -195,5 +195,6 @@ void iconClick(BuildContext context, String icon) {
       break;
     default:
       Navigator.of(context).pushNamed(MyEvents.tag);
+      break;
   }
 }
