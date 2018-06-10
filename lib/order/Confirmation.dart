@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../landingPage.dart';
 
 class Confirmation extends StatefulWidget {
   static String tag = "confirmation-Page";
@@ -13,12 +14,12 @@ class ConfirmationState extends State<Confirmation> {
       appBar: new AppBar(
         leading: IconButton(
           icon: Icon(
-            Icons.arrow_back,
+            Icons.home,
             color: Colors.white,
           ),
           onPressed: () {
             print('Menu button pressed');
-            Navigator.pop(context);
+            Navigator.of(context).pushNamed(LandingPage.tag);
           },
         ),
         title: new Text(

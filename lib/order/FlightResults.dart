@@ -179,10 +179,16 @@ class FlightResultsScreenState extends State<FlightResultsScreen> {
     });
   }
   Future<FlightResultsData> fetchPost() async {
-    var url = 'http://ndcwas18.azurewebsites.net/api/Shop/flights/1/'+ this.flightShopRequest.origin + '/' + this.flightShopRequest.destination +'/'+ this.flightShopRequest.departureDate + '/' + this.flightShopRequest.returnDate;
+    try{
+        var url = 'http://ndcwas18.azurewebsites.net/api/Shop/flights/1/'+ this.flightShopRequest.origin + '/' + this.flightShopRequest.destination +'/'+ this.flightShopRequest.departureDate + '/' + this.flightShopRequest.returnDate;
     final response = await http.get(url);
     
     Map fResultsMap =  json.decode(response.body);
     return new FlightResultsData.fromJson(fResultsMap);
+    }
+    catch(ex){
+      return component.getDummyFlightResults();
+    }
+    
   }
 }

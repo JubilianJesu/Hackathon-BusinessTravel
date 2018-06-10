@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'FlightResults.dart';
-import 'FlightSearchModel.dart';
+
 import 'FlightShopRequest.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -378,11 +378,11 @@ class SearchScreenState extends State<SearchScreen> {
       appBar: new AppBar(
           leading: IconButton(
             icon: Icon(
-              Icons.menu,
+              Icons.arrow_back,
               color: Colors.white,
             ),
             onPressed: () {
-              print('Menu button');
+              Navigator.pop(context);
             },
           ),
           title: new Text(
