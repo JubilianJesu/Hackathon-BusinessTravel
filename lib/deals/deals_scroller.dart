@@ -10,7 +10,7 @@ import 'dart:io';
 import 'dart:async';
 import 'dart:convert';
 
-Future<offers> getdeals() async {
+Future<offers> getevents() async {
   offers offersdata = new offers(
     images: <image>[
       new image(
@@ -49,7 +49,7 @@ Future<offers> getdeals() async {
   return offersdata;
 }
 
-Future<List<image>> getapideals() async {
+Future<List<image>> getapievents() async {
   List<image> data;
 
   http.Response res = await http.get(
@@ -158,8 +158,8 @@ Widget getEvent(image imagedata) {
 
 const tabCount = 2;
 
-class DealsBarDelegate extends SliverPersistentHeaderDelegate {
-  DealsBarDelegate({this.controller});
+class EventsBarDelegate extends SliverPersistentHeaderDelegate {
+  EventsBarDelegate({this.controller});
 
   final TabController controller;
 
@@ -173,33 +173,33 @@ class DealsBarDelegate extends SliverPersistentHeaderDelegate {
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
     return new Container(
-      color: Theme.of(context).cardColor,
-      height: kToolbarHeight,
-      child: new TabBar(
-        controller: controller,
-        key: new PageStorageKey<Type>(TabBar),
-        indicatorColor: Theme.of(context).primaryColor,
-        tabs: <Widget>[
-          new Tab(text: 'IT deals'),
-          new Tab(text: 'Sports deals'),
-        ],
-      ),
+      // color: Theme.of(context).cardColor,
+      // height: kToolbarHeight,
+      // child: new TabBar(
+      //   controller: controller,
+      //   key: new PageStorageKey<Type>(TabBar),
+      //   indicatorColor: Theme.of(context).primaryColor,
+      //   tabs: <Widget>[
+      //     new Tab(text: 'IT Events'),
+      //     new Tab(text: 'Sports Events'),
+      //   ],
+      // ),
     );
   }
 
   @override
-  bool shouldRebuild(covariant DealsBarDelegate oldDelegate) {
+  bool shouldRebuild(covariant EventsBarDelegate oldDelegate) {
     return oldDelegate.controller != controller;
   }
 }
 
 class MyDeals extends StatefulWidget {
-  static String tag = "mydeals-Page";
+  static String tag = "myevents-Page";
   @override
-  DealsPageState createState() => new DealsPageState();
+  EventsPageState createState() => new EventsPageState();
 }
 
-class DealsPageState extends State<MyDeals> with TickerProviderStateMixin {
+class EventsPageState extends State<MyDeals> with TickerProviderStateMixin {
   ScrollController _scrollController = new ScrollController();
 
   TabController _tabController;
@@ -220,15 +220,14 @@ class DealsPageState extends State<MyDeals> with TickerProviderStateMixin {
         controller: _scrollController,
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
-            new Container(),
             new SliverPersistentHeader(
               pinned: true,
-              delegate: new DealsBarDelegate(controller: _tabController),
+              delegate: new EventsBarDelegate(controller: _tabController),
             ),
           ];
         },
-        body: new DealsPageBody(
-          tabController: _tabController,
+        body: new EventsPageBody(
+          //tabController: _tabController,
           scrollController: _scrollController,
         ),
       ),
@@ -236,16 +235,16 @@ class DealsPageState extends State<MyDeals> with TickerProviderStateMixin {
   }
 }
 
-class DealsPageBody extends StatefulWidget {
-  DealsPageBody({this.scrollController, this.tabController});
+class EventsPageBody extends StatefulWidget {
+  EventsPageBody({this.scrollController, this.tabController});
 
   final ScrollController scrollController;
   final TabController tabController;
 
-  DealsPageBodyState createState() => new DealsPageBodyState();
+  EventsPageBodySTate createState() => new EventsPageBodySTate();
 }
 
-class DealsPageBodyState extends State<DealsPageBody> {
+class EventsPageBodySTate extends State<EventsPageBody> {
   Key _key = new PageStorageKey({});
   bool _innerListIsScrolled = false;
 
@@ -280,7 +279,7 @@ class DealsPageBodyState extends State<DealsPageBody> {
   @override
   Widget build(BuildContext context) {
     return new FutureBuilder(
-        future: getapideals(),
+        future: getapievents(),
         builder: (BuildContext context, AsyncSnapshot<List> snapshot) {
           if (!snapshot.hasData)
             return new Center(child: new CircularProgressIndicator());
