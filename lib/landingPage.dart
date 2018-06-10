@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'dstore/dStoreList.dart';
 import 'Preferences/preference.dart';
+import 'dstore/dstore.dart';
 import 'order/flightSearch.dart';
 import 'tagPage.dart';
 import 'package:http/http.dart' as http;
@@ -34,7 +35,7 @@ class LandingPageState extends State<LandingPage>{
   // }
   void clickDStore(){
     //getPnrDetails();
-    Navigator.of(context).pushNamed(DStorePage.tag);
+    Navigator.of(context).pushNamed(MySpace.tag);
   }
  @override
   Widget build(BuildContext context) {

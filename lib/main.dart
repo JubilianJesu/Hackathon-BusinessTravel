@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'dstore/dstore.dart';
 import 'eventPage.dart';
 import 'order/tripSummary.dart';
 import 'orderDetails.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget{
         Confirmation.tag: (BuildContext context) => new Confirmation(),
         MyDestinations.tag: (BuildContext context) => new MyDestinations(),
         MyDeals.tag: (BuildContext context) => new MyDeals(),
+        MySpace.tag: (BuildContext context) => new MySpace(),
         };
 
   @override

@@ -3,11 +3,13 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
+import 'dstore/dstore.dart';
 import 'events/events_scroller.dart';
 import 'events/events_view.dart';
 import 'Offers/Offers_view.dart';
 import 'order/FlightCommonComponent.dart';
 import 'order/tripSummary.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class TagPage extends StatefulWidget {
   static String tag = "Tag-Page";
@@ -29,6 +31,15 @@ class TagPageState extends State<TagPage> {
                   print('Menu button');
                 },
               ),
+              actions: <Widget>[IconButton(
+                icon: Icon(Icons.my_location),
+                onPressed: () {
+                   Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                        builder: (context) => new MySpace()));                  
+                },
+              ),],
               backgroundColor: Colors.deepPurpleAccent,
               title: new Text("TAG")),
           body: _buildBody(context)),
@@ -171,16 +182,16 @@ class TheGridView {
 void iconClick(BuildContext context, String icon) {
   switch (icon) {
     case "AirportMap":
-      //Navigator.of(context).pushNamed(MyEvents.tag);
+      launch("https://www.google.com/maps/place/O'Hare+International+Airport/@41.9741509,-87.9082607,18z/data=!4m5!3m4!1s0x880fb4276a7762f3:0x511747070259ad4b!8m2!3d41.9741625!4d-87.9073214");
       break;
     case "Weather":
-      Navigator.of(context).pushNamed('/OrderDetails');
+      launch("https://weather.com/weather/today/l/Washington+DC+USDC0001:1:US");
       break;
     case "Wine&Dine":
-      Navigator.of(context).pushNamed('/OrderDetails');
+      launch("https://www.google.com/maps/search/restaurants+near+me/@38.9001876,-77.0276488,15z/data=!3m1!4b1");
       break;
     case "Local Destinations":
-      Navigator.of(context).pushNamed('/OrderDetails');
+      launch("https://www.google.com/maps/search/attractions+near+me/@38.9001883,-77.0276488,15z/data=!3m1!4b1");
       break;
     default:
       Navigator.of(context).pushNamed(MyEvents.tag);

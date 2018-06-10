@@ -71,6 +71,15 @@ flutter:
     - assets/Locale.png
     - assets/Events.jpg
     - assets/Weather.gif
+    - assets/MyDeals.jpg
+    - assets/cross-sell-upsell.png
+    - assets/attractions.jpg
+    - assets/chat.jpg
+    - assets/United_Airlines_Logo.jpg
+    - assets/hilton.png
+    - assets/HubBG.png
+    - assets/budget.png
+    - assets/uber.jpg
 
   # To add assets to your application, add an assets section, like this:
   # assets:
