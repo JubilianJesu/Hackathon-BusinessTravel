@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'FlightResults.dart';
 import 'FlightSearchModel.dart';
 
-
-
 class SearchScreen extends StatefulWidget {
-static String tag="ordersearch-Page";
+  static String tag = "ordersearch-Page";
   //modified
   @override //new
   State createState() => new SearchScreenState(); //new
@@ -108,12 +106,16 @@ class SearchScreenState extends State<SearchScreen> {
                                   child: new Container(
                                 padding: const EdgeInsets.only(left: 8.0),
                                 child: new TextFormField(
+                                  validator: (value) {
+                                    if (value.isEmpty) {
+                                      return 'Please enter value';
+                                    }
+                                  },
                                   decoration: new InputDecoration.collapsed(
-                                      hintText: "From"
-                                      ),
-                                      onSaved: (String value){
-                                        this.searchModel.origin = value;
-                                      },
+                                      hintText: "From"),
+                                  onSaved: (String value) {
+                                    this.searchModel.origin = value;
+                                  },
                                 ),
                               )),
                               new Container(
@@ -144,11 +146,16 @@ class SearchScreenState extends State<SearchScreen> {
                                   child: new Container(
                                 padding: const EdgeInsets.only(left: 8.0),
                                 child: new TextFormField(
+                                  validator: (value) {
+                                    if (value.isEmpty) {
+                                      return 'Please enter value';
+                                    }
+                                  },
                                   decoration: new InputDecoration.collapsed(
                                       hintText: "To"),
-                                      onSaved: (String value){
-                                        this.searchModel.destination = value;
-                                      },
+                                  onSaved: (String value) {
+                                    this.searchModel.destination = value;
+                                  },
                                 ),
                               )),
                               new Container(
@@ -193,7 +200,12 @@ class SearchScreenState extends State<SearchScreen> {
                                 width: 0.2, color: Colors.grey),
                             left: const BorderSide(
                                 width: 0.2, color: Colors.grey))),
-                    child: new TextField(
+                    child: new TextFormField(
+                        validator: (value) {
+                          if (value.isEmpty) {
+                            return 'Please enter value';
+                          }
+                        },
                         decoration: new InputDecoration.collapsed(
                             hintText: 'Departure Date')),
                   )),
@@ -202,7 +214,12 @@ class SearchScreenState extends State<SearchScreen> {
                   child: new Flexible(
                       child: new Container(
                     padding: const EdgeInsets.only(left: 8.0),
-                    child: new TextField(
+                    child: new TextFormField(
+                        validator: (value) {
+                          if (value.isEmpty) {
+                            return 'Please enter value';
+                          }
+                        },
                         decoration: new InputDecoration.collapsed(
                             hintText: 'Return Date')),
                   )),
@@ -232,11 +249,13 @@ class SearchScreenState extends State<SearchScreen> {
                   textAlign: TextAlign.center),
             ),
             onTap: () {
-              print('Submit pressed');
-              Navigator.push(
-                  context,
-                  new MaterialPageRoute(
-                      builder: (context) => new FlightResultsScreen()));
+              if (_formKey.currentState.validate()) {
+                print('Submit pressed');
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                        builder: (context) => new FlightResultsScreen()));
+              }
             },
           )
         ],
@@ -318,28 +337,27 @@ class SearchScreenState extends State<SearchScreen> {
 
   Widget _buildBody() {
     return new Container(
-        child: new Form(
-      key: this._formKey,
-      child: new Container(
-        child: new ListView(
-          scrollDirection: Axis.vertical,
-          children: <Widget>[
-            new Container(
-            child: _buildTripType(),
-          ),
-          new Container(
-            child: _buildFromToBox(),
-          ),
-          new Container(
-            child: _travelOptions(),
-          ),
-          new Container(
-            child: _submitSearch(),
-          )
-          ],
-        ),
-      )
-      ),
+      child: new Form(
+          key: this._formKey,
+          child: new Container(
+            child: new ListView(
+              scrollDirection: Axis.vertical,
+              children: <Widget>[
+                new Container(
+                  child: _buildTripType(),
+                ),
+                new Container(
+                  child: _buildFromToBox(),
+                ),
+                new Container(
+                  child: _travelOptions(),
+                ),
+                new Container(
+                  child: _submitSearch(),
+                )
+              ],
+            ),
+          )),
     );
   }
 
@@ -348,12 +366,18 @@ class SearchScreenState extends State<SearchScreen> {
     return new Scaffold(
       appBar: new AppBar(
           leading: IconButton(
-            icon: Icon(Icons.menu, color: Colors.white,),
+            icon: Icon(
+              Icons.menu,
+              color: Colors.white,
+            ),
             onPressed: () {
               print('Menu button');
             },
           ),
-          title: new Text("One Order", style: new TextStyle(color: Colors.white),)),
+          title: new Text(
+            "One Order",
+            style: new TextStyle(color: Colors.white),
+          )),
       body: _buildBody(),
     );
   }
@@ -418,6 +442,3 @@ class CustomButtonState extends State<CustomButton> {
     );
   }
 }
-
-
-

@@ -21,7 +21,7 @@ class RCOfferComponent extends StatelessWidget{
     Color _labelColor = Colors.black54;
     Color _iconColor = Colors.black54;
     if (selected) {
-      backColor = Colors.blue;
+      backColor = Colors.deepPurpleAccent;
       _tickOpacity = 1.0;
       _labelWidth = 170.4;
       _tickIconWidth = 22.8;
