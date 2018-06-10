@@ -7,14 +7,14 @@ import 'dart:async';
 import 'dart:convert';
 
 class FlightResultsScreen extends StatefulWidget {
-  static String tag = "ordersearch-Page";
+  static String tag = "flightresult-Page";
   //modified
   @override //new
   State createState() => new FlightResultsScreenState(); //new
 }
 
 class FlightResultsScreenState extends State<FlightResultsScreen> {
-  static String tag = "flightresult-Page";
+  
   FlightCommonComponent component = new FlightCommonComponent();
   var currentTripIndex = 0;
   var totalTrips = 0;
