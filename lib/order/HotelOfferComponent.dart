@@ -17,7 +17,7 @@ class HotelOfferComponent extends StatelessWidget {
     double _labelWidth = 193.3;
     Color _labelColor = Colors.black54;
     if (selected) {
-      backColor = Colors.blue;
+      backColor = Colors.deepPurpleAccent;
       _tickOpacity = 1.0;
       _labelWidth = 170.4;
       _tickIconWidth = 22.8;

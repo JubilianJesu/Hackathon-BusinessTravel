@@ -82,6 +82,10 @@ class FlightCommonComponent{
       operatorName = "Delta Airlines";
       _logoPath = "assets/Delta_logo.png";
     }
+    if (carrierCode == "C9") {
+      operatorName = "Delta Airlines";
+      _logoPath = "assets/Delta_logo.png";
+    }
     List<Widget> lstWidg = new List<Widget>();
     lstWidg.add(new Image.asset(
       _logoPath,
@@ -134,8 +138,14 @@ class FlightCommonComponent{
     return lstWidgets;
   }
 
-  List<Flight> getDummyFlightResults() {
-    List<Flight> results = new List<Flight>();
+  FlightResultsData getDummyFlightResults() {
+    FlightResultsData data = new FlightResultsData();
+    FlightResults fResults = new FlightResults();
+    fResults.trips = new List<TripInfo>();
+    //--------------------Trip1---------------------------------------
+    var trip1 = new TripInfo();
+    trip1.trip = new List<Flight>();
+    List<Flight> flts = new List<Flight>();
     
     //-------------------Flight 1-----------------------------
     Flight flt1 = new Flight();
@@ -155,7 +165,7 @@ class FlightCommonComponent{
     am1.isWifi = true;
     flt1.amenities = am1;
 
-    results.add(flt1);
+    flts.add(flt1);
     //-----------------------------------------------------------
 
     //-------------------Flight 2-----------------------------
@@ -176,7 +186,7 @@ class FlightCommonComponent{
     am2.isWifi = true;
     flt2.amenities = am2;
 
-    results.add(flt2);
+    flts.add(flt2);
     //-----------------------------------------------------------
 
     //-------------------Flight 3-----------------------------
@@ -197,7 +207,7 @@ class FlightCommonComponent{
     am3.isWifi = true;
     flt3.amenities = am3;
 
-    results.add(flt3);
+    flts.add(flt3);
     //-----------------------------------------------------------
 
     //-------------------Flight 4-----------------------------
@@ -218,7 +228,7 @@ class FlightCommonComponent{
     am4.isWifi = true;
     flt4.amenities = am4;
 
-    results.add(flt4);
+    flts.add(flt4);
     //-----------------------------------------------------------
 
     //-------------------Flight 5-----------------------------
@@ -239,7 +249,7 @@ class FlightCommonComponent{
     am5.isWifi = true;
     flt5.amenities = am5;
 
-    results.add(flt5);
+    flts.add(flt5);
     //-----------------------------------------------------------
 
     //-------------------Flight 6-----------------------------
@@ -260,7 +270,7 @@ class FlightCommonComponent{
     am6.isWifi = false;
     flt6.amenities = am6;
 
-    results.add(flt6);
+    flts.add(flt6);
     //-----------------------------------------------------------
 
     //-------------------Flight 7-----------------------------
@@ -281,9 +291,168 @@ class FlightCommonComponent{
     am7.isWifi = true;
     flt7.amenities = am7;
 
-    results.add(flt7);
+    flts.add(flt7);
     //-----------------------------------------------------------
-    return results;
+    trip1.trip = flts;
+    fResults.trips.add(trip1);
+    //---------------------------------------------------------------------
+
+    //--------------------trip2---------------------------------------
+    var trip2 = new TripInfo();
+    trip2.trip = new List<Flight>();
+    List<Flight> flts2 = new List<Flight>();
+    
+    //-------------------Flight 1-----------------------------
+    Flight flt11 = new Flight();
+    Amenities am11 = new Amenities();
+    flt11.origin = "DEN";
+    flt11.destination = "ORD";
+    flt11.departureTime = "07:00am";
+    flt11.arrivalTime = "09:30am";
+    flt11.travelTime = "2h 30m";
+    flt11.priceToCollect = "+ \$0";
+    flt11.carrierCode = "aa";
+    flt11.isBestFlight = true;
+
+    am11.isLegroom = true;
+    am11.isOnDemandVideo = true;
+    am11.isUSB = true;
+    am11.isWifi = true;
+    flt11.amenities = am11;
+
+    flts2.add(flt11);
+    //-----------------------------------------------------------
+
+    //-------------------Flight 2-----------------------------
+    Flight flt21 = new Flight();
+    Amenities am21 = new Amenities();
+    flt21.origin = "DEN";
+    flt21.destination = "ORD";
+    flt21.departureTime = "07:15am";
+    flt21.arrivalTime = "09:50am";
+    flt21.travelTime = "2h 35m";
+    flt21.priceToCollect = "+ \$0";
+    flt21.carrierCode = "ua";
+    flt21.isBestFlight = true;
+
+    am21.isLegroom = true;
+    am21.isOnDemandVideo = false;
+    am21.isUSB = true;
+    am21.isWifi = true;
+    flt21.amenities = am21;
+
+    flts2.add(flt21);
+    //-----------------------------------------------------------
+
+    //-------------------Flight 3-----------------------------
+    Flight flt31 = new Flight();
+    Amenities am31 = new Amenities();
+    flt31.origin = "DEN";
+    flt31.destination = "ORD";
+    flt31.departureTime = "07:15am";
+    flt31.arrivalTime = "10:00am";
+    flt31.travelTime = "2h 45m";
+    flt31.priceToCollect = "+ \$0";
+    flt31.carrierCode = "da";
+    flt31.isBestFlight = false;
+
+    am31.isLegroom = false;
+    am31.isOnDemandVideo = false;
+    am31.isUSB = true;
+    am31.isWifi = true;
+    flt31.amenities = am31;
+
+    flts2.add(flt31);
+    //-----------------------------------------------------------
+
+    //-------------------Flight 4-----------------------------
+    Flight flt41 = new Flight();
+    Amenities am41 = new Amenities();
+    flt41.origin = "DEN";
+    flt41.destination = "ORD";
+    flt41.departureTime = "08:00am";
+    flt41.arrivalTime = "10:30am";
+    flt41.travelTime = "2h 30m";
+    flt41.priceToCollect = "+ \$0";
+    flt41.carrierCode = "ua";
+    flt41.isBestFlight = false;
+
+    am41.isLegroom = false;
+    am41.isOnDemandVideo = false;
+    am41.isUSB = true;
+    am41.isWifi = true;
+    flt41.amenities = am41;
+
+    flts2.add(flt41);
+    //-----------------------------------------------------------
+
+    //-------------------Flight 5-----------------------------
+    Flight flt51 = new Flight();
+    Amenities am51 = new Amenities();
+    flt51.origin = "DEN";
+    flt51.destination = "ORD";
+    flt51.departureTime = "08:05am";
+    flt51.arrivalTime = "10:34am";
+    flt51.travelTime = "2h 29m";
+    flt51.priceToCollect = "+ \$0";
+    flt51.carrierCode = "aa";
+    flt51.isBestFlight = false;
+
+    am51.isLegroom = false;
+    am51.isOnDemandVideo = false;
+    am51.isUSB = false;
+    am51.isWifi = true;
+    flt51.amenities = am51;
+
+    flts2.add(flt51);
+    //-----------------------------------------------------------
+
+    //-------------------Flight 6-----------------------------
+    Flight flt61 = new Flight();
+    Amenities am61 = new Amenities();
+    flt61.origin = "DEN";
+    flt61.destination = "ORD";
+    flt61.departureTime = "08:40am";
+    flt61.arrivalTime = "11:12am";
+    flt61.travelTime = "2h 32m";
+    flt61.priceToCollect = "+ \$0";
+    flt61.carrierCode = "da";
+    flt61.isBestFlight = false;
+
+    am61.isLegroom = false;
+    am61.isOnDemandVideo = false;
+    am61.isUSB = true;
+    am61.isWifi = false;
+    flt61.amenities = am61;
+
+    flts2.add(flt61);
+    //-----------------------------------------------------------
+
+    //-------------------Flight 7-----------------------------
+    Flight flt71 = new Flight();
+    Amenities am71 = new Amenities();
+    flt71.origin = "DEN";
+    flt71.destination = "ORD";
+    flt71.departureTime = "06:00am";
+    flt71.arrivalTime = "08:30am";
+    flt71.travelTime = "2h 30m";
+    flt71.priceToCollect = "+ \$99";
+    flt71.carrierCode = "aa";
+    flt71.isBestFlight = false;
+
+    am71.isLegroom = true;
+    am71.isOnDemandVideo = false;
+    am71.isUSB = true;
+    am71.isWifi = true;
+    flt71.amenities = am71;
+
+    flts2.add(flt71);
+    //-----------------------------------------------------------
+    trip2.trip = flts2;
+    fResults.trips.add(trip2);
+    //---------------------------------------------------------------------
+    data.flightResults = fResults;
+    return data;
   }
   
   List<Flight> getDummySelectedFlights() {

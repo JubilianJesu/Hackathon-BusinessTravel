@@ -484,7 +484,7 @@ class TripSummaryState extends State<TripSummary> {
 //    const HotelOfferComponent(
 //       {Key key,
 //       @required this.offerId,
-//       @required this.hotel,
+//       @required this.hotel,``
 //       this.selected = false,
 //       this.onTap}):super(key: key);
 

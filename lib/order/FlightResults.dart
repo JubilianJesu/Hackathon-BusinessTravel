@@ -1,16 +1,42 @@
 import 'package:flutter/material.dart';
 import 'tripSummary.dart';
 import 'FlightCommonComponent.dart';
+import 'FlightResultsModel.dart';
+import 'package:http/http.dart' as http;
+import 'dart:async';
+import 'dart:convert';
 
-class FlightResultsScreen extends StatelessWidget{  
-static String tag="flightresult-Page";
-FlightCommonComponent component = new FlightCommonComponent();
+class FlightResultsScreen extends StatefulWidget {
+  static String tag = "ordersearch-Page";
+  //modified
+  @override //new
+  State createState() => new FlightResultsScreenState(); //new
+}
+
+class FlightResultsScreenState extends State<FlightResultsScreen> {
+  static String tag = "flightresult-Page";
+  FlightCommonComponent component = new FlightCommonComponent();
+  var currentTripIndex = 0;
+  var totalTrips = 0;
+  ScrollController _scrollController;
+  FlightResultsData results;
+  @override
+    void initState() {
+      // TODO: implement initState
+      super.initState();
+      _scrollController = new ScrollController();
+      results = component.getDummyFlightResults();
+    }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white,),
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
           onPressed: () {
             print('Menu button pressed');
             Navigator.pop(context);
@@ -18,33 +44,65 @@ FlightCommonComponent component = new FlightCommonComponent();
         ),
         title: new Container(
           //width: 115.0,
-          child: new Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              new Text("ORD", style: new TextStyle(color: Colors.white),),
-              const Icon(
-                Icons.flight_takeoff, color: Colors.white,
-                size: 21.0,
+          // child: new Row(
+          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //   children: <Widget>[
+          //     new Text(
+          //       "ORD",
+          //       style: new TextStyle(color: Colors.white),
+          //     ),
+          //     const Icon(
+          //       Icons.flight_takeoff,
+          //       color: Colors.white,
+          //       size: 21.0,
+          //     ),
+          //     new Text("DEN", style: new TextStyle(color: Colors.white))
+          //   ],
+          // ),
+          child: new Text(
+                "Select Flight",
+                style: new TextStyle(color: Colors.white),
               ),
-              new Text("DEN", style: new TextStyle(color: Colors.white))
-            ],
-          ),
         ),
       ),
-      body: buildBody(context),
+      //body: buildBody(context),
+      body: new FutureBuilder<FlightResultsData>(
+        future: fetchPost(),
+        builder: (context, resp){
+          if(resp.hasData){
+            if(resp.data.flightResults != null && resp.data.flightResults.trips != null && resp.data.flightResults.trips.length > 0){
+              return buildBody(context, resp.data);
+            }
+            else {
+              return buildBody(context, component.getDummyFlightResults());
+            }
+          }
+          else if (resp.hasError){
+            return buildBody(context, component.getDummyFlightResults());
+          }
+          return new Center(
+            child: CircularProgressIndicator(),
+          ) ;
+        },
+      )
     );
   }
 
-  Widget buildBody(BuildContext context) {
+  Widget buildBody(BuildContext context, FlightResultsData results) {
     return new Container(
         child: new ListView(
-            scrollDirection: Axis.vertical, children: buildFlight(context)));
+            controller: _scrollController,
+            scrollDirection: Axis.vertical, children: buildFlight(context, results)));
   }
 
-  List<Widget> buildFlight(BuildContext context) {
+  List<Widget> buildFlight(BuildContext context, FlightResultsData results) {
     List<Widget> fltWidgets = new List<Widget>();
 
-    var fltResults = component.getDummyFlightResults();
+    //var results = component.getDummyFlightResults();
+    totalTrips = results.flightResults.trips.length;
+
+    var fltResults = results.flightResults.trips[currentTripIndex].trip;
+
     for (var i = 0; i < fltResults.length; i++) {
       var fltWid = new Column(
         children: <Widget>[
@@ -55,12 +113,13 @@ FlightCommonComponent component = new FlightCommonComponent();
               //mainAxisSize:MainAxisSize.max,
               children: <Widget>[
                 new Row(
-                  children: component.buildAirlineWidget(context, fltResults[i].carrierCode),
+                  children: component.buildAirlineWidget(
+                      context, fltResults[i].carrierCode),
                 ),
                 new Row(
                   //mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
-                    fltResults[i].isBestFlight ? new Container(
+                    fltResults[i].isBestFlight!= null && fltResults[i].isBestFlight ? new Container(
                       padding: const EdgeInsets.only(
                           top: 2.0,bottom: 2.0, left: 3.0),
                       decoration: const BoxDecoration(color: Colors.green),
@@ -103,11 +162,22 @@ FlightCommonComponent component = new FlightCommonComponent();
     }
     return fltWidgets;
   }
-  
 
   void _selectFlight(BuildContext context) {
-     Navigator.of(context).pushNamed(TripSummary.tag);
+    setState(() {
+      if (totalTrips == currentTripIndex+1) {
+        Navigator.of(context).pushNamed(TripSummary.tag);
+      }
+      else{
+        currentTripIndex++;
+        _scrollController.animateTo(0.0, duration: new Duration(milliseconds: 1), curve: Curves.ease);
+      }
+    });
   }
-
- 
+  Future<FlightResultsData> fetchPost() async {
+    final response = await http.get('http://ndcwas18.azurewebsites.net/api/Shop/flights/1/LHR/BCN/2018-09-12/2018-09-14');
+    
+    Map fResultsMap =  json.decode(response.body);
+    return new FlightResultsData.fromJson(fResultsMap);
+  }
 }
