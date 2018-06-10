@@ -79,7 +79,7 @@ class SearchScreenState extends State<SearchScreen> {
                       onPressed: _handleSwapAirportClick),
                 ),
                 new Container(
-                    width: 363.2,
+                    width: 311.00,
                     //width: 350.0,
                     decoration: const BoxDecoration(
                         border: const Border(
@@ -217,7 +217,7 @@ class SearchScreenState extends State<SearchScreen> {
 
   Widget _submitSearch() {
     return new Container(
-      padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 33.0),
+      padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 3.0),
       margin: const EdgeInsets.only(top: 40.0),
       child: new Row(
         children: <Widget>[

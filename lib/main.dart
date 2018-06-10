@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget{
       title: "Business Travel",    
     debugShowCheckedModeBanner: false,
     theme: ThemeData(
-      primarySwatch: Colors.lightBlue ,
+      primarySwatch: Colors.lightBlue,
     ),
     routes: routes,
     home: LoginPage(),
