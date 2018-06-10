@@ -5,16 +5,20 @@ import 'FlightResultsModel.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
+import 'FlightShopRequest.dart';
 
 class FlightResultsScreen extends StatefulWidget {
   static String tag = "flightresult-Page";
+  final FlightShopRequest flightShopRequest;
+  FlightResultsScreen(this.flightShopRequest);
   //modified
   @override //new
-  State createState() => new FlightResultsScreenState(); //new
+  State createState() => new FlightResultsScreenState(this.flightShopRequest); //new
 }
 
 class FlightResultsScreenState extends State<FlightResultsScreen> {
-  
+  final FlightShopRequest flightShopRequest;
+  FlightResultsScreenState(this.flightShopRequest);
   FlightCommonComponent component = new FlightCommonComponent();
   var currentTripIndex = 0;
   var totalTrips = 0;
@@ -175,7 +179,8 @@ class FlightResultsScreenState extends State<FlightResultsScreen> {
     });
   }
   Future<FlightResultsData> fetchPost() async {
-    final response = await http.get('http://ndcwas18.azurewebsites.net/api/Shop/flights/1/LHR/BCN/2018-09-12/2018-09-14');
+    var url = 'http://ndcwas18.azurewebsites.net/api/Shop/flights/1/'+ this.flightShopRequest.origin + '/' + this.flightShopRequest.destination +'/'+ this.flightShopRequest.departureDate + '/' + this.flightShopRequest.returnDate;
+    final response = await http.get(url);
     
     Map fResultsMap =  json.decode(response.body);
     return new FlightResultsData.fromJson(fResultsMap);

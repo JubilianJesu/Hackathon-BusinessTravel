@@ -15,6 +15,7 @@ import 'dstore/dStoreList.dart';
 import 'order/Confirmation.dart';
 import 'destination/destination.dart';
 import 'deals/deals_scroller.dart';
+import 'order/FlightShopRequest.dart';
 
 void main() => runApp(MyApp());
 
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget{
         TagPage.tag : (BuildContext context) => new TagPage(),
         EventListPage.tag: (BuildContext context) => new EventListPage(),
         SearchScreen.tag: (BuildContext context) => new SearchScreen(),
-        FlightResultsScreen.tag: (BuildContext context) => new FlightResultsScreen(),
+        FlightResultsScreen.tag: (BuildContext context) => new FlightResultsScreen(new FlightShopRequest()),
         TripSummary.tag: (BuildContext context) => new TripSummary(),
         LoginPage.tag: (BuildContext context) => new LoginPage(),
         MyOffers.tag: (BuildContext context) => new MyOffers(),

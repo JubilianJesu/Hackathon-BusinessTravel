@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'FlightResults.dart';
 import 'FlightSearchModel.dart';
+import 'FlightShopRequest.dart';
 
 class SearchScreen extends StatefulWidget {
   static String tag = "ordersearch-Page";
@@ -11,7 +12,7 @@ class SearchScreen extends StatefulWidget {
 
 class SearchScreenState extends State<SearchScreen> {
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
-  FlightSearchModel searchModel = new FlightSearchModel();
+  FlightShopRequest search = new FlightShopRequest();
   bool isFlight = true;
   bool isHotel = false;
   void _handleOneWayClick() {}
@@ -114,7 +115,7 @@ class SearchScreenState extends State<SearchScreen> {
                                   decoration: new InputDecoration.collapsed(
                                       hintText: "From"),
                                   onSaved: (String value) {
-                                    this.searchModel.origin = value;
+                                    this.search.origin = value;
                                   },
                                 ),
                               )),
@@ -154,7 +155,7 @@ class SearchScreenState extends State<SearchScreen> {
                                   decoration: new InputDecoration.collapsed(
                                       hintText: "To"),
                                   onSaved: (String value) {
-                                    this.searchModel.destination = value;
+                                    this.search.destination = value;
                                   },
                                 ),
                               )),
@@ -192,36 +193,45 @@ class SearchScreenState extends State<SearchScreen> {
                 ),
                 new Container(
                   child: new Flexible(
-                      child: new Container(
-                    padding: const EdgeInsets.only(left: 8.0),
-                    decoration: const BoxDecoration(
-                        border: const Border(
-                            right: const BorderSide(
-                                width: 0.2, color: Colors.grey),
-                            left: const BorderSide(
-                                width: 0.2, color: Colors.grey))),
-                    child: new TextFormField(
+                    child: new Container(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      decoration: const BoxDecoration(
+                          border: const Border(
+                              right: const BorderSide(
+                                  width: 0.2, color: Colors.grey),
+                              left: const BorderSide(
+                                  width: 0.2, color: Colors.grey))),
+                      child: new TextFormField(
                         validator: (value) {
                           if (value.isEmpty) {
                             return 'Please enter value';
                           }
                         },
                         decoration: new InputDecoration.collapsed(
-                            hintText: 'Departure Date')),
-                  )),
+                            hintText: 'Departure Date'),
+                        onSaved: (String value) {
+                          this.search.departureDate = value;
+                        },
+                      ),
+                    ),
+                  ),
                 ),
                 new Container(
                   child: new Flexible(
                       child: new Container(
                     padding: const EdgeInsets.only(left: 8.0),
                     child: new TextFormField(
-                        validator: (value) {
-                          if (value.isEmpty) {
-                            return 'Please enter value';
-                          }
-                        },
-                        decoration: new InputDecoration.collapsed(
-                            hintText: 'Return Date')),
+                      validator: (value) {
+                        if (value.isEmpty) {
+                          return 'Please enter value';
+                        }
+                      },
+                      decoration: new InputDecoration.collapsed(
+                          hintText: 'Return Date'),
+                      onSaved: (String value) {
+                        this.search.returnDate = value;
+                      },
+                    ),
                   )),
                 )
               ],
@@ -250,11 +260,12 @@ class SearchScreenState extends State<SearchScreen> {
             ),
             onTap: () {
               if (_formKey.currentState.validate()) {
+                _formKey.currentState.save();
                 print('Submit pressed');
                 Navigator.push(
                     context,
                     new MaterialPageRoute(
-                        builder: (context) => new FlightResultsScreen()));
+                        builder: (context) => new FlightResultsScreen(this.search)));
               }
             },
           )
