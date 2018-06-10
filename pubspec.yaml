@@ -60,6 +60,14 @@ flutter:
     - assets/FullSizeCar.jpg
     - assets/SUVCar.jpg
     - assets/qr_code.png
+    - assets/washingtonmonument.jpg
+    - assets/event-icon-dsbr.png
+    - assets/eents.png
+    - assets/airporttile.png
+    - assets/Wine&Dine.gif
+    - assets/Locale.png
+    - assets/Events.jpg
+    - assets/Weather.gif
 
   # To add assets to your application, add an assets section, like this:
   # assets:
