@@ -10,9 +10,10 @@ import 'order/flightSearch.dart';
 import 'order/FlightResults.dart';
 import 'login/login.dart';
 import 'offers/offers_view.dart';
-import 'events/events_view.dart';
+import 'events/events_scroller.dart';
 import 'dstore/dStoreList.dart';
 import 'order/Confirmation.dart';
+import 'destination/destination.dart';
 
 void main() => runApp(MyApp());
 
@@ -31,18 +32,19 @@ class MyApp extends StatelessWidget{
         MyEvents.tag: (BuildContext context) => new MyEvents(),
         DStorePage.tag : (BuildContext context) => new DStorePage(),
         Confirmation.tag: (BuildContext context) => new Confirmation(),
+        MyDestinations.tag: (BuildContext context) => new MyDestinations(),
         };
 
   @override
   Widget build(BuildContext context){
     return MaterialApp( 
-      title: "Business Travel",
+      title: "Business Travel",    
     debugShowCheckedModeBanner: false,
     theme: ThemeData(
       primarySwatch: Colors.lightBlue ,
     ),
     routes: routes,
-    home: LandingPage(),
+    home: LoginPage(),
     );
   }
 }
