@@ -305,12 +305,12 @@ class TripSummaryState extends State<TripSummary> {
         children: <Widget>[
           new GestureDetector(
             child: new Container(
-              decoration: const BoxDecoration(color: Colors.deepPurpleAccent),
+              decoration: const BoxDecoration(color: Colors.red),
               width: 300.0,
               height: 40.0,
               padding: const EdgeInsets.only(top: 8.0),
               child: new Text('Confirm',
-                  style: new TextStyle(fontSize: 20.0, color: Colors.white70),
+                  style: new TextStyle(fontSize: 20.0, color: Colors.white),
                   textAlign: TextAlign.center),
             ),
             onTap: () {

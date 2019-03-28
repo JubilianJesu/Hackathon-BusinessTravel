@@ -139,7 +139,8 @@ class MyHomePage extends State<MyPreferences> {
       ),
     );
 
-    final stayWithinBudget = Row(children: <Widget>[
+    final stayWithinBudget = Row(
+      children: <Widget>[
       const Icon(
         Icons.menu,
         color: Colors.grey,
@@ -363,7 +364,7 @@ class MyHomePage extends State<MyPreferences> {
         height: 40.0,
         margin: const EdgeInsets.only(left: 30.0, top: 30.0, right: 30.0),
         child: new RaisedButton(
-          color: Colors.deepPurpleAccent,
+          color: Colors.red,
           splashColor: Colors.blueGrey,
           child: Text('Submit',
               style: new TextStyle(fontSize: 20.0, color: Colors.white),

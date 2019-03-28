@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../Preferences/preference.dart';
 import 'package:http/http.dart' as http;
+import 'package:local_auth/local_auth.dart';
 import 'dart:async';
 import 'dart:convert';
 import '../model/authlogin.dart';
@@ -15,6 +16,8 @@ class loginProfile {
   final String authToken;
   final String profileId;
   final String companyId;
+
+  loginProfile(this.authToken, this.profileId, this.companyId);
 }
 
 class _LoginPageState extends State<LoginPage> {
@@ -76,20 +79,26 @@ class _LoginPageState extends State<LoginPage> {
     return new Scaffold(
       key: scaffoldKey,
       appBar: new AppBar(
-        title: new Text('Corporate Travel Market Place'),
+        title: new Text('Next Gen Corporate Travel'),
       ),
+      backgroundColor: Colors.grey[850],
       body: new Container(
         decoration: new BoxDecoration(
           image: new DecorationImage(
-            image: new AssetImage("assets/HubBG.png"),
-            fit: BoxFit.cover,
+            image: new AssetImage("assets/1logo_cbt.png"),
+            fit: BoxFit.contain,
+            alignment: FractionalOffset.topCenter
           ),
         ),
+        //color: Colors.grey[850],
         child: new Padding(
           padding: const EdgeInsets.all(16.0),
           child: new Form(
             key: formKey,
             child: new Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 new TextFormField(
                   decoration: new InputDecoration(labelText: 'Your email',labelStyle: new TextStyle(color: Colors.white)),
@@ -114,7 +123,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: new RaisedButton(
                     onPressed: _submit,
                     child: new Text('Login',style: new TextStyle(color: Colors.white),),
-                    color: Colors.deepPurpleAccent,
+                    color: Colors.red,
                   ),
                 ),
               ],

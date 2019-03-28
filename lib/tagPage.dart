@@ -23,6 +23,11 @@ class TagPageState extends State<TagPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+      primaryColor: Colors.grey[850],
+      fontFamily: 'Whitney'
+
+    ),
       home: Scaffold(
           appBar: AppBar(
               leading: IconButton(
@@ -40,7 +45,7 @@ class TagPageState extends State<TagPage> {
                         builder: (context) => new MySpace()));                  
                 },
               ),],
-              backgroundColor: Colors.deepPurpleAccent,
+              backgroundColor: Colors.grey[800],
               title: new Text("TAG")),
           body: _buildBody(context)),
     );
@@ -171,9 +176,9 @@ class TheGridView {
         crossAxisSpacing: 1.0,
         children: <Widget>[
           makeGridCell(context,"AirportMap", "Airport Map", "airporttile.png", 5),
-          makeGridCell(context,"Weather", "Weather", "Weather.gif", 5),
-          makeGridCell(context,"Events", "Events", "Events.jpg", 3),
-          makeGridCell(context,"Local Destinations", "Locale", "Locale.png", 3),
+          makeGridCell(context,"Weather", "Weather", "Weather.png", 5),
+          makeGridCell(context,"Events", "Events", "Event_2.jpg", 3),
+          makeGridCell(context,"Local Destinations", "Locale", "attractions.jpg", 3),
           makeGridCell(context,"Wine&Dine", "Wine&Dine", "Wine&Dine.gif", 8)
         ]);
   }

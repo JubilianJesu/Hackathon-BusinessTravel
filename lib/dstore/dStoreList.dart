@@ -11,6 +11,11 @@ class DStorePageState extends State<DStorePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+      primaryColor: Colors.grey[850],
+      fontFamily: 'Whitney'
+
+    ),
       home: Scaffold(
         appBar: AppBar(
             leading: IconButton(

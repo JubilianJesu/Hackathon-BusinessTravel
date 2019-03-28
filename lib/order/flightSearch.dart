@@ -30,27 +30,27 @@ class SearchScreenState extends State<SearchScreen> {
             new RaisedButton(
               child: new Text(
                 'One-way',
-                style: new TextStyle(color: Colors.black54),
+                style: new TextStyle(color: Colors.white),
               ),
               onPressed: _handleOneWayClick,
-              color: Colors.white70,
+              color: Colors.grey[600],
               elevation: 0.5,
             ),
             new RaisedButton(
                 child: new Text(
                   'Round Trip',
-                  style: new TextStyle(color: Colors.black54),
+                  style: new TextStyle(color: Colors.white),
                 ),
                 onPressed: _handleRTClick,
-                color: Colors.white70,
+                color: Colors.grey[600],
                 elevation: 0.5),
             new RaisedButton(
                 child: new Text(
                   'Multi City',
-                  style: new TextStyle(color: Colors.black54),
+                  style: new TextStyle(color: Colors.white),
                 ),
                 onPressed: _handleMCClick,
-                color: Colors.white70,
+                color: Colors.grey[600],
                 elevation: 0.5),
           ],
         ));
@@ -64,8 +64,8 @@ class SearchScreenState extends State<SearchScreen> {
             margin: const EdgeInsets.symmetric(vertical: 8.0),
             decoration: const BoxDecoration(
                 border: const Border(
-                    top: const BorderSide(width: 0.2, color: Colors.grey),
-                    bottom: const BorderSide(width: 0.2, color: Colors.grey))),
+                    top: const BorderSide(width: 0.2, color: Colors.black),
+                    bottom: const BorderSide(width: 0.2, color: Colors.black))),
             child: new Row(
               children: [
                 new Container(
@@ -179,7 +179,7 @@ class SearchScreenState extends State<SearchScreen> {
           ),
           new Container(
             padding: const EdgeInsets.only(top: 8.0, bottom: 9.0),
-            decoration: const BoxDecoration(
+            decoration: const BoxDecoration(              
                 border: const Border(
                     bottom: const BorderSide(width: 0.5, color: Colors.grey))),
             child: new Row(
@@ -250,12 +250,13 @@ class SearchScreenState extends State<SearchScreen> {
         children: <Widget>[
           new GestureDetector(
             child: new Container(
-              decoration: const BoxDecoration(color: Colors.deepPurpleAccent),
+              decoration: const BoxDecoration(color: Colors.red),
               width: 350.0,
               height: 40.0,
               padding: const EdgeInsets.only(top: 8.0),
+              margin: const EdgeInsets.symmetric(horizontal: 25.0),
               child: new Text('Search',
-                  style: new TextStyle(fontSize: 20.0, color: Colors.white70),
+                  style: new TextStyle(fontSize: 20.0, color: Colors.white),
                   textAlign: TextAlign.center),
             ),
             onTap: () {
@@ -299,7 +300,7 @@ class SearchScreenState extends State<SearchScreen> {
                             }),
                         new Text('Flight',
                             style: new TextStyle(
-                                fontSize: 16.0, color: Colors.black54))
+                                fontSize: 16.0, color: Colors.white))
                       ],
                     ),
                   ),
@@ -315,7 +316,7 @@ class SearchScreenState extends State<SearchScreen> {
                             }),
                         new Text('Hotel',
                             style: new TextStyle(
-                                fontSize: 16.0, color: Colors.black54))
+                                fontSize: 16.0, color: Colors.white))
                       ],
                     ),
                   ),
@@ -409,8 +410,8 @@ class CustomButtonState extends State<CustomButton> {
     return _customButton(text);
   }
 
-  Color _myTextColor = Colors.black54;
-  Color _myBackColor = Colors.white70;
+  Color _myTextColor = Colors.white;
+  Color _myBackColor = Colors.grey[600];
   Widget _customButton(btnText) {
     return new GestureDetector(
       child: new ConstrainedBox(
@@ -435,18 +436,18 @@ class CustomButtonState extends State<CustomButton> {
                   textAlign: TextAlign.center,
                   style: new TextStyle(color: _myTextColor, fontSize: 16.0),
                 ),
-                //const Icon(Icons.info_outline, color: Colors.black54, size: 20.0,)
+                //const Icon(Icons.info_outline, color: Colors.white, size: 20.0,)
               ],
             )),
       ),
       onTap: () {
         setState(() {
-          if (_myTextColor == Colors.black54) {
+          if (_myTextColor == Colors.white) {
             _myTextColor = Colors.white;
             _myBackColor = Colors.deepPurpleAccent;
           } else {
-            _myTextColor = Colors.black54;
-            _myBackColor = Colors.white70;
+            _myTextColor = Colors.white;
+            _myBackColor = Colors.grey[600];
           }
         });
       },

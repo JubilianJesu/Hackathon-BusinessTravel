@@ -21,6 +21,11 @@ class MySpacePageState extends State<MySpace> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+      primaryColor: Colors.grey[850],
+      fontFamily: 'Whitney'
+
+    ),
       home: Scaffold(
           appBar: AppBar(
               leading: IconButton(
@@ -29,7 +34,7 @@ class MySpacePageState extends State<MySpace> {
                   print('Menu button');
                 },
               ),
-              backgroundColor: Colors.deepPurpleAccent,
+              backgroundColor: Colors.grey[800],
               title: new Text("My Space")),
           body: _buildBody(context)),
     );

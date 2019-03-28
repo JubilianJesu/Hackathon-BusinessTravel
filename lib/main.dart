@@ -43,10 +43,11 @@ class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return MaterialApp( 
-      title: "Business Travel",    
+      title: "Leisure Travel",    
     debugShowCheckedModeBanner: false,
     theme: ThemeData(
-      primarySwatch: Colors.deepPurple ,
+      primaryColor: Colors.grey[850],
+      fontFamily: 'Whitney'
 
     ),
     routes: routes,
