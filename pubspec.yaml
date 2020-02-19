@@ -1,12 +1,8 @@
 name: businesstravel
 description: A new Flutter project.
 
-environment:
-  sdk: ">=2.0.0-dev.68.0 <3.0.0"
-
 dependencies:
   json_annotation: ^0.2.4
-  local_auth: "^0.2.1"
   flutter:
     sdk: flutter
 
@@ -14,11 +10,11 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: '^0.1.2'  
   #shared_preferences: '^0.4.2'
-  url_launcher: '^4.0.1'
+  url_launcher: '^2.0.2'
   http: "^0.11.3+16"
   
 dev_dependencies:
-  build_runner: ^0.9.2
+  build_runner: ^0.8.9
   json_serializable: ^0.5.0
 
   flutter_test:
@@ -82,16 +78,17 @@ flutter:
     - assets/United_Airlines_Logo.jpg
     - assets/hilton.png
     - assets/HubBG.png
+    - assets/HubBG-1.png
+    - assets/HubBG-2.png
     - assets/budget.png
     - assets/uber.jpg
-    - assets/travelhub_black.png
-    - assets/black-background.jpg
-    - assets/1logo_cbt.png
-    - assets/2logo_cbt.png
-    - assets/imgevent1.jpg
-    - assets/imgevent2.jpg
-    - assets/imgevent3.jpg
-    - assets/Weather.png
+    - assets/BT01mydeals_.png
+    - assets/BT02myairlines.png
+    - assets/BT03myhotels.png
+    - assets/BT04myfeedback.png
+    - assets/SEA_overview_map.png
+    - assets/SlightDrizzle.ico
+    - assets/delta.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
@@ -123,9 +120,3 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.io/custom-fonts/#from-packages
-fonts:
-  - family: Whitney
-    fonts:
-      - asset: fonts/3955045D2CF71A4B6.woff2
-      - asset: fonts/2AEF2F564D90434B1.woff2
-        style: italic
