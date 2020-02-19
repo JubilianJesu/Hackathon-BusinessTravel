@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../Preferences/preference.dart';
 import 'package:http/http.dart' as http;
-import 'package:local_auth/local_auth.dart';
 import 'dart:async';
 import 'dart:convert';
 import '../model/authlogin.dart';
@@ -12,12 +11,27 @@ class LoginPage extends StatefulWidget {
   _LoginPageState createState() => new _LoginPageState();
 }
 
+const MaterialColor blueDeep = const MaterialColor(
+    _bluePrimaryValue,
+    const <int, Color>{
+       50: const Color(0xFFE3F2FD),
+      100: const Color(0xFFBBDEFB),
+      200: const Color(0xFF90CAF9),
+      300: const Color(0xFF64B5F6),
+      400: const Color(0xFF42A5F5),
+      500: const Color(_bluePrimaryValue),
+      600: const Color(0xFF1E88E5),
+      700: const Color(0xFF1976D2),
+      800: const Color(0xFF1565C0),
+      900: const Color(0xFF0D47A1),
+    },
+  );
+const int _bluePrimaryValue = 0xFF0D47A1;
+
 class loginProfile {
   final String authToken;
   final String profileId;
   final String companyId;
-
-  loginProfile(this.authToken, this.profileId, this.companyId);
 }
 
 class _LoginPageState extends State<LoginPage> {
@@ -79,26 +93,20 @@ class _LoginPageState extends State<LoginPage> {
     return new Scaffold(
       key: scaffoldKey,
       appBar: new AppBar(
-        title: new Text('Next Gen Corporate Travel'),
+        title: new Text('Corporate Travel Market Place'),
       ),
-      backgroundColor: Colors.grey[850],
       body: new Container(
         decoration: new BoxDecoration(
           image: new DecorationImage(
-            image: new AssetImage("assets/1logo_cbt.png"),
-            fit: BoxFit.contain,
-            alignment: FractionalOffset.topCenter
+            image: new AssetImage("assets/HubBG-1.png"),
+            fit: BoxFit.cover,
           ),
         ),
-        //color: Colors.grey[850],
         child: new Padding(
           padding: const EdgeInsets.all(16.0),
           child: new Form(
             key: formKey,
             child: new Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 new TextFormField(
                   decoration: new InputDecoration(labelText: 'Your email',labelStyle: new TextStyle(color: Colors.white)),
@@ -106,6 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                       !val.contains('@') ? 'Not a valid email.' : null,
                   onSaved: (val) => _email = val,
                   style: new TextStyle(color: Colors.white),
+                  initialValue: 'jubilian.j@tcs.com',
                 ),
                 new TextFormField(
                   decoration: new InputDecoration(
@@ -116,14 +125,18 @@ class _LoginPageState extends State<LoginPage> {
                   onSaved: (val) => _password = val,
                   obscureText: true,
                   style: new TextStyle(color: Colors.white),
+                  initialValue: 'Test123',
                 ),
                 new Container(
+                  width: 1200.00,
+                  height: 50.00,
                   margin:
-                      const EdgeInsets.only(left: 30.0, top: 30.0, right: 30.0),
+                      const EdgeInsets.only(left: 50.0, top: 50.0, right: 50.0),
                   child: new RaisedButton(
                     onPressed: _submit,
-                    child: new Text('Login',style: new TextStyle(color: Colors.white),),
-                    color: Colors.red,
+                    child: new Text('Login',style: new TextStyle(color: Colors.white,fontSize: 20.00)),
+                    color: Colors.deepPurple,
+                    
                   ),
                 ),
               ],

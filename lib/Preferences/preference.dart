@@ -1,3 +1,4 @@
+import 'package:businesstravel/orderDetails.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../landingPage.dart';
@@ -20,12 +21,17 @@ class MyHomePage extends State<MyPreferences> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   List<String> _events = <String>[
     '',
-    'IT Events',
-    'Game Events',
-    'Cultural Events'
+    'Cannot Walk',
+    'Cannot Walk long distance',
+    'Cannot Aecend or Descend Steps'
+  ];
+  List<String> _assisatnceLevels = <String>[
+    '',
+    'From Lobby',
+    'Self Movement to Gate'
   ];
   String _event = '';
-  List<String> _dinings = <String>['', 'Italian', 'Russian', 'Indian'];
+  List<String> _typeOfWheelChairs = <String>['', 'Standard Manual', 'Battery Operated'];
   String _dining = '';
   String stayWithinBudgetValue = "Yes";
   String blendTravelValue = "Yes";
@@ -108,24 +114,58 @@ class MyHomePage extends State<MyPreferences> {
 
   @override
   Widget build(BuildContext context) {
-    final eventsInterested = InputDecorator(
+
+    var _asstianceLevel = 'From Lobby';//'Games event';
+    final assistanceLevel = InputDecorator(
       decoration: const InputDecoration(
         icon: const Icon(
           Icons.event,
           color: Colors.grey,
         ),
-        labelText: 'Events Interested',
+        labelText: 'AssistanceLevel Level',
         labelStyle: const TextStyle(
             fontWeight: FontWeight.bold, fontSize: 15.0, color: Colors.black),
       ),
-      isEmpty: _event == '',
+
       child: new DropdownButtonHideUnderline(
         child: new DropdownButton<String>(
-          value: _event,
+          value: _asstianceLevel,
           isDense: true,
           onChanged: (String newValue) {
             setState(() {
-              myPreference.eventInterested = newValue;
+              myPreference.assisatanceLevel = newValue;
+              _asstianceLevel = newValue;
+            });
+          },
+          items: _assisatnceLevels.map((String value) {
+            return new DropdownMenuItem<String>(
+              value: value,
+              child: new Text(value),
+            );
+          }).toList(),
+        ),
+      ),
+    );
+
+    var _mobilityLevel = 'Cannot Walk';
+    final mobilityLevel = InputDecorator(
+      decoration: const InputDecoration(
+        icon: const Icon(
+          Icons.event,
+          color: Colors.grey,
+        ),
+        labelText: 'Mobility Level',
+        labelStyle: const TextStyle(
+            fontWeight: FontWeight.bold, fontSize: 15.0, color: Colors.black),
+      ),
+
+      child: new DropdownButtonHideUnderline(
+        child: new DropdownButton<String>(
+          value: _mobilityLevel,
+          isDense: true,
+          onChanged: (String newValue) {
+            setState(() {
+              myPreference.mobilityLevel = newValue;
               _event = newValue;
             });
           },
@@ -138,6 +178,7 @@ class MyHomePage extends State<MyPreferences> {
         ),
       ),
     );
+
 
     final stayWithinBudget = Row(
       children: <Widget>[
@@ -222,7 +263,9 @@ class MyHomePage extends State<MyPreferences> {
         },
       ),
     ]);
-    final diningOptions = InputDecorator(
+    
+    var _typeOfWheelChair = 'Battery Operated';
+    final typeOfWheelChair = InputDecorator(
       decoration: const InputDecoration(
         icon: const Icon(
           Icons.local_dining,
@@ -232,18 +275,17 @@ class MyHomePage extends State<MyPreferences> {
         labelStyle: const TextStyle(
             fontWeight: FontWeight.bold, fontSize: 15.0, color: Colors.black),
       ),
-      isEmpty: _dining == '',
       child: new DropdownButtonHideUnderline(
         child: new DropdownButton<String>(
-          value: _dining,
+          value: _typeOfWheelChair,
           isDense: true,
           onChanged: (String newValue) {
             setState(() {
               myPreference.diningOption = newValue;
-              _dining = newValue;
+              _typeOfWheelChair = newValue;
             });
           },
-          items: _dinings.map((String value) {
+          items: _typeOfWheelChairs.map((String value) {
             return new DropdownMenuItem<String>(
               value: value,
               child: new Text(value),
@@ -339,23 +381,37 @@ class MyHomePage extends State<MyPreferences> {
       ),
     ]);
 
-    final destinationZipCode = TextFormField(
+    final assemblyInstructions = TextFormField(
       decoration: const InputDecoration(
         icon: const Icon(
           Icons.contact_mail,
           color: Colors.grey,
         ),
-        hintText: 'Destination Zipcode',
-        labelText: 'Destination Zipcode',
+        hintText: 'Assembly Instructions',
+        labelText: 'Assembly Instructions',
         labelStyle: const TextStyle(
             fontWeight: FontWeight.bold, fontSize: 15.0, color: Colors.black),
         hintStyle: const TextStyle(
             fontWeight: FontWeight.bold, fontSize: 15.0, color: Colors.black),
       ),
-      keyboardType: TextInputType.phone,
-      inputFormatters: [
-        WhitelistingTextInputFormatter.digitsOnly,
-      ],
+      keyboardType: TextInputType.text,
+      onSaved: (val) => myPreference.destinationZipcode = val,
+    );
+
+    final dimensions = TextFormField(
+      decoration: const InputDecoration(
+        icon: const Icon(
+          Icons.contact_mail,
+          color: Colors.grey,
+        ),
+        hintText: 'Dimensions',
+        labelText: 'Dimensions',
+        labelStyle: const TextStyle(
+            fontWeight: FontWeight.bold, fontSize: 15.0, color: Colors.black),
+        hintStyle: const TextStyle(
+            fontWeight: FontWeight.bold, fontSize: 15.0, color: Colors.black),
+      ),
+      keyboardType: TextInputType.text,
       onSaved: (val) => myPreference.destinationZipcode = val,
     );
 
@@ -364,14 +420,14 @@ class MyHomePage extends State<MyPreferences> {
         height: 40.0,
         margin: const EdgeInsets.only(left: 30.0, top: 30.0, right: 30.0),
         child: new RaisedButton(
-          color: Colors.red,
+          color: Colors.deepPurpleAccent,
           splashColor: Colors.blueGrey,
           child: Text('Submit',
               style: new TextStyle(fontSize: 20.0, color: Colors.white),
               textAlign: TextAlign.center),
           onPressed: () {
             submitForm();
-            Navigator.of(context).pushNamed(LandingPage.tag);
+            Navigator.of(context).pushNamed(SearchScreen.tag);
           },
         ));
 
@@ -382,10 +438,10 @@ class MyHomePage extends State<MyPreferences> {
           new Container(
               margin: const EdgeInsets.only(top: 10.0),
               child: new Text(
-                'Welcome Jessie',
+                'Welcome Jane',
                 style: const TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 15.0,
+                    fontSize: 20.0,
                     color: Colors.black),
               )),
         ]),
@@ -397,10 +453,10 @@ class MyHomePage extends State<MyPreferences> {
       children: [
         new Column(children: [
           new Container(
-              margin: const EdgeInsets.only(top: 10.0),
+              margin: const EdgeInsets.only(top: 5.0),
               child: new Text(
-                'Glad to make your Business Travel Exciting!',
-                style: const TextStyle(fontSize: 12.0, color: Colors.black),
+                'Lets Capture Your Mobility Details!',
+                style: const TextStyle(fontSize: 15.0, color: Colors.black),
               )),
         ]),
       ],
@@ -408,7 +464,7 @@ class MyHomePage extends State<MyPreferences> {
 
     final line = Container(
       color: Colors.black.withOpacity(0.85),
-      margin: const EdgeInsets.symmetric(vertical: 16.0),
+      margin: const EdgeInsets.symmetric(vertical: 5.0),
       width: 200.0,
       height: 2.0,
     );
@@ -426,13 +482,11 @@ class MyHomePage extends State<MyPreferences> {
                   welcomeMessage,
                   line,
                   headerMessage,
-                  eventsInterested,
-                  stayWithinBudget,
-                  blendTravel,
-                  diningOptions,
-                  socialBasedSetting,
-                  femineCare,
-                  destinationZipCode,
+                  mobilityLevel,
+                  assistanceLevel,
+                  typeOfWheelChair,
+                  assemblyInstructions,
+                dimensions,
                   submitButton,
                 ],
               )));

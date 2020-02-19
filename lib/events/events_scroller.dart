@@ -10,43 +10,30 @@ import 'dart:io';
 import 'dart:async';
 import 'dart:convert';
 
-Future<offers> getevents() async {
+Future<List<image>> getevents() async {
+  await new Future.delayed(const Duration(seconds : 2));
   offers offersdata = new offers(
     images: <image>[
       new image(
-        title: 'Jazz in the Garden Concert Series, On June 08, 2018',
+        title: 'Seattle Sounders FC, On April 12, 2019',
         imageUrl:
-            'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F41503594%2F1961717567%2F1%2Foriginal.jpg?w=800&auto=compress&rect=583%2C389%2C1944%2C972&s=e068139d3d0c3fcb38c8385afd60109f',
-        url: 'https://washington.org/event/jazz-garden-concert-series',
-        description: 'Jazz in the Garden Concert Series, On June 08, 2018',
+            'http://cdn.placepass.com/vendors/fanxchange/fanxchange_product_images/soccer_1.jpg',
+        url: 'https://www.placepass.com/things-to-do/h8bjMv7SZ1ZZgSZ-seattle-sounders-fc?startDate=2019-04-05&endDate=2019-04-12',
+        description: 'Real Salt Lake at Seattle Sounders FC, On April 12, 2019',
       ),
       new image(
-        title: 'DC Jazz Festival, From June 8-17, 2018',
+        title: 'Washington Huskies Softball, From April 8-17, 2019',
         imageUrl:
-            'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F41503594%2F1961717567%2F1%2Foriginal.jpg?w=800&auto=compress&rect=583%2C389%2C1944%2C972&s=e068139d3d0c3fcb38c8385afd60109f',
+            'http://cdn.placepass.com/vendors/fanxchange/fanxchange_product_images/baseball_8.jpg',
         url:
-            'https://washington.org/visit-dc/reasons-to-attend-dc-jazz-festival',
-        description: 'DC Jazz Festival, From June 8-17, 2018',
-      ),
-      new image(
-        title: 'Experience a creativity, From June 21-24, 2018',
-        imageUrl:
-            'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F41503594%2F1961717567%2F1%2Foriginal.jpg?w=800&auto=compress&rect=583%2C389%2C1944%2C972&s=e068139d3d0c3fcb38c8385afd60109f',
-        url: 'https://washington.org/visit-dc/discover-by-the-people-festival',
-        description: 'Experience a creativity, From June 21-24, 2018',
-      ),
-      new image(
-        title: 'Girlfriend , Signature Theatre, From June 10, 2018',
-        imageUrl:
-            'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F41503594%2F1961717567%2F1%2Foriginal.jpg?w=800&auto=compress&rect=583%2C389%2C1944%2C972&s=e068139d3d0c3fcb38c8385afd60109f',
-        url:
-            'https://washington.org/event/girlfriend-matthew-sweet-and-todd-almond',
-        description: 'Girlfriend , Signature Theatre, From June 10, 2018',
-      ),
+            'https://www.placepass.com/things-to-do/h8bjMv7SZ17SEL0-washington-huskies-softball?startDate=2019-04-05&endDate=2019-04-12',
+        description: 'Arizona State Sun Devils at Washington Huskies Softball, From April 8-17, 2019',
+      )
     ],
   );
 
-  return offersdata;
+  List<image> images = offersdata.images;
+  return images;
 }
 
 Future<List<image>> getapievents() async {
@@ -279,7 +266,7 @@ class EventsPageBodySTate extends State<EventsPageBody> {
   @override
   Widget build(BuildContext context) {
     return new FutureBuilder(
-        future: getapievents(),
+        future: getevents(),
         builder: (BuildContext context, AsyncSnapshot<List> snapshot) {
           if (!snapshot.hasData)
             return new Center(child: new CircularProgressIndicator());

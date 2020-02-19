@@ -10,6 +10,7 @@ import 'Offers/Offers_view.dart';
 import 'order/FlightCommonComponent.dart';
 import 'order/tripSummary.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'dstore/AirportMap.dart';
 
 class TagPage extends StatefulWidget {
   static String tag = "Tag-Page";
@@ -23,12 +24,7 @@ class TagPageState extends State<TagPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-      primaryColor: Colors.grey[850],
-      fontFamily: 'Whitney'
-
-    ),
-      home: Scaffold(
+            home: Scaffold(
           appBar: AppBar(
               leading: IconButton(
                 icon: Icon(Icons.menu),
@@ -45,7 +41,7 @@ class TagPageState extends State<TagPage> {
                         builder: (context) => new MySpace()));                  
                 },
               ),],
-              backgroundColor: Colors.grey[800],
+              backgroundColor: Colors.deepPurpleAccent,
               title: new Text("TAG")),
           body: _buildBody(context)),
     );
@@ -148,6 +144,8 @@ class TheGridView {
                       fit: BoxFit.cover,
                       height: 120.0,
                     ),
+                    
+                   
                     Center(
                         child: Text(
                       "$title",
@@ -164,6 +162,71 @@ class TheGridView {
         ),
       ),
     );
+    
+  }
+
+  GestureDetector makeWeatherGridCell(BuildContext context,
+      String name, String title, String image, int notificationCount, String temperature, String city) {
+    return new GestureDetector(
+      onTap: () {
+        iconClick(context,name);
+      },
+      child: new Card(
+        elevation: 1.0,
+        child: new ClipRRect(
+          borderRadius: new BorderRadius.circular(8.0),
+          child: new Stack(
+            children: <Widget>[
+              new Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisSize: MainAxisSize.min,
+                  verticalDirection: VerticalDirection.down,
+                  children: <Widget>[
+                    new Image.asset(
+                      "assets/$image",
+                      fit: BoxFit.scaleDown,
+                      alignment: Alignment.topLeft,
+                      height: 70.0,
+                      width: 100.0,
+                    ),
+                    Align(
+                      alignment: Alignment.topRight,
+                        child: Text(
+                      "$temperature",
+                      style: new TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 24.0),
+                    )),
+                    Align(
+                      alignment: Alignment.topRight,
+                        child: Text(
+                      "$city",
+                      style: new TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20.0),
+                    )),
+                   
+                    Center(
+                        child: Text(
+                      "$title",
+                      style: new TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20.0),
+                    )),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+    
   }
 
   GridView build(BuildContext context) {
@@ -176,7 +239,7 @@ class TheGridView {
         crossAxisSpacing: 1.0,
         children: <Widget>[
           makeGridCell(context,"AirportMap", "Airport Map", "airporttile.png", 5),
-          makeGridCell(context,"Weather", "Weather", "Weather.png", 5),
+          makeWeatherGridCell(context,"Weather", "Weather", "SlightDrizzle.ico", 5 ,"51 F", "Seattle"),
           makeGridCell(context,"Events", "Events", "Event_2.jpg", 3),
           makeGridCell(context,"Local Destinations", "Locale", "attractions.jpg", 3),
           makeGridCell(context,"Wine&Dine", "Wine&Dine", "Wine&Dine.gif", 8)
@@ -187,16 +250,16 @@ class TheGridView {
 void iconClick(BuildContext context, String icon) {
   switch (icon) {
     case "AirportMap":
-      launch("https://www.google.com/maps/place/Denver+International+Airport/@39.8560963,-104.6759263,17z/data=!3m1!4b1!4m5!3m4!1s0x876c7f2a98ff44ff:0x49583bb435b59c6a!8m2!3d39.8560963!4d-104.6737376");
+      Navigator.of(context).push(MaterialPageRoute(builder: (context) => AirportMap()));
       break;
     case "Weather":
-      launch("https://weather.com/weather/hourbyhour/l/Denver+CO+USCO0105:1:US");
+      launch("https://weather.com/weather/today/l/USWA0395:1:US");
       break;
     case "Wine&Dine":
-      launch("https://www.google.com/maps/search/restaurants+near+me/@38.9001876,-77.0276488,15z/data=!3m1!4b1");
+      launch("https://weather.com/weather/today/l/USWA0395:1:US");
       break;
     case "Local Destinations":
-      launch("https://www.google.com/maps/search/attractions+near+me/@38.9001883,-77.0276488,15z/data=!3m1!4b1");
+      launch("https://www.google.com/maps/search/local+attractions/@47.628085,-122.3573466,14z/data=!3m1!4b1");
       break;
     default:
       Navigator.of(context).pushNamed(MyEvents.tag);

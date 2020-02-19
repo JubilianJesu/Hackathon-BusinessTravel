@@ -22,6 +22,8 @@ class SearchScreenState extends State<SearchScreen> {
   void _handleMyLocationClick() {}
 
   Widget _buildTripType() {
+    var _tapColor = Colors.white70;
+    var _tapTextColor = Colors.black54;
     return new Container(
         margin: const EdgeInsets.symmetric(vertical: 6.0),
         child: new Row(
@@ -30,27 +32,31 @@ class SearchScreenState extends State<SearchScreen> {
             new RaisedButton(
               child: new Text(
                 'One-way',
-                style: new TextStyle(color: Colors.white),
+                style: new TextStyle(color: Colors.black54),
               ),
               onPressed: _handleOneWayClick,
-              color: Colors.grey[600],
+              color: Colors.white70,
               elevation: 0.5,
             ),
             new RaisedButton(
                 child: new Text(
                   'Round Trip',
-                  style: new TextStyle(color: Colors.white),
+                  style: new TextStyle(color: _tapTextColor),
                 ),
-                onPressed: _handleRTClick,
-                color: Colors.grey[600],
+                onPressed:() {
+                  setState(() {
+                                _tapColor = Colors.deepPurple;
+                                _tapTextColor = Colors.white70;
+                              }); } ,
+                color: _tapColor,
                 elevation: 0.5),
             new RaisedButton(
                 child: new Text(
                   'Multi City',
-                  style: new TextStyle(color: Colors.white),
+                  style: new TextStyle(color: Colors.black54),
                 ),
                 onPressed: _handleMCClick,
-                color: Colors.grey[600],
+                color: Colors.white70,
                 elevation: 0.5),
           ],
         ));
@@ -64,8 +70,8 @@ class SearchScreenState extends State<SearchScreen> {
             margin: const EdgeInsets.symmetric(vertical: 8.0),
             decoration: const BoxDecoration(
                 border: const Border(
-                    top: const BorderSide(width: 0.2, color: Colors.black),
-                    bottom: const BorderSide(width: 0.2, color: Colors.black))),
+                    top: const BorderSide(width: 0.2, color: Colors.grey),
+                    bottom: const BorderSide(width: 0.2, color: Colors.grey))),
             child: new Row(
               children: [
                 new Container(
@@ -117,6 +123,7 @@ class SearchScreenState extends State<SearchScreen> {
                                   onSaved: (String value) {
                                     this.search.origin = value;
                                   },
+                                  initialValue: 'ORD',
                                 ),
                               )),
                               new Container(
@@ -157,6 +164,7 @@ class SearchScreenState extends State<SearchScreen> {
                                   onSaved: (String value) {
                                     this.search.destination = value;
                                   },
+                                  initialValue: 'SEA',
                                 ),
                               )),
                               new Container(
@@ -179,7 +187,7 @@ class SearchScreenState extends State<SearchScreen> {
           ),
           new Container(
             padding: const EdgeInsets.only(top: 8.0, bottom: 9.0),
-            decoration: const BoxDecoration(              
+            decoration: const BoxDecoration(
                 border: const Border(
                     bottom: const BorderSide(width: 0.5, color: Colors.grey))),
             child: new Row(
@@ -212,6 +220,7 @@ class SearchScreenState extends State<SearchScreen> {
                         onSaved: (String value) {
                           this.search.departureDate = value;
                         },
+                        initialValue: '04/08/2019',
                       ),
                     ),
                   ),
@@ -231,6 +240,7 @@ class SearchScreenState extends State<SearchScreen> {
                       onSaved: (String value) {
                         this.search.returnDate = value;
                       },
+                      initialValue: '04/12/2019',
                     ),
                   )),
                 )
@@ -250,13 +260,12 @@ class SearchScreenState extends State<SearchScreen> {
         children: <Widget>[
           new GestureDetector(
             child: new Container(
-              decoration: const BoxDecoration(color: Colors.red),
+              decoration: const BoxDecoration(color: Colors.deepPurpleAccent),
               width: 350.0,
               height: 40.0,
               padding: const EdgeInsets.only(top: 8.0),
-              margin: const EdgeInsets.symmetric(horizontal: 25.0),
               child: new Text('Search',
-                  style: new TextStyle(fontSize: 20.0, color: Colors.white),
+                  style: new TextStyle(fontSize: 20.0, color: Colors.white70),
                   textAlign: TextAlign.center),
             ),
             onTap: () {
@@ -278,7 +287,7 @@ class SearchScreenState extends State<SearchScreen> {
   Widget _travelOptions() {
     return Column(
       children: <Widget>[
-        new Container(
+       /** new Container(
           decoration: const BoxDecoration(
               border: const Border(
                   bottom: const BorderSide(width: 0.2, color: Colors.grey))),
@@ -300,7 +309,7 @@ class SearchScreenState extends State<SearchScreen> {
                             }),
                         new Text('Flight',
                             style: new TextStyle(
-                                fontSize: 16.0, color: Colors.white))
+                                fontSize: 16.0, color: Colors.black54))
                       ],
                     ),
                   ),
@@ -316,7 +325,7 @@ class SearchScreenState extends State<SearchScreen> {
                             }),
                         new Text('Hotel',
                             style: new TextStyle(
-                                fontSize: 16.0, color: Colors.white))
+                                fontSize: 16.0, color: Colors.black54))
                       ],
                     ),
                   ),
@@ -324,7 +333,7 @@ class SearchScreenState extends State<SearchScreen> {
               ),
             ],
           ),
-        ),
+        ), */
         new Container(
           padding: const EdgeInsets.only(top: 12.0, bottom: 12.0),
           decoration: const BoxDecoration(
@@ -336,10 +345,10 @@ class SearchScreenState extends State<SearchScreen> {
             //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               CustomButton('Hotel'),
-              CustomButton('Blend with leisure'),
-              CustomButton('Social seating'),
+              CustomButton('Mobility Aids'),
+              CustomButton('Special seating'),
               CustomButton('Taxi'),
-              CustomButton('Rental Car')
+              CustomButton('Rental Wheel Chair')
             ],
           ),
         ),
@@ -387,7 +396,7 @@ class SearchScreenState extends State<SearchScreen> {
             },
           ),
           title: new Text(
-            "One Order",
+            "Booking",
             style: new TextStyle(color: Colors.white),
           )),
       body: _buildBody(),
@@ -410,8 +419,8 @@ class CustomButtonState extends State<CustomButton> {
     return _customButton(text);
   }
 
-  Color _myTextColor = Colors.white;
-  Color _myBackColor = Colors.grey[600];
+  Color _myTextColor = Colors.black54;
+  Color _myBackColor = Colors.white70;
   Widget _customButton(btnText) {
     return new GestureDetector(
       child: new ConstrainedBox(
@@ -436,18 +445,18 @@ class CustomButtonState extends State<CustomButton> {
                   textAlign: TextAlign.center,
                   style: new TextStyle(color: _myTextColor, fontSize: 16.0),
                 ),
-                //const Icon(Icons.info_outline, color: Colors.white, size: 20.0,)
+                //const Icon(Icons.info_outline, color: Colors.black54, size: 20.0,)
               ],
             )),
       ),
       onTap: () {
         setState(() {
-          if (_myTextColor == Colors.white) {
+          if (_myTextColor == Colors.black54) {
             _myTextColor = Colors.white;
             _myBackColor = Colors.deepPurpleAccent;
           } else {
-            _myTextColor = Colors.white;
-            _myBackColor = Colors.grey[600];
+            _myTextColor = Colors.black54;
+            _myBackColor = Colors.white70;
           }
         });
       },

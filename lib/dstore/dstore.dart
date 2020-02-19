@@ -8,9 +8,14 @@ import '../events/events_scroller.dart';
 import '../order/FlightCommonComponent.dart';
 import '../order/tripSummary.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'MyAirlines.dart';
+import 'MyHotel.dart';
+import 'MyNewDeal.dart';
+import 'MyFeedback.dart';
 
 class MySpace extends StatefulWidget {
   static String tag = "MySpace-Page";
+  final String eventnavig = "";
   @override
   State<StatefulWidget> createState() {
     return new MySpacePageState();
@@ -21,11 +26,6 @@ class MySpacePageState extends State<MySpace> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-      primaryColor: Colors.grey[850],
-      fontFamily: 'Whitney'
-
-    ),
       home: Scaffold(
           appBar: AppBar(
               leading: IconButton(
@@ -34,7 +34,7 @@ class MySpacePageState extends State<MySpace> {
                   print('Menu button');
                 },
               ),
-              backgroundColor: Colors.grey[800],
+              backgroundColor: Colors.deepPurpleAccent,
               title: new Text("My Space")),
           body: _buildBody(context)),
     );
@@ -164,7 +164,7 @@ class TheGridView {
         mainAxisSpacing: 1.0,
         crossAxisSpacing: 1.0,
         children: <Widget>[          
-          makeGridCell(context,"United", "", "United_Airlines_Logo.jpg", 5),
+          makeGridCell(context,"Delta", "", "delta.png", 5),
           makeGridCell(context,"Hilton", "", "hilton.png", 5),          
           makeGridCell(context,"Deals", "", "MyDeals.jpg", 5),
           makeGridCell(context,"Budget", "", "budget.png", 3),
@@ -175,12 +175,12 @@ class TheGridView {
 }
 
 void iconClick(BuildContext context, String icon) {
-  switch (icon) {
-    case "United":
-      launch("https://www.united.com/ual/en/us/");
+    switch (icon) {
+    case "Delta":
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyAirline()));      
       break;
     case "Hilton":
-      launch("http://www3.hilton.com/en/index.html");
+      Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyHotel()));
       break;
     case "Uber":     
       launch("https://www.uber.com/");          
@@ -189,9 +189,9 @@ void iconClick(BuildContext context, String icon) {
       launch("https://www.budget.com/en/home");
       break;
     case "Deals":
-      Navigator.of(context).pushNamed(MyDeals.tag);
+      Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyNewDeal()));
       break;   
     default:
-      Navigator.of(context).pushNamed(MySpace.tag);
+      Navigator.of(context).pushNamed(MySpace.tag);  
   }
 }

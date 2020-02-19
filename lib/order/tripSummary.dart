@@ -148,7 +148,7 @@ class TripSummaryState extends State<TripSummary> {
                     new Icon(
                       Icons.location_on,
                       size: 20.0,
-                      color: Colors.blueAccent,
+                      color: Colors.deepPurpleAccent,
                     ),
                     new Flexible(
                       child: new Container(
@@ -158,7 +158,7 @@ class TripSummaryState extends State<TripSummary> {
                           //controller: widget._NameController,
                           maxLines: 1,
                           decoration: new InputDecoration.collapsed(
-                              hintText: 'Den',
+                              hintText: 'SEA',
                               hintStyle: new TextStyle(fontSize: 18.0)),
                         ),
                       ),
@@ -242,7 +242,7 @@ class TripSummaryState extends State<TripSummary> {
                     new Icon(
                       Icons.location_on,
                       size: 20.0,
-                      color: Colors.blueAccent,
+                      color: Colors.deepPurpleAccent,
                     ),
                     new Flexible(
                       child: new Container(
@@ -252,7 +252,7 @@ class TripSummaryState extends State<TripSummary> {
                           //controller: widget._NameController,
                           maxLines: 1,
                           decoration: new InputDecoration.collapsed(
-                              hintText: 'Den',
+                              hintText: 'SEA',
                               hintStyle: new TextStyle(fontSize: 18.0)),
                         ),
                       ),
@@ -305,7 +305,7 @@ class TripSummaryState extends State<TripSummary> {
         children: <Widget>[
           new GestureDetector(
             child: new Container(
-              decoration: const BoxDecoration(color: Colors.red),
+              decoration: const BoxDecoration(color: Colors.deepPurple),
               width: 300.0,
               height: 40.0,
               padding: const EdgeInsets.only(top: 8.0),
@@ -330,7 +330,7 @@ class TripSummaryState extends State<TripSummary> {
     //-------------------------Hoteloffer1---------------------------
     var offer1 = new Hotel();
     offer1.offerId = "1";
-    offer1.name = "Sofitel Washington Inn Washington";
+    offer1.name = "Courtyard by Marriot";
     offer1.imagePath = "assets/hotel_sofitel.jpg";
     offer1.distance = "2 miles";
     offer1.price = "+\$0";
@@ -348,9 +348,9 @@ class TripSummaryState extends State<TripSummary> {
     //-------------------------Hoteloffer2---------------------------
     var offer2 = new Hotel();
     offer2.offerId = "2";
-    offer2.name = "Hilton Hotel";
+    offer2.name = "Homewood Suites by Hilton";
     offer2.imagePath = "assets/hotel_hilton.jpg";
-    offer2.distance = "5 miles";
+    offer2.distance = "0.5 miles";
     offer2.price = "+\$0";
     offer2.starRating = 4;
     offer2.amenities = new HotelAmenities();
@@ -366,7 +366,7 @@ class TripSummaryState extends State<TripSummary> {
     //-------------------------Hoteloffer3---------------------------
     var offer3 = new Hotel();
     offer3.offerId = "3";
-    offer3.name = "Mandarin Oriental";
+    offer3.name = "Crowneplaza Seattle";
     offer3.imagePath = "assets/hotel_MandarinOriental.jpg";
     offer3.distance = "3 miles";
     offer3.price = "+\$0";
@@ -384,7 +384,7 @@ class TripSummaryState extends State<TripSummary> {
     //-------------------------Hoteloffer4---------------------------
     var offer4 = new Hotel();
     offer4.offerId = "4";
-    offer4.name = "Willard Inter Continental";
+    offer4.name = "Four Seasons Hotel";
     offer4.imagePath = "assets/hotel_WillardInterContinental.jpg";
     offer4.distance = "5 miles";
     offer4.price = "+\$100";

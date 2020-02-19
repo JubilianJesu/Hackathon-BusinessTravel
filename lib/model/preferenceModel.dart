@@ -1,5 +1,7 @@
 class PreferenceModel {
   String eventInterested = '';
+  String assisatanceLevel = '';
+  String mobilityLevel = '';
   String stayWithWidget = '';
   String blendTravel = '';
   String diningOption = '';

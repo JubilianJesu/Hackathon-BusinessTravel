@@ -48,17 +48,16 @@ class LandingPageState extends State<LandingPage>{
       final orderButton = Padding(
         padding: EdgeInsets.symmetric(vertical:16.0,),
         child: Material(
-           borderRadius:  BorderRadius.circular(18.0),
+            borderRadius:  BorderRadius.circular(18.0),
             shadowColor: Colors.deepPurpleAccent.shade100,
             elevation: 5.0,
-            child: RaisedButton(
-              // minWidth: 200.0,
-              // height: 42.0,
+            child: MaterialButton(
+              minWidth: 200.0,
+              height: 42.0,
               onPressed: (){
                 Navigator.of(context).pushNamed(SearchScreen.tag);
               },
-              color: Colors.redAccent,
-              shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(25.0)),
+              color: Colors.deepPurpleAccent,
               child: Text('Orders', style: TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold)),
               ),
         ),
@@ -71,14 +70,13 @@ final tagButton = Padding(
             borderRadius:  BorderRadius.circular(18.0),
             shadowColor: Colors.deepPurpleAccent.shade100,
             elevation: 5.0,
-            child: RaisedButton(
-              // minWidth: 200.0,
-              // height: 42.0,
+            child: MaterialButton(
+              minWidth: 200.0,
+              height: 42.0,
               onPressed: (){
                 Navigator.of(context).pushNamed(TagPage.tag);
               },
-              color: Colors.redAccent,
-              shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(25.0)),
+              color: Colors.deepPurpleAccent,
               child: Text('Tag', style: TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold)),
               ),
         ),
@@ -91,15 +89,14 @@ final dStoreButton = Padding(
             borderRadius:  BorderRadius.circular(18.0),
             shadowColor: Colors.deepPurpleAccent.shade100,
             elevation: 5.0,
-            child: RaisedButton(
-              // minWidth: 200.0,
-              // height: 42.0,
+            child: MaterialButton(
+              minWidth: 200.0,
+              height: 42.0,
               onPressed: (){
                 clickDStore();
                 
                },
-              color: Colors.redAccent,
-              shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(25.0)),
+              color: Colors.deepPurpleAccent,
               child: Text('My Space', style: TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold)),
               ),
         ),
@@ -115,7 +112,7 @@ final dStoreButton = Padding(
       body: new Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          new Image.asset("assets/background.jpg", fit: BoxFit.cover),
+          new Image.asset("assets/HubBG-1.png", fit: BoxFit.cover),
           new BackdropFilter(
             filter: new ImageFilter.blur(sigmaX: 0.0, sigmaY: 0.0),
             child: new Container(

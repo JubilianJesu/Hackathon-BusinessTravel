@@ -44,6 +44,7 @@ class Flight extends Object with _$FlightSerializerMixin{
   List<Flight> connections;
   String priceToCollect;
   String totalPrice;
+  int flightStats;
 
   Flight();
 

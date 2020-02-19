@@ -20,6 +20,7 @@ import 'order/FlightShopRequest.dart';
 
 void main() => runApp(MyApp());
 
+
 class MyApp extends StatelessWidget{
   final routes =  <String, WidgetBuilder> {
         LandingPage.tag : (BuildContext context) => new LandingPage(),
@@ -37,17 +38,16 @@ class MyApp extends StatelessWidget{
         Confirmation.tag: (BuildContext context) => new Confirmation(),
         MyDestinations.tag: (BuildContext context) => new MyDestinations(),
         MyDeals.tag: (BuildContext context) => new MyDeals(),
-        MySpace.tag: (BuildContext context) => new MySpace(),
+        MySpace.tag: (BuildContext context) => new MySpace()        
         };
 
   @override
   Widget build(BuildContext context){
     return MaterialApp( 
-      title: "Leisure Travel",    
+      title: "Business Travel",    
     debugShowCheckedModeBanner: false,
     theme: ThemeData(
-      primaryColor: Colors.grey[850],
-      fontFamily: 'Whitney'
+      primarySwatch:Colors.deepPurple,
 
     ),
     routes: routes,
