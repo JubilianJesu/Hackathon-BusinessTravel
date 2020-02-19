@@ -2,40 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f625307-2c1c-4e14-80d8-4b6dc6a02fa2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/4.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.1/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/4.1/javaCompile/taskJars.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.1/javaCompile/taskJars.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/4.1/taskHistory/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.1/taskHistory/fileSnapshots.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/4.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.1/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/4.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.1/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Preferences/preference.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Preferences/preference.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/dstore/dStoreList.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/dstore/dStoreList.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/dstore/dstore.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/dstore/dstore.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/events/events_scroller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/events/events_scroller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/landingPage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/landingPage.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/HubBG-1.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/HubBG-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/hotel_MandarinOriental.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/hotel_MandarinOriental.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/hotel_WillardInterContinental.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/hotel_WillardInterContinental.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/hotel_hilton.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/hotel_hilton.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/hotel_sofitel.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/hotel_sofitel.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/login/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/login/login.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/model/preferenceModel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/model/preferenceModel.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/order/FlightCommonComponent.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/order/FlightCommonComponent.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/order/FlightResults.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/order/FlightResults.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/order/FlightResultsModel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/order/FlightResultsModel.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/order/HotelOfferComponent.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/order/HotelOfferComponent.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/order/flightSearch.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/order/flightSearch.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/order/tripSummary.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/order/tripSummary.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/tagPage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/tagPage.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,8 +27,38 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/main.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+            <state relative-caret-position="153">
+              <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/order/tripSummary.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="169">
+              <caret line="401" column="27" selection-start-line="401" selection-start-column="21" selection-end-line="401" selection-end-column="27" />
+              <folding>
+                <element signature="e#4200#5083#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/order/FlightCommonComponent.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="281">
+              <caret line="42" column="26" lean-forward="true" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/login/login.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="174">
+              <caret line="116" column="44" selection-start-line="116" selection-start-column="44" selection-end-line="116" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -57,8 +66,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/order/flightSearch.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="356" column="3" lean-forward="true" selection-start-line="356" selection-start-column="3" selection-end-line="356" selection-end-column="3" />
+            <state relative-caret-position="565">
+              <caret line="356" column="3" selection-start-line="356" selection-start-column="3" selection-end-line="356" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -66,8 +75,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/Preferences/preference.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="418" column="21" lean-forward="true" selection-start-line="418" selection-start-column="21" selection-end-line="418" selection-end-column="21" />
+            <state relative-caret-position="199">
+              <caret line="420" column="74" selection-start-line="419" selection-start-column="21" selection-end-line="420" selection-end-column="74" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -83,20 +92,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/order/FlightResults.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="119" column="42" selection-start-line="119" selection-start-column="42" selection-end-line="119" selection-end-column="42" />
+            <state relative-caret-position="168">
+              <caret line="126" column="45" selection-start-line="126" selection-start-column="45" selection-end-line="126" selection-end-column="45" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/order/FlightCommonComponent.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="527" column="31" lean-forward="true" selection-start-line="527" selection-start-column="31" selection-end-line="527" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -113,6 +113,16 @@
       <find>Blend</find>
       <find>Flight</find>
       <find>_travelOptions</find>
+      <find>SEA</find>
+      <find>buildHotelSection</find>
+      <find>add rental</find>
+      <find>Battery</find>
+      <find>Toy</find>
+      <find>freedom</find>
+      <find>amenit</find>
+      <find>offer1</find>
+      <find>isWifi</find>
+      <find>getFlightAmenities</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -125,6 +135,8 @@
         <option value="$PROJECT_DIR$/lib/Preferences/preference.dart" />
         <option value="$PROJECT_DIR$/lib/main.dart" />
         <option value="$PROJECT_DIR$/lib/order/flightSearch.dart" />
+        <option value="$PROJECT_DIR$/lib/login/login.dart" />
+        <option value="$PROJECT_DIR$/lib/order/tripSummary.dart" />
         <option value="$PROJECT_DIR$/lib/order/FlightCommonComponent.dart" />
       </list>
     </option>
@@ -146,6 +158,11 @@
             <path>
               <item name="Hackathon-BusinessTravel" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="Hackathon-BusinessTravel" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="assets" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="Hackathon-BusinessTravel" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
@@ -225,7 +242,7 @@
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Android Profiler" show_stripe_button="false" />
       <window_info anchor="bottom" id="TODO" />
-      <window_info active="true" anchor="bottom" id="Run" sideWeight="0.4986577" visible="true" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Run" sideWeight="0.4986577" visible="true" weight="0.19688386" />
       <window_info anchor="bottom" id="Find" />
       <window_info anchor="bottom" id="Debug" />
       <window_info anchor="bottom" id="Terminal" sideWeight="0.49932885" weight="0.3286119" />
@@ -240,10 +257,18 @@
       <window_info anchor="right" id="Palette&#9;" />
     </layout>
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/order/FlightCommonComponent.dart</url>
+          <line>152</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/order/FlightResultsModel.dart">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/model/preferenceModel.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -267,42 +292,62 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/Preferences/preference.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="418" column="21" lean-forward="true" selection-start-line="418" selection-start-column="21" selection-end-line="418" selection-end-column="21" />
+        <state relative-caret-position="199">
+          <caret line="420" column="74" selection-start-line="419" selection-start-column="21" selection-end-line="420" selection-end-column="74" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/order/flightSearch.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="356" column="3" lean-forward="true" selection-start-line="356" selection-start-column="3" selection-end-line="356" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/main.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/lib/order/FlightResultsModel.dart">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/order/FlightResults.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="119" column="42" selection-start-line="119" selection-start-column="42" selection-end-line="119" selection-end-column="42" />
+        <state relative-caret-position="168">
+          <caret line="126" column="45" selection-start-line="126" selection-start-column="45" selection-end-line="126" selection-end-column="45" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/main.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/login/login.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="116" column="44" selection-start-line="116" selection-start-column="44" selection-end-line="116" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/order/flightSearch.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="565">
+          <caret line="356" column="3" selection-start-line="356" selection-start-column="3" selection-end-line="356" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/order/tripSummary.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="401" column="27" selection-start-line="401" selection-start-column="21" selection-end-line="401" selection-end-column="27" />
+          <folding>
+            <element signature="e#4200#5083#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/order/FlightCommonComponent.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="527" column="31" lean-forward="true" selection-start-line="527" selection-start-column="31" selection-end-line="527" selection-end-column="31" />
+        <state relative-caret-position="281">
+          <caret line="42" column="26" lean-forward="true" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
         </state>
       </provider>
     </entry>

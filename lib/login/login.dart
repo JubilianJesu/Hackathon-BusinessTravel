@@ -93,7 +93,7 @@ class _LoginPageState extends State<LoginPage> {
     return new Scaffold(
       key: scaffoldKey,
       appBar: new AppBar(
-        title: new Text('Corporate Travel Market Place'),
+        title: new Text('Freedom On Wheels'),
       ),
       body: new Container(
         decoration: new BoxDecoration(
@@ -109,22 +109,22 @@ class _LoginPageState extends State<LoginPage> {
             child: new Column(
               children: [
                 new TextFormField(
-                  decoration: new InputDecoration(labelText: 'Your email',labelStyle: new TextStyle(color: Colors.white)),
+                  decoration: new InputDecoration(labelText: 'Your email',labelStyle: new TextStyle(color: Colors.black)),
                   validator: (val) =>
                       !val.contains('@') ? 'Not a valid email.' : null,
                   onSaved: (val) => _email = val,
-                  style: new TextStyle(color: Colors.white),
+                  style: new TextStyle(color: Colors.black),
                   initialValue: 'jubilian.j@tcs.com',
                 ),
                 new TextFormField(
                   decoration: new InputDecoration(
-                    labelText: 'Your password', labelStyle: new TextStyle(color: Colors.white),
+                    labelText: 'Your password', labelStyle: new TextStyle(color: Colors.black),
                     ),
                   validator: (val) =>
                       val.length < 6 ? 'Password too short.' : null,
                   onSaved: (val) => _password = val,
                   obscureText: true,
-                  style: new TextStyle(color: Colors.white),
+                  style: new TextStyle(color: Colors.black),
                   initialValue: 'Test123',
                 ),
                 new Container(

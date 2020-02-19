@@ -70,28 +70,7 @@ class TripSummaryState extends State<TripSummary> {
                 bottom: const BorderSide(width: 0.8, color: Colors.grey))),
         child: new Row(
           children: <Widget>[
-            new Container(
-                height: 62.0,
-                width: 65.0,
-                //padding: const EdgeInsets.only(right: 4.0),
-                decoration: const BoxDecoration(
-                    border: const Border(
-                        right:
-                            const BorderSide(width: 0.8, color: Colors.grey))),
-                child: new Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    new Container(
-                      width: 50.0,
-                      child: new Text(
-                        flight.departureDateFormatted,
-                        style: new TextStyle(fontSize: 15.0),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ],
-                )),
+
             new Container(
               width: 290.5,
               padding: const EdgeInsets.only(top: 4.0, bottom: 8.0),
@@ -119,29 +98,111 @@ class TripSummaryState extends State<TripSummary> {
             children: <Widget>[
               new Container(
                 margin:
-                    const EdgeInsets.only(top: 10.0, bottom: 10.0, left: 1.0),
+                const EdgeInsets.only(top: 20.0, left: 3.0),
                 child: new Row(
                   children: <Widget>[
                     new Text(
-                      'Add Hotel to your trip',
+                      'Airport wheelchair assistance is avaiable and added for your trip.',
                       textAlign: TextAlign.left,
                       style: new TextStyle(
-                          fontSize: 18.0, fontWeight: FontWeight.bold),
+                          fontSize: 14.0),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+          new Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              new Container(
+                margin:
+                const EdgeInsets.only(left: 3.0),
+                child: new Row(
+                  children: <Widget>[
+                    new Text(
+                      'You can explore more options below.',
+                      textAlign: TextAlign.left,
+                      style: new TextStyle(
+                          fontSize: 14.0),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+          new Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              new Container(
+                margin:
+                    const EdgeInsets.only(top: 20.0, bottom: 10.0, left: 3.0),
+                child: new Row(
+                  children: <Widget>[
+                    new Text(
+                      'Freedom of carrying wheel chair',
+                      textAlign: TextAlign.left,
+                      style: new TextStyle(
+                          fontSize: 21.0, fontWeight: FontWeight.bold),
                     ),
-                    new Container(
+                    /*new Container(
                       height: 18.0,
                       margin: const EdgeInsets.only(left: 5.0, top: 0.0),
                       child: new Icon(
                         Icons.arrow_drop_down,
                         size: 20.0,
                       ),
+                    )*/
+                  ],
+                ),
+              ),
+            ],
+          ),
+          new Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              new Container(
+                margin:
+                const EdgeInsets.only(left: 3.0),
+                child: new Row(
+                  children: <Widget>[
+                    new Text(
+                      'Rent wheelchair for whole trip, you will be picked and dropped',
+                      textAlign: TextAlign.left,
+                      style: new TextStyle(
+                          fontSize: 14.0),
                     )
                   ],
                 ),
               ),
+            ],
+          ),
+          new Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              new Container(
+                margin:
+                const EdgeInsets.only(bottom: 10.0, left: 3.0),
+                child: new Row(
+                  children: <Widget>[
+                    new Text(
+                      'off to place of your choice',
+                      textAlign: TextAlign.left,
+                      style: new TextStyle(
+                          fontSize: 14.0),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+          new Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+
               new Container(
                 width: 100.0,
-                margin: const EdgeInsets.only(right: 8.0),
+                margin: const EdgeInsets.only(right: 8.0, top: 10.0, bottom: 10.0),
                 child: new Row(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
@@ -158,7 +219,34 @@ class TripSummaryState extends State<TripSummary> {
                           //controller: widget._NameController,
                           maxLines: 1,
                           decoration: new InputDecoration.collapsed(
-                              hintText: 'SEA',
+                              hintText: 'Pick Up',
+                              hintStyle: new TextStyle(fontSize: 18.0)),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              new Container(
+                width: 100.0,
+                margin: const EdgeInsets.only(right: 8.0, top: 10.0, bottom: 10.0),
+                child: new Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    new Icon(
+                      Icons.location_on,
+                      size: 20.0,
+                      color: Colors.deepPurpleAccent,
+                    ),
+                    new Flexible(
+                      child: new Container(
+                        //height: 30.0,
+                        //width: 40.0,
+                        child: new TextField(
+                          //controller: widget._NameController,
+                          maxLines: 1,
+                          decoration: new InputDecoration.collapsed(
+                              hintText: 'Drop Off',
                               hintStyle: new TextStyle(fontSize: 18.0)),
                         ),
                       ),
@@ -168,6 +256,7 @@ class TripSummaryState extends State<TripSummary> {
               ),
             ],
           ),
+
           new Container(
             height: 181.0,
             child: new ListView(
@@ -218,7 +307,7 @@ class TripSummaryState extends State<TripSummary> {
                   child: new Row(
                     children: <Widget>[
                       new Text(
-                        'Add Rental Car',
+                        'Or reserve wheel chair only for airport',
                         textAlign: TextAlign.left,
                         style: new TextStyle(
                             fontSize: 18.0, fontWeight: FontWeight.bold),
@@ -233,33 +322,7 @@ class TripSummaryState extends State<TripSummary> {
                       )
                     ],
                   )),
-              new Container(
-                width: 100.0,
-                margin: const EdgeInsets.only(right: 8.0),
-                child: new Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    new Icon(
-                      Icons.location_on,
-                      size: 20.0,
-                      color: Colors.deepPurpleAccent,
-                    ),
-                    new Flexible(
-                      child: new Container(
-                        //height: 30.0,
-                        //width: 40.0,
-                        child: new TextField(
-                          //controller: widget._NameController,
-                          maxLines: 1,
-                          decoration: new InputDecoration.collapsed(
-                              hintText: 'SEA',
-                              hintStyle: new TextStyle(fontSize: 18.0)),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
+
             ],
           ),
           new Container(
@@ -330,9 +393,9 @@ class TripSummaryState extends State<TripSummary> {
     //-------------------------Hoteloffer1---------------------------
     var offer1 = new Hotel();
     offer1.offerId = "1";
-    offer1.name = "Courtyard by Marriot";
+    offer1.name = "Battery MX12B";
     offer1.imagePath = "assets/hotel_sofitel.jpg";
-    offer1.distance = "2 miles";
+    offer1.distance = "20";
     offer1.price = "+\$0";
     offer1.starRating = 5;
     offer1.amenities = new HotelAmenities();
@@ -348,9 +411,9 @@ class TripSummaryState extends State<TripSummary> {
     //-------------------------Hoteloffer2---------------------------
     var offer2 = new Hotel();
     offer2.offerId = "2";
-    offer2.name = "Homewood Suites by Hilton";
-    offer2.imagePath = "assets/hotel_hilton.jpg";
-    offer2.distance = "0.5 miles";
+    offer2.name = "Battery MDX19B";
+    offer2.imagePath = "assets/hotel_WillardInterContinental.jpg";
+    offer2.distance = "50";
     offer2.price = "+\$0";
     offer2.starRating = 4;
     offer2.amenities = new HotelAmenities();
@@ -366,9 +429,9 @@ class TripSummaryState extends State<TripSummary> {
     //-------------------------Hoteloffer3---------------------------
     var offer3 = new Hotel();
     offer3.offerId = "3";
-    offer3.name = "Crowneplaza Seattle";
+    offer3.name = "Battery RDX19B";
     offer3.imagePath = "assets/hotel_MandarinOriental.jpg";
-    offer3.distance = "3 miles";
+    offer3.distance = "30";
     offer3.price = "+\$0";
     offer3.starRating = 3;
     offer3.amenities = new HotelAmenities();
@@ -384,8 +447,8 @@ class TripSummaryState extends State<TripSummary> {
     //-------------------------Hoteloffer4---------------------------
     var offer4 = new Hotel();
     offer4.offerId = "4";
-    offer4.name = "Four Seasons Hotel";
-    offer4.imagePath = "assets/hotel_WillardInterContinental.jpg";
+    offer4.name = "Battery DQX9B";
+    offer4.imagePath = "assets/hotel_hilton.jpg";
     offer4.distance = "5 miles";
     offer4.price = "+\$100";
     offer4.starRating = 3;
@@ -408,8 +471,8 @@ class TripSummaryState extends State<TripSummary> {
     //-------------------------rcoffer1------------------------------
     var offer1 = new RentalCar();
     offer1.offerId = "1";
-    offer1.carName = "Toyota RAV4";
-    offer1.carImagePath = "assets/SUVCar.jpg";
+    offer1.carName = "Battery MDX32";
+    offer1.carImagePath = "assets/hotel_hilton.jpg";
     offer1.operatorName = "Hertz";
     offer1.operatorLogoImagePath = "assets/Hertz_logo.png";
     offer1.price = "+\$0";
@@ -426,8 +489,8 @@ class TripSummaryState extends State<TripSummary> {
     //-------------------------rcoffer2------------------------------
     var offer2 = new RentalCar();
     offer2.offerId = "2";
-    offer2.carName = "Toyota Corolla";
-    offer2.carImagePath = "assets/IntermediateCar.jpg";
+    offer2.carName = "Battery PB12";
+    offer2.carImagePath = "assets/hotel_MandarinOriental.jpg";
     offer2.operatorName = "Budget";
     offer2.operatorLogoImagePath = "assets/Budget_logo.png";
     offer2.price = "+\$0";
@@ -444,8 +507,8 @@ class TripSummaryState extends State<TripSummary> {
     //-------------------------rcoffer3------------------------------
     var offer3 = new RentalCar();
     offer3.offerId = "3";
-    offer3.carName = "Toyota Camry";
-    offer3.carImagePath = "assets/FullSizeCar.jpg";
+    offer3.carName = "Battery YI39";
+    offer3.carImagePath = "assets/hotel_WillardInterContinental.jpg";
     offer3.operatorName = "Enterprise";
     offer3.operatorLogoImagePath = "assets/Enterprise_logo.jpg";
     offer3.price = "+\$20";
@@ -462,8 +525,8 @@ class TripSummaryState extends State<TripSummary> {
     //-------------------------rcoffer4------------------------------
     var offer4 = new RentalCar();
     offer4.offerId = "4";
-    offer4.carName = "Chervolet Spark";
-    offer4.carImagePath = "assets/SmallCar.jpg";
+    offer4.carName = "Battery UI34";
+    offer4.carImagePath = "assets/hotel_sofitel.jpg";
     offer4.operatorName = "Avis";
     offer4.operatorLogoImagePath = "assets/Avis_logo.jpg";
     offer4.price = "+\$0";
