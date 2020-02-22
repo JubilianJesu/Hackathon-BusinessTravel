@@ -105,13 +105,22 @@ class RCOfferComponent extends StatelessWidget{
                     children: <Widget>[
                       new Container(
                         margin: const EdgeInsets.only(left: 5.0, top: 8.0),
-                        child: new Image.asset(
-                          car.operatorLogoImagePath,
-                          height: 20.0,
-                        ),
+                        child:
+//                        new Image.asset(
+//                          car.operatorLogoImagePath,
+//                          height: 20.0,
+//                        ),
+                          new Text('Complimentry',
+                            style: new TextStyle(fontSize: 14.0),
+                          ),
                       ),
                       new Container(
-                        child: buildRCAmenities(context, car.amenities, _iconColor),
+                          margin: const EdgeInsets.only(top: 10.0),
+//                        child: buildRCAmenities(context, car.amenities, _iconColor),
+                          child: new Text(car.availability,
+                              style: new TextStyle(
+                                  fontSize: 16.0, color: Colors.black54)
+                          )
                       )
                     ],
                   )

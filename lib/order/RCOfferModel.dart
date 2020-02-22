@@ -13,6 +13,7 @@ class RentalCar {
   int starRating;
   bool isBestOption = false;
   RCAmenities amenities;
+  String availability;
 }
 
 class RCAmenities {

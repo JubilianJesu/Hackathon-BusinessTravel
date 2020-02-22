@@ -88,10 +88,10 @@ class HotelOfferComponent extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         new Row(),
-                        new Container(
-                          margin: const EdgeInsets.only(bottom: 5.0),
-                          child: buildHotelAmenities(context, hotel.amenities),
-                        )
+//                        new Container(
+//                          margin: const EdgeInsets.only(bottom: 5.0),
+//                          child: buildHotelAmenities(context, hotel.amenities),
+//                        )
                       ],
                     ),
                   ),
@@ -110,13 +110,15 @@ class HotelOfferComponent extends StatelessWidget {
                               child: new Text(
                                 hotel.price,
                                 style: new TextStyle(
-                                    fontSize: 16.0, color: Colors.black54),
+                                    fontSize: 14.0, color: Colors.black54),
                               )),
                           new Container(
                             margin: const EdgeInsets.only(right: 5.0),
                             child: new Row(
                               children: <Widget>[
-                                new Text(hotel.distance),
+                                new Text(hotel.distance,
+                                  style: new TextStyle(fontSize: 15.0),
+                                ),
                                 // new Icon(
                                 //   Icons.thumb_up,
                                 //   color: Colors.blueAccent,
@@ -146,7 +148,7 @@ class HotelOfferComponent extends StatelessWidget {
         child: new Icon(
           Icons.star,
           color: Colors.orange,
-          size: 25.0,
+          size: 20.0,
         ),
       );
       widStarRating.add(widStar);

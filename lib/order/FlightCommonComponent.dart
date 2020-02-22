@@ -189,7 +189,7 @@ class FlightCommonComponent{
   }
 
   FlightResultsData getDummyFlightResults() {
-    sleep(const Duration(seconds:3));
+//    sleep(const Duration(seconds:3));
     FlightResultsData data = new FlightResultsData();
     FlightResults fResults = new FlightResults();
     fResults.trips = new List<TripInfo>();

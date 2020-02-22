@@ -14,6 +14,7 @@ import 'offers/offers_view.dart';
 import 'events/events_scroller.dart';
 import 'dstore/dStoreList.dart';
 import 'order/Confirmation.dart';
+import 'order/RentalWheelChair.dart';
 import 'destination/destination.dart';
 import 'deals/deals_scroller.dart';
 import 'order/FlightShopRequest.dart';
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget{
         MyOffers.tag: (BuildContext context) => new MyOffers(),
         MyEvents.tag: (BuildContext context) => new MyEvents(),
         DStorePage.tag : (BuildContext context) => new DStorePage(),
+        RentalWC.tag: (BuildContext context) => new RentalWC(),
         Confirmation.tag: (BuildContext context) => new Confirmation(),
         MyDestinations.tag: (BuildContext context) => new MyDestinations(),
         MyDeals.tag: (BuildContext context) => new MyDeals(),

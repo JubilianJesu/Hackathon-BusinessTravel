@@ -3,19 +3,17 @@ import 'FlightCommonComponent.dart';
 import 'FlightResultsModel.dart';
 import 'HotelOfferModel.dart';
 import 'RCOfferModel.dart';
-import 'RentalWheelChair.dart';
+import 'Confirmation.dart';
 import 'HotelOfferComponent.dart';
 import 'RCOfferComponent.dart';
-import 'Confirmation.dart';
 
-class TripSummary extends StatefulWidget {
-  static String tag = "tripsummary-Page";
-
+class RentalWC extends StatefulWidget {
+  static String tag = "rentalWC-Page";
   @override
-  State createState() => new TripSummaryState();
+  State createState() => new RentalWCState();
 }
 
-class TripSummaryState extends State<TripSummary> {
+class RentalWCState extends State<RentalWC> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -31,7 +29,7 @@ class TripSummaryState extends State<TripSummary> {
           },
         ),
         title: new Text(
-          'Trip Summary',
+          'Freedom on Wheels',
           style: new TextStyle(color: Colors.white),
         ),
       ),
@@ -47,109 +45,10 @@ class TripSummaryState extends State<TripSummary> {
     return new Container(
         child: new ListView(scrollDirection: Axis.vertical, children: <Widget>[
           buildTitleMessageSection(context),
-          buildTripSummary(context),
-          buildMessageSection(context),
-          buildFOWPromotionSection(context),
-          buildConfirmFOWProgram(context),
-//      buildHotelSection(context, getdummyHotelOffers()),
-//      buildRentalCarSection(context, getDummyRCOffers()),
+          buildHotelSection(context, getdummyHotelOffers()),
+          buildAirportRentalTitle(context),
+          buildRentalCarSection(context, getDummyRCOffers()),
           buildConfirmSection(context)
-    ]));
-  }
-
-  Widget buildTripSummary(BuildContext context) {
-    var flights = component.getDummySelectedFlights();
-    List<Widget> widTrips = new List<Widget>();
-    for (var i = 0; i < flights.length; i++) {
-      widTrips.add(buildTripForSummary(context, flights[i]));
-    }
-    return new Container(
-      decoration: BoxDecoration(
-          border: const Border(
-            top: const BorderSide(width: 0.8, color: Colors.grey),
-          )),
-      child: new Column(
-        children: widTrips,
-      ),
-    );
-  }
-
-  Widget buildTripForSummary(BuildContext context, Flight flight) {
-    double c_width = MediaQuery.of(context).size.width * 0.99;
-    return new Container(
-        decoration: BoxDecoration(
-            border: const Border(
-                bottom: const BorderSide(width: 0.8, color: Colors.grey),
-                )),
-        child: new Row(
-          children: <Widget>[
-            new Container(
-              width: c_width,
-              padding: const EdgeInsets.only(top: 4.0, bottom: 8.0),
-              // decoration: const BoxDecoration(
-              //     border: const Border(
-              //         right: const BorderSide(width: 0.8, color: Colors.grey))),
-              child: new Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  component.buildTripDetails(context, flight),
-                ],
-              ),
-            ),
-          ],
-        ));
-  }
-
-  Widget buildMessageSection(BuildContext context) {
-    double c_width = MediaQuery.of(context).size.width * 0.99;
-    return new Container(
-        padding: const EdgeInsets.only(bottom: 15.0),
-        decoration: const BoxDecoration(
-            border: const Border(
-                bottom: const BorderSide(width: 1.0, color: Colors.grey))),
-        child: new Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-          new Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              new Container(
-                margin: const EdgeInsets.only(top: 20.0, left: 3.0),
-                width: c_width,
-                child: new Row(
-                  children: <Widget>[
-                    Flexible(
-                        child: new Text(
-                      'Airport wheelchair assistance is avaiable and added for your trip. You will be provided wheelchair with assistance at check-in station.',
-                      textAlign: TextAlign.left,
-                      style: new TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
-                      softWrap: true,
-                    ))
-                  ],
-                ),
-              ),
-            ],
-          ),
-          new Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              new Container(
-                margin: const EdgeInsets.only(top: 20.0, left: 3.0),
-                width: c_width,
-                child: new Row(
-                  children: <Widget>[
-                    Flexible(
-                        child: new Text(
-                      'Note: Your outbound flight with fly time of 210 minutes does not have accessible lavatory.',
-                      textAlign: TextAlign.left,
-                      style: new TextStyle(fontSize: 18.0),
-                      softWrap: true,
-                    ))
-                  ],
-                ),
-              ),
-            ],
-          ),
         ]));
   }
 
@@ -159,50 +58,50 @@ class TripSummaryState extends State<TripSummary> {
         child: new Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-          new Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              new Container(
-                margin: const EdgeInsets.only(top: 20.0, left: 3.0),
-                width: c_width,
-                child: new Row(
-                  children: <Widget>[
-                    Flexible(
-                        child: new Text(
-                      'Review your trip summary',
-                      textAlign: TextAlign.left,
-                      style: new TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
-                      softWrap: true,
-                    ))
-                  ],
-                ),
+              new Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  new Container(
+                    margin: const EdgeInsets.only(top: 20.0, left: 3.0),
+                    width: c_width,
+                    child: new Row(
+                      children: <Widget>[
+                        Flexible(
+                            child: new Text(
+                              'Freedom of carrying wheel chair',
+                              textAlign: TextAlign.left,
+                              style: new TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),
+                              softWrap: true,
+                            ))
+                      ],
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
-          new Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              new Container(
-                margin: const EdgeInsets.only(top: 20.0, left: 3.0, bottom: 15.0),
-                width: c_width,
-                child: new Row(
-                  children: <Widget>[
-                    Flexible(
-                        child: new Text(
-                      'Please review important instrunctions about your trip.',
-                      textAlign: TextAlign.left,
-                      softWrap: true,
-                      style: new TextStyle(fontSize: 18.0),
-                    ))
-                  ],
-                ),
+              new Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  new Container(
+                    margin: const EdgeInsets.only(top: 20.0, left: 3.0, bottom: 15.0),
+                    width: c_width,
+                    child: new Row(
+                      children: <Widget>[
+                        Flexible(
+                            child: new Text(
+                              'Rent wheelchair for whole trip, don\'t worry you will be picked and dropped. to place of your choice.',
+                              textAlign: TextAlign.left,
+                              softWrap: true,
+                              style: new TextStyle(fontSize: 18.0),
+                            ))
+                      ],
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
-        ]));
+            ]));
   }
 
-  Widget buildFOWPromotionSection(BuildContext context){
+  Widget buildAirportRentalTitle(BuildContext context) {
     double c_width = MediaQuery.of(context).size.width * 0.99;
     return new Container(
         child: new Column(
@@ -212,17 +111,37 @@ class TripSummaryState extends State<TripSummary> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   new Container(
-                    margin: const EdgeInsets.only(top: 25.0, left: 4.0, bottom: 20.0),
+                    margin: const EdgeInsets.only(top: 20.0, left: 3.0),
                     width: c_width,
                     child: new Row(
                       children: <Widget>[
                         Flexible(
                             child: new Text(
-                              'Would you like to try our Freedom On Wheels program?',
-                              textAlign: TextAlign.center,
-                              style: new TextStyle(fontSize: 28.0),
+                              'Or move independently at Airport',
+                              textAlign: TextAlign.left,
+                              style: new TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),
                               softWrap: true,
-                            )),
+                            ))
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              new Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  new Container(
+                    margin: const EdgeInsets.only(top: 20.0, left: 3.0, bottom: 15.0),
+                    width: c_width,
+                    child: new Row(
+                      children: <Widget>[
+                        Flexible(
+                            child: new Text(
+                              'Reserve your faviorite wheel chair only for airport',
+                              textAlign: TextAlign.left,
+                              softWrap: true,
+                              style: new TextStyle(fontSize: 18.0),
+                            ))
                       ],
                     ),
                   ),
@@ -239,105 +158,10 @@ class TripSummaryState extends State<TripSummary> {
           new Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              new Container(
-                margin: const EdgeInsets.only(top: 20.0, left: 3.0),
-                child: new Row(
-                  children: <Widget>[
-                    new Text(
-                      'Airport wheelchair assistance is avaiable and added for your trip.',
-                      textAlign: TextAlign.left,
-                      style: new TextStyle(fontSize: 14.0),
-                    )
-                  ],
-                ),
-              ),
-            ],
-          ),
-          new Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              new Container(
-                margin: const EdgeInsets.only(left: 3.0),
-                child: new Row(
-                  children: <Widget>[
-                    new Text(
-                      'You can explore more options below.',
-                      textAlign: TextAlign.left,
-                      style: new TextStyle(fontSize: 14.0),
-                    )
-                  ],
-                ),
-              ),
-            ],
-          ),
-          new Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              new Container(
-                margin:
-                    const EdgeInsets.only(top: 20.0, bottom: 10.0, left: 3.0),
-                child: new Row(
-                  children: <Widget>[
-                    new Text(
-                      'Freedom of carrying wheel chair',
-                      textAlign: TextAlign.left,
-                      style: new TextStyle(
-                          fontSize: 21.0, fontWeight: FontWeight.bold),
-                    ),
-                    /*new Container(
-                      height: 18.0,
-                      margin: const EdgeInsets.only(left: 5.0, top: 0.0),
-                      child: new Icon(
-                        Icons.arrow_drop_down,
-                        size: 20.0,
-                      ),
-                    )*/
-                  ],
-                ),
-              ),
-            ],
-          ),
-          new Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              new Container(
-                margin: const EdgeInsets.only(left: 3.0),
-                child: new Row(
-                  children: <Widget>[
-                    new Text(
-                      'Rent wheelchair for whole trip, you will be picked and dropped',
-                      textAlign: TextAlign.left,
-                      style: new TextStyle(fontSize: 14.0),
-                    )
-                  ],
-                ),
-              ),
-            ],
-          ),
-          new Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              new Container(
-                margin: const EdgeInsets.only(bottom: 10.0, left: 3.0),
-                child: new Row(
-                  children: <Widget>[
-                    new Text(
-                      'off to place of your choice',
-                      textAlign: TextAlign.left,
-                      style: new TextStyle(fontSize: 14.0),
-                    )
-                  ],
-                ),
-              ),
-            ],
-          ),
-          new Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
+
               new Container(
                 width: 100.0,
-                margin:
-                    const EdgeInsets.only(right: 8.0, top: 10.0, bottom: 10.0),
+                margin: const EdgeInsets.only(right: 8.0, top: 10.0, bottom: 10.0),
                 child: new Row(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
@@ -364,8 +188,7 @@ class TripSummaryState extends State<TripSummary> {
               ),
               new Container(
                 width: 100.0,
-                margin:
-                    const EdgeInsets.only(right: 8.0, top: 10.0, bottom: 10.0),
+                margin: const EdgeInsets.only(right: 8.0, top: 10.0, bottom: 10.0),
                 child: new Row(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
@@ -392,6 +215,7 @@ class TripSummaryState extends State<TripSummary> {
               ),
             ],
           ),
+
           new Container(
             height: 181.0,
             child: new ListView(
@@ -403,7 +227,6 @@ class TripSummaryState extends State<TripSummary> {
       ),
     );
   }
-
   List<Widget> buildHotelCarousel(
       BuildContext context, HotelOffers hotelOffers) {
     List<Widget> lstWidHotels = new List<Widget>();
@@ -415,9 +238,10 @@ class TripSummaryState extends State<TripSummary> {
         selected: _selectedHotelOfferId == offerId,
         onTap: () {
           setState(() {
-            if (_selectedHotelOfferId == offerId) {
+            if(_selectedHotelOfferId == offerId){
               _selectedHotelOfferId = "";
-            } else {
+            }
+            else{
               _selectedHotelOfferId = offerId;
             }
           });
@@ -426,38 +250,38 @@ class TripSummaryState extends State<TripSummary> {
     }
     return lstWidHotels;
   }
-
   Widget buildRentalCarSection(BuildContext context, RCOffers rcOffers) {
     return new Container(
       child: new Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          new Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              new Container(
-                  margin:
-                      const EdgeInsets.only(top: 10.0, bottom: 10.0, left: 1.0),
-                  child: new Row(
-                    children: <Widget>[
-                      new Text(
-                        'Or reserve wheel chair only for airport',
-                        textAlign: TextAlign.left,
-                        style: new TextStyle(
-                            fontSize: 18.0, fontWeight: FontWeight.bold),
-                      ),
-                      new Container(
-                        height: 18.0,
-                        margin: const EdgeInsets.only(left: 5.0, top: 0.0),
-                        child: new Icon(
-                          Icons.arrow_drop_down,
-                          size: 20.0,
-                        ),
-                      )
-                    ],
-                  )),
-            ],
-          ),
+//          new Row(
+//            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//            children: <Widget>[
+//              new Container(
+//                  margin:
+//                  const EdgeInsets.only(top: 10.0, bottom: 10.0, left: 1.0),
+//                  child: new Row(
+//                    children: <Widget>[
+//                      new Text(
+//                        'Or reserve wheel chair only for airport',
+//                        textAlign: TextAlign.left,
+//                        style: new TextStyle(
+//                            fontSize: 18.0, fontWeight: FontWeight.bold),
+//                      ),
+//                      new Container(
+//                        height: 18.0,
+//                        margin: const EdgeInsets.only(left: 5.0, top: 0.0),
+//                        child: new Icon(
+//                          Icons.arrow_drop_down,
+//                          size: 20.0,
+//                        ),
+//                      )
+//                    ],
+//                  )),
+//
+//            ],
+//          ),
           new Container(
             height: 181.0,
             child: new ListView(
@@ -480,9 +304,10 @@ class TripSummaryState extends State<TripSummary> {
         selected: _selectedRCOfferId == offerId,
         onTap: () {
           setState(() {
-            if (_selectedRCOfferId == offerId) {
+            if(_selectedRCOfferId == offerId){
               _selectedRCOfferId = "";
-            } else {
+            }
+            else{
               _selectedRCOfferId = offerId;
             }
           });
@@ -492,10 +317,10 @@ class TripSummaryState extends State<TripSummary> {
     return lstWidCars;
   }
 
-  Widget buildConfirmFOWProgram(BuildContext context) {
+  Widget buildConfirmSection(BuildContext context) {
     return new Container(
       padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 55.0),
-      margin: const EdgeInsets.only(top: 8.0),
+      margin: const EdgeInsets.only(top: 20.0),
       child: new Row(
         children: <Widget>[
           new GestureDetector(
@@ -504,32 +329,7 @@ class TripSummaryState extends State<TripSummary> {
               width: 300.0,
               height: 40.0,
               padding: const EdgeInsets.only(top: 8.0),
-              child: new Text('I am interested',
-                  style: new TextStyle(fontSize: 20.0, color: Colors.white),
-                  textAlign: TextAlign.center),
-            ),
-            onTap: () {
-              print('Confirm pressed');
-              Navigator.of(context).pushNamed(RentalWC.tag);
-            },
-          )
-        ],
-      ),
-    );
-  }
-  Widget buildConfirmSection(BuildContext context) {
-    return new Container(
-      padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 55.0),
-      margin: const EdgeInsets.only(top: 8.0),
-      child: new Row(
-        children: <Widget>[
-          new GestureDetector(
-            child: new Container(
-              decoration: const BoxDecoration(color: Colors.grey),
-              width: 300.0,
-              height: 40.0,
-              padding: const EdgeInsets.only(top: 8.0),
-              child: new Text('No, confirm my booking',
+              child: new Text('Confirm',
                   style: new TextStyle(fontSize: 20.0, color: Colors.white),
                   textAlign: TextAlign.center),
             ),
@@ -553,7 +353,7 @@ class TripSummaryState extends State<TripSummary> {
     offer1.name = "Battery MX12B";
     offer1.imagePath = "assets/hotel_sofitel.jpg";
     offer1.distance = "Available: 20";
-    offer1.price = "+\$0";
+    offer1.price = "+\$10 per day";
     offer1.starRating = 5;
     offer1.amenities = new HotelAmenities();
     offer1.amenities.isWifi = true;
@@ -571,7 +371,7 @@ class TripSummaryState extends State<TripSummary> {
     offer2.name = "Battery MDX19B";
     offer2.imagePath = "assets/hotel_WillardInterContinental.jpg";
     offer2.distance = "Waitlist: 50";
-    offer2.price = "+\$0";
+    offer2.price = "+\$40 per day";
     offer2.starRating = 4;
     offer2.amenities = new HotelAmenities();
     offer2.amenities.isWifi = true;
@@ -589,7 +389,7 @@ class TripSummaryState extends State<TripSummary> {
     offer3.name = "Battery RDX19B";
     offer3.imagePath = "assets/hotel_MandarinOriental.jpg";
     offer3.distance = "Available: 30";
-    offer3.price = "+\$0";
+    offer3.price = "+\$20 per day";
     offer3.starRating = 3;
     offer3.amenities = new HotelAmenities();
     offer3.amenities.isWifi = true;
@@ -607,7 +407,7 @@ class TripSummaryState extends State<TripSummary> {
     offer4.name = "Battery DQX9B";
     offer4.imagePath = "assets/hotel_hilton.jpg";
     offer4.distance = "Waitlist: 5";
-    offer4.price = "+\$100";
+    offer4.price = "+\$35 per day";
     offer4.starRating = 3;
     offer4.amenities = new HotelAmenities();
     offer4.amenities.isWifi = true;
@@ -642,6 +442,7 @@ class TripSummaryState extends State<TripSummary> {
     offer1.amenities.seats = 5;
     offer1.amenities.bags = 3;
     rcOffers.offers.add(offer1);
+    offer1.availability = "Available: 210";
     //---------------------------------------------------------------
     //-------------------------rcoffer2------------------------------
     var offer2 = new RentalCar();
@@ -660,6 +461,7 @@ class TripSummaryState extends State<TripSummary> {
     offer2.amenities.seats = 5;
     offer2.amenities.bags = 2;
     rcOffers.offers.add(offer2);
+    offer2.availability = "Waitlist: 10";
     //---------------------------------------------------------------
     //-------------------------rcoffer3------------------------------
     var offer3 = new RentalCar();
@@ -678,6 +480,7 @@ class TripSummaryState extends State<TripSummary> {
     offer3.amenities.seats = 5;
     offer3.amenities.bags = 3;
     rcOffers.offers.add(offer3);
+    offer3.availability = "Available: 310";
     //---------------------------------------------------------------
     //-------------------------rcoffer4------------------------------
     var offer4 = new RentalCar();
@@ -696,21 +499,9 @@ class TripSummaryState extends State<TripSummary> {
     offer4.amenities.seats = 4;
     offer4.amenities.bags = 2;
     rcOffers.offers.add(offer4);
+    offer4.availability = "Available: 510";
     //---------------------------------------------------------------
     return rcOffers;
   }
-}
-// class HotelOfferComponent extends StatefulWidget{
-//    const HotelOfferComponent(
-//       {Key key,
-//       @required this.offerId,
-//       @required this.hotel,``
-//       this.selected = false,
-//       this.onTap}):super(key: key);
 
-//   final String offerId;
-//   final VoidCallback onTap;
-//   final Hotel hotel;
-//   final bool selected;
-//   State createState() => new HotelOfferComponentState(key: key, offerId: offerId, hotel: hotel, onTap: onTap, selected: selected);
-// }
+}

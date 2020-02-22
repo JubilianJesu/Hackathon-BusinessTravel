@@ -30,6 +30,8 @@ class FlightResultsScreenState extends State<FlightResultsScreen> {
       super.initState();
       _scrollController = new ScrollController();
       results = component.getDummyFlightResults();
+      print('results = ');
+      print(results);
     }
 
   @override
@@ -179,16 +181,16 @@ class FlightResultsScreenState extends State<FlightResultsScreen> {
     });
   }
   Future<FlightResultsData> fetchPost() async {
-    try{
-        var url = 'http://ndcwas18.azurewebsites.net/api/Shop/flights/1/'+ this.flightShopRequest.origin + '/' + this.flightShopRequest.destination +'/'+ this.flightShopRequest.departureDate + '/' + this.flightShopRequest.returnDate;
-    final response = await http.get(url);
-    
-    Map fResultsMap =  json.decode(response.body);
-    return new FlightResultsData.fromJson(fResultsMap);
-    }
-    catch(ex){
+//    try{
+//        var url = 'http://ndcwas18.azurewebsites.net/api/Shop/flights/1/'+ this.flightShopRequest.origin + '/' + this.flightShopRequest.destination +'/'+ this.flightShopRequest.departureDate + '/' + this.flightShopRequest.returnDate;
+//    final response = await http.get(url);
+//
+//    Map fResultsMap =  json.decode(response.body);
+//    return new FlightResultsData.fromJson(fResultsMap);
+//    }
+//    catch(ex){
       return component.getDummyFlightResults();
-    }
+//    }
     
   }
 }
