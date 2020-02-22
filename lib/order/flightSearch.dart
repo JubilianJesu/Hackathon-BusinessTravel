@@ -346,7 +346,7 @@ class SearchScreenState extends State<SearchScreen> {
             children: <Widget>[
               CustomButton('Mobility Aids'),
               CustomButton('Special seating'),
-            CustomButton('Rental Wheel Chair'),
+            CustomButton('Non-stop Flight'),
               CustomButton('Hotel'),
               CustomButton('Taxi')
             ],
