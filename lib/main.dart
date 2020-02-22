@@ -17,6 +17,7 @@ import 'order/Confirmation.dart';
 import 'destination/destination.dart';
 import 'deals/deals_scroller.dart';
 import 'order/FlightShopRequest.dart';
+import 'GlobalSSRIDConfirmation.dart';
 
 void main() => runApp(MyApp());
 
@@ -38,7 +39,8 @@ class MyApp extends StatelessWidget{
         Confirmation.tag: (BuildContext context) => new Confirmation(),
         MyDestinations.tag: (BuildContext context) => new MyDestinations(),
         MyDeals.tag: (BuildContext context) => new MyDeals(),
-        MySpace.tag: (BuildContext context) => new MySpace()        
+        MySpace.tag: (BuildContext context) => new MySpace(),
+        GlobalSSRIdConfirmation.tag:(BuildContext context) => new GlobalSSRIdConfirmation(),
         };
 
   @override
