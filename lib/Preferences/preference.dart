@@ -7,6 +7,7 @@ import '../order/flightSearch.dart';
 import '../model/preferenceModel.dart';
 import 'dart:ui';
 import '../landingPage.dart';
+import '../GlobalSSRIDConfirmation.dart';
 
 class MyPreferences extends StatefulWidget {
   static String tag = "mypreferences-Page";
@@ -29,6 +30,10 @@ class MyHomePage extends State<MyPreferences> {
     '',
     'From Lobby',
     'Self Movement to Gate'
+  ];
+  List<String> _genders = <String>[
+    'Male',
+    'Female',
   ];
   String _event = '';
   List<String> _typeOfWheelChairs = <String>['', 'Standard Manual', 'Battery Operated'];
@@ -99,21 +104,17 @@ class MyHomePage extends State<MyPreferences> {
       //   },
       // );
 
-      print('Form save called, myPreference is now up to date...');
-      print('EventInterested: ${myPreference.eventInterested}');
-      print('StayWithWidget: ${myPreference.stayWithWidget}');
-      print('BlendTravel: ${myPreference.blendTravel}');
-      print('DiningOption: ${myPreference.diningOption}');
-      print('SocialSetting: ${myPreference.socialSetting}');
-      print('DestinationZipcode: ${myPreference.destinationZipcode}');
-      print('========================================');
-      //print('Submitting to back end...');
-      print('TODO - we will write the submission part next...');
     }
   }
 
+
+
   @override
   Widget build(BuildContext context) {
+
+    var name = "Jane";
+    var _gender = 'Male';//'Games event';
+
 
     var _asstianceLevel = 'From Lobby';//'Games event';
     final assistanceLevel = InputDecorator(
@@ -146,6 +147,151 @@ class MyHomePage extends State<MyPreferences> {
         ),
       ),
     );
+    Widget _buildPersonalDetails() {
+      return new Container(
+        child: new Column(
+          children: <Widget>[
+            new Container(
+              margin: const EdgeInsets.symmetric(vertical: 8.0),
+              decoration: const BoxDecoration(
+                  border: const Border(
+                      top: const BorderSide(width: 0.2, color: Colors.grey),
+                      bottom: const BorderSide(width: 0.2, color: Colors.grey))),
+              child: new Row(
+                children: [
+
+                  new Container(
+                      width: 311.00,
+                      //width: 350.0,
+                      decoration: const BoxDecoration(
+                          border: const Border(
+                              left: const BorderSide(
+                                  width: 0.2, color: Colors.grey))),
+                      //padding : const EdgeInsets.only(left: 8.0),
+                      child: new Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          new Container(
+                            padding: const EdgeInsets.only(
+                                bottom: 8.0, top: 8.0, left: 8.0),
+                            decoration: const BoxDecoration(
+                                border: const Border(
+                                    bottom: const BorderSide(
+                                        width: 0.2, color: Colors.grey))),
+                            child: new Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                new Icon(
+                                  Icons.input,
+                                  color: Colors.grey,
+                                ),
+                                new Flexible(
+                                    child: new Container(
+                                      padding: const EdgeInsets.only(left: 8.0),
+                                      child: new TextFormField(
+                                        decoration: new InputDecoration.collapsed(
+                                            hintText: "First Name"),
+                                        initialValue: "Martin",
+                                      ),
+                                    )),
+
+                              ],
+                            ),
+                          ),
+                          new Container(
+                            padding: const EdgeInsets.only(
+                                bottom: 8.0, top: 8.0, left: 8.0),
+                            decoration: const BoxDecoration(
+                                border: const Border(
+                                    bottom: const BorderSide(
+                                        width: 0.2, color: Colors.grey))),
+                            child: new Row(
+                              children: <Widget>[
+                                new Icon(
+                                  Icons.input,
+                                  color: Colors.grey,
+                                ),
+                                new Flexible(
+                                    child: new Container(
+                                      padding: const EdgeInsets.only(left: 8.0),
+                                      child: new TextFormField(
+                                        decoration: new InputDecoration.collapsed(
+                                            hintText: "Last Name"),
+                                        initialValue: "Martinez",
+                                      ),
+                                    )),
+
+                              ],
+                            ),
+                          ),new Container(
+                            padding: const EdgeInsets.only(
+                                bottom: 8.0, top: 8.0, left: 8.0),
+                            decoration: const BoxDecoration(
+                                border: const Border(
+                                    bottom: const BorderSide(
+                                        width: 0.2, color: Colors.grey)))
+
+                            ,
+                            child: new Row(
+                              children: <Widget>[
+                                new Icon(
+                                  Icons.date_range,
+                                  color: Colors.grey,
+                                ),
+                                new Flexible(
+                                    child: new Container(
+                                      padding: const EdgeInsets.only(left: 8.0),
+                                      child: new TextFormField(
+                                        decoration: new InputDecoration.collapsed(
+                                            hintText: "mm/dd/yyyy"),
+                                        initialValue: "10/10/2010",
+                                      ),
+                                    )),
+
+                              ],
+                            ),
+                          ),new Container(
+
+                            padding: const EdgeInsets.only(
+                                bottom: 8.0, top: 8.0, left: 8.0),
+
+                            child: new Row(
+                              children: <Widget>[
+                                new Text("Gender"),
+                                new Flexible(
+                                    child: new Container(
+                                      padding: const EdgeInsets.only(left: 58.0),
+                                        child: new DropdownButton<String>(
+                                          value: _gender,
+                                          onChanged: (String newValue) {
+                                            setState(() {
+                                              myPreference.gender = newValue;
+                                              _gender = newValue;
+                                            });
+                                          },
+                                          items: _genders.map((String value) {
+                                            return new DropdownMenuItem<String>(
+                                              value: value,
+                                              child: new Text(value),
+                                            );
+                                          }).toList(),
+                                        ),
+                                    )),
+
+                              ],
+                            ),
+                          )
+                        ],
+                      ))
+                ],
+              ),
+            ),
+
+          ],
+        ),
+      );
+    }
 
     var _mobilityLevel = 'Cannot Walk';
     final mobilityLevel = InputDecorator(
@@ -263,7 +409,7 @@ class MyHomePage extends State<MyPreferences> {
         },
       ),
     ]);
-    
+
     var _typeOfWheelChair = 'Battery Operated';
     final typeOfWheelChair = InputDecorator(
       decoration: const InputDecoration(
@@ -336,8 +482,8 @@ class MyHomePage extends State<MyPreferences> {
         },
       ),
     ]);
-    
-    
+
+
 
     final femineCare = Row(children: <Widget>[
       const Icon(
@@ -384,7 +530,7 @@ class MyHomePage extends State<MyPreferences> {
     final assemblyInstructions = TextFormField(
       decoration: const InputDecoration(
         icon: const Icon(
-          Icons.contact_mail,
+          Icons.file_upload,
           color: Colors.grey,
         ),
         hintText: 'Assembly Instructions',
@@ -401,7 +547,7 @@ class MyHomePage extends State<MyPreferences> {
     final dimensions = TextFormField(
       decoration: const InputDecoration(
         icon: const Icon(
-          Icons.contact_mail,
+          Icons.power_input,
           color: Colors.grey,
         ),
         hintText: 'Dimensions',
@@ -427,7 +573,7 @@ class MyHomePage extends State<MyPreferences> {
               textAlign: TextAlign.center),
           onPressed: () {
             submitForm();
-            Navigator.of(context).pushNamed(SearchScreen.tag);
+            Navigator.of(context).pushNamed(GlobalSSRIdConfirmation.tag);
           },
         ));
 
@@ -438,7 +584,7 @@ class MyHomePage extends State<MyPreferences> {
           new Container(
               margin: const EdgeInsets.only(top: 10.0),
               child: new Text(
-                'Welcome Jane',
+                'Welcome',
                 style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20.0,
@@ -479,9 +625,12 @@ class MyHomePage extends State<MyPreferences> {
               child: new ListView(
                 padding: const EdgeInsets.symmetric(horizontal: 10.0),
                 children: <Widget>[
-                  welcomeMessage,
-                  line,
+
                   headerMessage,
+                  line,
+                  new Container(
+                    child: _buildPersonalDetails(),
+                  ),
                   mobilityLevel,
                   assistanceLevel,
                   typeOfWheelChair,
@@ -501,7 +650,7 @@ class MyHomePage extends State<MyPreferences> {
               print('Menu button');
             },
           ),
-          title: new Text("My Preferences")),
+          title: new Text("Global Special Request Profile")),
       body: new Stack(
         children: <Widget>[
           //new Image.asset("assets/background.jpg", fit: BoxFit.cover),

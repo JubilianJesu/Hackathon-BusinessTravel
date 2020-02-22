@@ -344,11 +344,11 @@ class SearchScreenState extends State<SearchScreen> {
             scrollDirection: Axis.horizontal,
             //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              CustomButton('Hotel'),
               CustomButton('Mobility Aids'),
               CustomButton('Special seating'),
-              CustomButton('Taxi'),
-              CustomButton('Rental Wheel Chair')
+            CustomButton('Rental Wheel Chair'),
+              CustomButton('Hotel'),
+              CustomButton('Taxi')
             ],
           ),
         ),

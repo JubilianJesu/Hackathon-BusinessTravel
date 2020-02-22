@@ -9,6 +9,7 @@ import 'tagPage.dart';
 import 'package:http/http.dart' as http;
 import 'dart:ui';
 import 'order/flightSearch.dart';
+import 'package:businesstravel/GlobalSSRIDConfirmation.dart';
 
 class LandingPage extends StatefulWidget {
 static String tag="landing-Page";
@@ -58,7 +59,7 @@ class LandingPageState extends State<LandingPage>{
                 Navigator.of(context).pushNamed(SearchScreen.tag);
               },
               color: Colors.deepPurpleAccent,
-              child: Text('Orders', style: TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold)),
+              child: Text('Booking', style: TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold)),
               ),
         ),
 
@@ -74,10 +75,10 @@ final tagButton = Padding(
               minWidth: 200.0,
               height: 42.0,
               onPressed: (){
-                Navigator.of(context).pushNamed(TagPage.tag);
+                Navigator.of(context).pushNamed(GlobalSSRIdConfirmation.tag);
               },
               color: Colors.deepPurpleAccent,
-              child: Text('Tag', style: TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold)),
+              child: Text('Manage Global SSR Id', style: TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold)),
               ),
         ),
 
@@ -97,7 +98,7 @@ final dStoreButton = Padding(
                 
                },
               color: Colors.deepPurpleAccent,
-              child: Text('My Space', style: TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold)),
+              child: Text('My Wallet', style: TextStyle(color: Colors.white, fontSize: 30.0, fontWeight: FontWeight.bold)),
               ),
         ),
 
@@ -107,7 +108,7 @@ final dStoreButton = Padding(
     return new Scaffold( // 1
     drawer: drawer,
       appBar: new AppBar(
-      title: new Text("Business Travel"), // screen title,
+      title: new Text("Freedom on Wheels"), // screen title,
       ),
       body: new Stack(
         fit: StackFit.expand,
