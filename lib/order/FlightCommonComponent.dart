@@ -185,6 +185,14 @@ class FlightCommonComponent{
             size: _iconSize,
           )));
     }
+    if (amenities.isOnDemandVideo && amenities.isLegroom) {
+      lstWidgets.add(new Container(
+          padding: const EdgeInsets.only(left: 2.0),
+          child: const Icon(
+            Icons.accessible,
+            size: _iconSize,
+          )));
+    }
     return lstWidgets;
   }
 

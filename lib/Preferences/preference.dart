@@ -192,6 +192,7 @@ class MyHomePage extends State<MyPreferences> {
                                       child: new TextFormField(
                                         decoration: new InputDecoration.collapsed(
                                             hintText: "First Name"),
+                                        initialValue: "Martin",
                                       ),
                                     )),
 
@@ -217,6 +218,7 @@ class MyHomePage extends State<MyPreferences> {
                                       child: new TextFormField(
                                         decoration: new InputDecoration.collapsed(
                                             hintText: "Last Name"),
+                                        initialValue: "Martinez",
                                       ),
                                     )),
 
@@ -243,6 +245,7 @@ class MyHomePage extends State<MyPreferences> {
                                       child: new TextFormField(
                                         decoration: new InputDecoration.collapsed(
                                             hintText: "mm/dd/yyyy"),
+                                        initialValue: "10/10/2010",
                                       ),
                                     )),
 
