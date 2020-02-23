@@ -12,6 +12,7 @@ import 'MyAirlines.dart';
 import 'MyHotel.dart';
 import 'MyNewDeal.dart';
 import 'MyFeedback.dart';
+import '../landingPage.dart';
 
 class MySpace extends StatefulWidget {
   static String tag = "MySpace-Page";
@@ -29,9 +30,10 @@ class MySpacePageState extends State<MySpace> {
       home: Scaffold(
           appBar: AppBar(
               leading: IconButton(
-                icon: Icon(Icons.menu),
+                icon: Icon(Icons.home),
                 onPressed: () {
                   print('Menu button');
+                  Navigator.of(context).pushNamed(LandingPage.tag);
                 },
               ),
               backgroundColor: Colors.deepPurpleAccent,
@@ -135,16 +137,16 @@ class TheGridView {
                     new Image.asset(
                       "assets/$image",
                       fit: BoxFit.cover,
-                      height: 120.0,
+                      height: 175.0,
                     ),
-                    new Center(
-                        child: Text(
-                      "$title",
-                      style: new TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20.0),
-                    )),
+//                    new Center(
+//                        child: Text(
+//                      "$title",
+//                      style: new TextStyle(
+//                          color: Colors.black,
+//                          fontWeight: FontWeight.bold,
+//                          fontSize: 20.0),
+//                    )),
                   ],
                 ),
               ),
@@ -164,11 +166,11 @@ class TheGridView {
         mainAxisSpacing: 1.0,
         crossAxisSpacing: 1.0,
         children: <Widget>[          
-          makeGridCell(context,"Delta", "", "delta.png", 5),
-          makeGridCell(context,"Hilton", "", "hilton.png", 5),          
-          makeGridCell(context,"Deals", "", "MyDeals.jpg", 5),
-          makeGridCell(context,"Budget", "", "budget.png", 3),
-          makeGridCell(context,"Uber", "", "uber.jpg", 3),
+          makeGridCell(context,"WheelChairDocument", "", "MyDeals.jpg", 5),
+//          makeGridCell(context,"Hilton", "", "hilton.png", 5),
+//          makeGridCell(context,"Deals", "", "MyDeals.jpg", 5),
+//          makeGridCell(context,"Budget", "", "budget.png", 3),
+//          makeGridCell(context,"Uber", "", "uber.jpg", 3),
          // makeGridCell(context,"Attractions", "", "attractions.jpg", 3),
         ]);
   }
@@ -188,9 +190,12 @@ void iconClick(BuildContext context, String icon) {
     case "Budget":
       launch("https://www.budget.com/en/home");
       break;
-    case "Deals":
+    case "WheelChairDocument":
       Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyNewDeal()));
-      break;   
+      break;
+    case "Deals":
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyNewDeal()));
+    break;
     default:
       Navigator.of(context).pushNamed(MySpace.tag);  
   }
