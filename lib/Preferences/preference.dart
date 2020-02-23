@@ -6,7 +6,6 @@ import '../model/preferenceModel.dart';
 import '../order/flightSearch.dart';
 import '../model/preferenceModel.dart';
 import 'dart:ui';
-import '../landingPage.dart';
 import '../GlobalSSRIDConfirmation.dart';
 
 class MyPreferences extends StatefulWidget {
@@ -28,8 +27,8 @@ class MyHomePage extends State<MyPreferences> {
   ];
   List<String> _assisatnceLevels = <String>[
     '',
-    'From Lobby',
-    'Self Movement to Gate'
+    'Lobby',
+    'Gate'
   ];
   List<String> _genders = <String>[
     'Male',
@@ -116,14 +115,14 @@ class MyHomePage extends State<MyPreferences> {
     var _gender = 'Male';//'Games event';
 
 
-    var _asstianceLevel = 'From Lobby';//'Games event';
+    var _asstianceLevel = 'Lobby';//'Games event';
     final assistanceLevel = InputDecorator(
       decoration: const InputDecoration(
         icon: const Icon(
-          Icons.event,
+          Icons.assistant,
           color: Colors.grey,
         ),
-        labelText: 'AssistanceLevel Level',
+        labelText: 'Airport Assistance required from',
         labelStyle: const TextStyle(
             fontWeight: FontWeight.bold, fontSize: 15.0, color: Colors.black),
       ),
@@ -297,7 +296,7 @@ class MyHomePage extends State<MyPreferences> {
     final mobilityLevel = InputDecorator(
       decoration: const InputDecoration(
         icon: const Icon(
-          Icons.event,
+          Icons.perm_identity,
           color: Colors.grey,
         ),
         labelText: 'Mobility Level',
@@ -414,10 +413,10 @@ class MyHomePage extends State<MyPreferences> {
     final typeOfWheelChair = InputDecorator(
       decoration: const InputDecoration(
         icon: const Icon(
-          Icons.local_dining,
+          Icons.accessible,
           color: Colors.grey,
         ),
-        labelText: 'Dining Options',
+        labelText: 'WheelChair Type',
         labelStyle: const TextStyle(
             fontWeight: FontWeight.bold, fontSize: 15.0, color: Colors.black),
       ),
@@ -645,9 +644,13 @@ class MyHomePage extends State<MyPreferences> {
       key: _scaffoldKey,
       appBar: new AppBar(
           leading: IconButton(
-            icon: Icon(Icons.menu),
+            icon: Icon(
+              Icons.home,
+              color: Colors.white,
+            ),
             onPressed: () {
-              print('Menu button');
+              print('Menu button pressed');
+              Navigator.of(context).pushNamed(LandingPage.tag);
             },
           ),
           title: new Text("Global Special Request Profile")),

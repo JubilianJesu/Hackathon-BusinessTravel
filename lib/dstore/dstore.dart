@@ -35,7 +35,7 @@ class MySpacePageState extends State<MySpace> {
                 },
               ),
               backgroundColor: Colors.deepPurpleAccent,
-              title: new Text("My Space")),
+              title: new Text("My Wallet")),
           body: _buildBody(context)),
     );
   }

@@ -88,7 +88,7 @@ class RentalWCState extends State<RentalWC> {
                       children: <Widget>[
                         Flexible(
                             child: new Text(
-                              'Rent wheelchair for whole trip, don\'t worry you will be picked and dropped. to place of your choice.',
+                              'Rent wheelchair for whole trip, don\'t worry you will be picked and dropped to place of your choice.',
                               textAlign: TextAlign.left,
                               softWrap: true,
                               style: new TextStyle(fontSize: 18.0),

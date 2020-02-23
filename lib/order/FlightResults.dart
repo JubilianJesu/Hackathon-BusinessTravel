@@ -148,7 +148,7 @@ class FlightResultsScreenState extends State<FlightResultsScreen> {
             child: new Row(
               children: <Widget>[
                 new SizedBox(  
-                  width: 60.0,                
+                  width: 80.0,
                   child: new RaisedButton(
                     splashColor: Colors.blue,                    
                     onPressed:() => _selectFlight(context),

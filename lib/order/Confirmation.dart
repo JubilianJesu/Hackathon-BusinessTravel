@@ -70,7 +70,7 @@ class ConfirmationState extends State<Confirmation> {
               new Container(
                 margin: const EdgeInsets.only(top: 50.0),
                 child: new Text(
-                    "An email with itinerary details has been sent to ashish.negi@tcs.com.", style: new TextStyle(fontSize: 19.0) ,textAlign: TextAlign.center,),
+                    "An email with the itinerary details has been sent to jubilian.j@tcs.com.", style: new TextStyle(fontSize: 19.0) ,textAlign: TextAlign.center,),
               ),
             ],
           )

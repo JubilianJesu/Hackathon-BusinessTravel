@@ -140,9 +140,9 @@ class TripSummaryState extends State<TripSummary> {
                   children: <Widget>[
                     Flexible(
                         child: new Text(
-                      'Note: Your outbound flight with fly time of 210 minutes does not have accessible lavatory.',
+                      'Note: Your inbound flight with fly time of 210 minutes does not have accessible lavatory. The request for Aisle wheelchair has been put for the flight.',
                       textAlign: TextAlign.left,
-                      style: new TextStyle(fontSize: 18.0),
+                      style: new TextStyle(fontSize: 18.0, color: Colors.red),
                       softWrap: true,
                     ))
                   ],

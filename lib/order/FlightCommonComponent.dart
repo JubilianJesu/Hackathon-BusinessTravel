@@ -33,7 +33,7 @@ class FlightCommonComponent{
                             child: new Text(flight.travelTime),
                           ),
                           new Container(
-                            width:150.0,
+                            width:180.0,
                             margin: const EdgeInsets.only(top: 9.8),
                             decoration: const BoxDecoration(
                                 border: const Border(
@@ -214,7 +214,7 @@ class FlightCommonComponent{
     flt1.departureTime = "07:00am";
     flt1.arrivalTime = "09:35am";
     flt1.travelTime = "4h 35m";
-    flt1.priceToCollect = "+ \$120";
+    flt1.priceToCollect = "\$120";
     flt1.carrierCode = "da";
     flt1.isBestFlight = true;
     flt1.flightStats = 8;
@@ -236,7 +236,7 @@ class FlightCommonComponent{
     flt2.departureTime = "02:31pm";
     flt2.arrivalTime = "05:08pm";
     flt2.travelTime = "4h 35m";
-    flt2.priceToCollect = "+ \$120";
+    flt2.priceToCollect = "\$120";
     flt2.carrierCode = "da";
     flt2.isBestFlight = true;
     flt2.flightStats = 8;
@@ -258,7 +258,7 @@ class FlightCommonComponent{
     flt3.departureTime = "07:15am";
     flt3.arrivalTime = "10:00am";
     flt3.travelTime = "4h 45m";
-    flt3.priceToCollect = "+ \$212";
+    flt3.priceToCollect = "\$212";
     flt3.carrierCode = "da";
     flt3.isBestFlight = false;
     flt3.flightStats = 4;
@@ -280,7 +280,7 @@ class FlightCommonComponent{
     flt4.departureTime = "08:00am";
     flt4.arrivalTime = "10:30am";
     flt4.travelTime = "4h 30m";
-    flt4.priceToCollect = "+ \$231";
+    flt4.priceToCollect = "\$231";
     flt4.carrierCode = "ua";
     flt4.isBestFlight = false;
     flt4.flightStats = 6;
@@ -302,7 +302,7 @@ class FlightCommonComponent{
     flt5.departureTime = "08:05am";
     flt5.arrivalTime = "10:34am";
     flt5.travelTime = "4h 29m";
-    flt5.priceToCollect = "+ \$240";
+    flt5.priceToCollect = "\$240";
     flt5.carrierCode = "aa";
     flt5.isBestFlight = false;
     flt5.flightStats = 2;
@@ -324,7 +324,7 @@ class FlightCommonComponent{
     flt6.departureTime = "08:40am";
     flt6.arrivalTime = "11:12am";
     flt6.travelTime = "4h 32m";
-    flt6.priceToCollect = "+ \$250";
+    flt6.priceToCollect = "\$250";
     flt6.carrierCode = "da";
     flt6.isBestFlight = false;
     flt6.flightStats = 3;
@@ -346,7 +346,7 @@ class FlightCommonComponent{
     flt7.departureTime = "06:00am";
     flt7.arrivalTime = "08:30am";
     flt7.travelTime = "4h 30m";
-    flt7.priceToCollect = "+ \$299";
+    flt7.priceToCollect = "\$299";
     flt7.carrierCode = "aa";
     flt7.isBestFlight = false;
     flt7.flightStats = 7;
@@ -376,7 +376,7 @@ class FlightCommonComponent{
     flt11.departureTime = "05:59pm";
     flt11.arrivalTime = "11:58pm";
     flt11.travelTime = "3h 58m";
-    flt11.priceToCollect = "+ \$300";
+    flt11.priceToCollect = "\$300";
     flt11.carrierCode = "da";
     flt11.isBestFlight = true;
     flt11.flightStats = 8;
@@ -398,7 +398,7 @@ class FlightCommonComponent{
     flt21.departureTime = "07:15am";
     flt21.arrivalTime = "09:50am";
     flt21.travelTime = "3h 35m";
-    flt21.priceToCollect = "+ \$120";
+    flt21.priceToCollect = "\$120";
     flt21.carrierCode = "da";
     flt21.isBestFlight = true;
     flt21.flightStats = 8;
@@ -420,7 +420,7 @@ class FlightCommonComponent{
     flt31.departureTime = "07:15am";
     flt31.arrivalTime = "10:00am";
     flt31.travelTime = "3h 45m";
-    flt31.priceToCollect = "+ \$120";
+    flt31.priceToCollect = "\$120";
     flt31.carrierCode = "da";
     flt31.isBestFlight = false;
     flt31.flightStats = 4;
@@ -442,7 +442,7 @@ class FlightCommonComponent{
     flt41.departureTime = "08:00am";
     flt41.arrivalTime = "10:30am";
     flt41.travelTime = "3h 30m";
-    flt41.priceToCollect = "+ \$130";
+    flt41.priceToCollect = "\$130";
     flt41.carrierCode = "ua";
     flt41.isBestFlight = false;
     flt41.flightStats = 4;
@@ -464,7 +464,7 @@ class FlightCommonComponent{
     flt51.departureTime = "08:05am";
     flt51.arrivalTime = "10:34am";
     flt51.travelTime = "3h 29m";
-    flt51.priceToCollect = "+ \$150";
+    flt51.priceToCollect = "\$150";
     flt51.carrierCode = "aa";
     flt51.isBestFlight = false;
     flt51.flightStats = 6;
@@ -486,7 +486,7 @@ class FlightCommonComponent{
     flt61.departureTime = "08:40am";
     flt61.arrivalTime = "11:12am";
     flt61.travelTime = "3h 32m";
-    flt61.priceToCollect = "+ \$200";
+    flt61.priceToCollect = "\$200";
     flt61.carrierCode = "da";
     flt61.isBestFlight = false;
     flt61.flightStats = 6;
@@ -508,7 +508,7 @@ class FlightCommonComponent{
     flt71.departureTime = "06:00am";
     flt71.arrivalTime = "08:30am";
     flt71.travelTime = "3h 30m";
-    flt71.priceToCollect = "+ \$299";
+    flt71.priceToCollect = "\$299";
     flt71.carrierCode = "aa";
     flt71.isBestFlight = false;
     flt71.flightStats = 9;
@@ -541,7 +541,7 @@ class FlightCommonComponent{
     flt1.departureTime = "07:00am";
     flt1.arrivalTime = "09:30am";
     flt1.travelTime = "3h 30m";
-    flt1.priceToCollect = "+ \$0";
+    flt1.priceToCollect = "\$0";
     flt1.carrierCode = "da";
     flt1.isBestFlight = true;
 
@@ -562,7 +562,7 @@ class FlightCommonComponent{
     flt2.departureTime = "07:15pm";
     flt2.arrivalTime = "09:50pm";
     flt2.travelTime = "3h 35m";
-    flt2.priceToCollect = "+ \$0";
+    flt2.priceToCollect = "\$0";
     flt2.carrierCode = "da";
     flt2.isBestFlight = true;
     flt2.departureDateFormatted = "Mon, April 12";
