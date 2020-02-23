@@ -220,7 +220,7 @@ class SearchScreenState extends State<SearchScreen> {
                         onSaved: (String value) {
                           this.search.departureDate = value;
                         },
-                        initialValue: '04/08/2019',
+                        initialValue: '02/29/2020',
                       ),
                     ),
                   ),
@@ -240,7 +240,7 @@ class SearchScreenState extends State<SearchScreen> {
                       onSaved: (String value) {
                         this.search.returnDate = value;
                       },
-                      initialValue: '04/12/2019',
+                      initialValue: '03/03/2020',
                     ),
                   )),
                 )
@@ -253,6 +253,7 @@ class SearchScreenState extends State<SearchScreen> {
   }
 
   Widget _submitSearch() {
+    double c_width = MediaQuery.of(context).size.width * 0.99;
     return new Container(
       padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 3.0),
       margin: const EdgeInsets.only(top: 40.0),
@@ -261,7 +262,7 @@ class SearchScreenState extends State<SearchScreen> {
           new GestureDetector(
             child: new Container(
               decoration: const BoxDecoration(color: Colors.deepPurpleAccent),
-              width: 350.0,
+              width: c_width,
               height: 40.0,
               padding: const EdgeInsets.only(top: 8.0),
               child: new Text('Search',
